@@ -1,0 +1,2 @@
+Frontend Notice
+Next.js version : 14
