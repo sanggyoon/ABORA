@@ -1,0 +1,61 @@
+.conversationRoomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.choosenAgent_A {
+  height: 100%;
+  width: 30%;
+  position: relative;
+
+  border: 1px solid white; /*temp*/
+}
+
+.chatBox {
+  height: 100%;
+  width: 40%;
+
+  border: 1px solid white; /*temp*/
+}
+
+.choosenAgent_B {
+  height: 100%;
+  width: 30%;
+  position: relative;
+
+  border: 1px solid white; /*temp*/
+}
+
+.agent_A_avartar,
+.agent_B_avartar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chatInput {
+  background-color: var(--background);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 1rem;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatInput input {
+  width: 40%;
+  border: none;
+  background-color: var(--background);
+  color: var(--signature);
+  margin: auto 0;
+}
