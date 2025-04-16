@@ -1,14 +1,15 @@
 # 📁 app/modules/user/schemas.py
-from pydantic import BaseModel
-from typing import Optional
+from pydantic import BaseModel, EmailStr
 
-class UserBase(BaseModel):
+class UserCreate(BaseModel):
     username: str
-    full_name: Optional[str] = None
-    email: Optional[str] = None
-
-class UserCreate(UserBase):
+    email: EmailStr
     password: str
 
-class UserOut(UserBase):
-    pass
+class UserRead(BaseModel):
+    id: int
+    username: str
+    email: str
+    
+    class Config:
+        orm_mode = True
