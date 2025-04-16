@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/public/models/chaeyoung.glb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/Avatar_GPT.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/Avatar_Gemini.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/MyElement3D.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" afterDir="false" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="fix : 아바타 3D 모델 로딩을 위한 clone 메소드">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +103,7 @@
       <workItem from="1744596928858" duration="2559000" />
       <workItem from="1744682494081" duration="2049000" />
       <workItem from="1744697821170" duration="5140000" />
-      <workItem from="1744793977470" duration="1329000" />
+      <workItem from="1744793977470" duration="6950000" />
     </task>
     <task id="LOCAL-00001" summary="init : chaeyoung">
       <option name="closed" value="true" />
@@ -124,7 +121,39 @@
       <option name="project" value="LOCAL" />
       <updated>1744596300400</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix : Avatar 추가 및 아바타 리팩토링">
+      <option name="closed" value="true" />
+      <created>1744800717450</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744800717450</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix : Gemini Avatar 추가">
+      <option name="closed" value="true" />
+      <created>1744800831753</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744800831753</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix : 카드 열 정렬로 바꿈.">
+      <option name="closed" value="true" />
+      <created>1744804709231</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744804709231</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix : 아바타 3D 모델 로딩을 위한 clone 메소드">
+      <option name="closed" value="true" />
+      <created>1744804751973</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744804751973</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +162,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init : chaeyoung" />
     <MESSAGE value="init : chaeyoung - 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="init : chaeyoung - 1" />
+    <MESSAGE value="fix : Avatar 추가 및 아바타 리팩토링" />
+    <MESSAGE value="fix : Gemini Avatar 추가" />
+    <MESSAGE value="fix : 카드 열 정렬로 바꿈." />
+    <MESSAGE value="fix : 아바타 3D 모델 로딩을 위한 clone 메소드" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix : 아바타 3D 모델 로딩을 위한 clone 메소드" />
   </component>
 </project>
