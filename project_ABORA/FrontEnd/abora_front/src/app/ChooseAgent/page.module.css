@@ -39,7 +39,9 @@
 }
 
 .slide {
-  min-width: 100%;
+  position: absolute;
+  width: 100%;
+  /*min-width: 100%;*/
   transition: transform 0.5s ease-in-out;
   display: flex;
   align-items: center;
