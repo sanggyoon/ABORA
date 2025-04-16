@@ -3,6 +3,11 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
+import Avatar_GPT from '../Components/Avatar/Avatar_GPT'
+import Avatar_Gemini from '../Components/Avatar/Avatar_Gemini'
+import Avatar_Claude from '../Components/Avatar/Avatar_Claude'
+import Avatar_Llama from '../Components/Avatar/Avatar_Llama'
+import AvatarScene from '../Components/Avatar/AvatarScene'
 
 export default function ChooseAgent() {
   const router = useRouter();
@@ -17,11 +22,12 @@ export default function ChooseAgent() {
   };
 
   const slideData = [
-    'Avatar_GPT',
-    'Avatar_Gemini',
-    'Avatar_Claude',
-    'Avatar_Llama',
+    { name: 'Avatar_GPT', Component: Avatar_GPT },
+    { name: 'Avatar_Gemini', Component: Avatar_Gemini },
+    { name: 'Avatar_Claude', Component: Avatar_Claude },
+    { name: 'Avatar_Llama', Component: Avatar_Llama },
   ];
+
 
   const handleNextSlide = (
     setSlide: React.Dispatch<React.SetStateAction<number>>,
@@ -42,27 +48,29 @@ export default function ChooseAgent() {
       {/* 슬라이드 A */}
       <div className={styles.chooseAgent_A}>
         <div
-          className={styles.arrow}
-          onClick={() => handlePrevSlide(setCurrentSlideA, currentSlideA)}
+            className={styles.arrow}
+            onClick={() => handlePrevSlide(setCurrentSlideA, currentSlideA)}
         >
           &#8592; {/* 왼쪽 화살표 */}
         </div>
         <div className={styles.slideBox}>
-          {slideData.map((item, index) => (
-            <div
-              key={index}
-              className={styles.slide}
-              style={{
-                transform: `translateX(${(index - currentSlideA) * 100}%)`,
-              }}
-            >
-              {item}
-            </div>
+          {slideData.map(({ name, Component }, index) => (
+              <div
+                  key={index}
+                  className={styles.slide}
+                  style={{
+                    transform: `translateX(${(index - currentSlideA) * 100}%)`,
+                  }}
+              >
+                <AvatarScene ModelComponent={Component} />
+                <p>{name}</p>
+              </div>
           ))}
         </div>
+
         <div
-          className={styles.arrow}
-          onClick={() => handleNextSlide(setCurrentSlideA, currentSlideA)}
+            className={styles.arrow}
+            onClick={() => handleNextSlide(setCurrentSlideA, currentSlideA)}
         >
           &#8594; {/* 오른쪽 화살표 */}
         </div>
@@ -71,23 +79,25 @@ export default function ChooseAgent() {
       {/* 슬라이드 B */}
       <div className={styles.chooseAgent_B}>
         <div
-          className={styles.arrow}
-          onClick={() => handlePrevSlide(setCurrentSlideB, currentSlideB)}
+            className={styles.arrow}
+            onClick={() => handlePrevSlide(setCurrentSlideB, currentSlideB)}
         >
           &#8592; {/* 왼쪽 화살표 */}
         </div>
         <div className={styles.slideBox}>
-          {slideData.map((item, index) => (
-            <div
-              key={index}
-              className={styles.slide}
-              style={{
-                transform: `translateX(${(index - currentSlideB) * 100}%)`,
-              }}
-            >
-              {item}
-            </div>
+          {slideData.map(({ name, Component }, index) => (
+              <div
+                  key={index}
+                  className={styles.slide}
+                  style={{
+                    transform: `translateX(${(index - currentSlideB) * 100}%)`,
+                  }}
+              >
+                <AvatarScene ModelComponent={Component}></AvatarScene>
+                <p>{name}</p>
+              </div>
           ))}
+
         </div>
         <div
           className={styles.arrow}
