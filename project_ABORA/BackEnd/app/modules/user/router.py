@@ -8,7 +8,7 @@ from typing import List
 router = APIRouter(prefix="/users", tags=["users"])
 
 # User 생성
-@router.post("/", response_model=schemas.UserRead)
+@router.post("/", response_model=schemas.UserRead, status_code=201)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_email(db, email=user.email)
     if db_user:
