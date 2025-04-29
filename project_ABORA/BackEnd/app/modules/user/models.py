@@ -8,7 +8,7 @@ Base = declarative_base()
 
 class User(Base):
     # 이 클래스가 어떤 데이터베이스 테이블과 연결될지를 정의
-    __tablename__ = "users"
+    __tablename__ = "user"
 
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, nullable=False)
