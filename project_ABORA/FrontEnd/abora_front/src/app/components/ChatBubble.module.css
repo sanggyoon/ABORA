@@ -1,0 +1,31 @@
+.userBubble {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 15px;
+  max-width: 100%;
+  margin: 0.5rem auto;
+  align-self: flex-end;
+}
+
+.agentABubble {
+  background-color: var(--background);
+  color: white;
+  padding: 1rem;
+  border-radius: 15px;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  align-self: flex-end;
+  border: 1px solid white;
+}
+
+.agentBBubble {
+  background-color: var(--background);
+  color: white;
+  padding: 1rem;
+  border-radius: 15px;
+  max-width: 100%;
+  margin: 0.5rem 0;
+  align-self: flex-start;
+  border: 1px solid white;
+}

@@ -46,9 +46,49 @@ export default function RootLayout({
           <span>ABORA</span>
           <span>ABORA</span>
           <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
         </header>
         {children}
         <footer>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
+          <span>ABORA</span>
           <span>ABORA</span>
           <span>ABORA</span>
           <span>ABORA</span>

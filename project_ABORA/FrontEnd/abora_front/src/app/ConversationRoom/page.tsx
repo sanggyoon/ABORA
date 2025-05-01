@@ -3,6 +3,11 @@
 import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import {
+  UserBubble,
+  AgentABubble,
+  AgentBBubble,
+} from '../components/ChatBubble';
 import Avatar_A from '../Img/Agent_A.png';
 import Avatar_B from '../Img/Agent_B.png';
 import Avatar_C from '../Img/Agent_C.png';
@@ -26,31 +31,37 @@ export default function ConversationRoom() {
         {/* 에이전트 A */}
         <div className={styles.choosenAgent_A}>
           <div className={styles.agent_A_avartar}>
-            <p>{agentA}</p>
+            <p className={styles.name_agentA}>{agentA}</p>
             {agentA && (
               <Image
                 src={avatarImages[agentA as keyof typeof avatarImages]}
                 alt={`Avatar for ${agentA}`}
-                width={100}
+                layout="responsive"
                 height={100}
+                width={100}
               />
             )}
           </div>
         </div>
 
         {/* 채팅 영역 */}
-        <div className={styles.chatBox}>Chat Box</div>
+        <div className={styles.chatBox}>
+          <UserBubble message="Hello, this is a user message!" />
+          <AgentABubble message="Hi, I am Agent A!" />
+          <AgentBBubble message="Hello, I am Agent B!" />
+        </div>
 
         {/* 에이전트 B */}
         <div className={styles.choosenAgent_B}>
           <div className={styles.agent_B_avartar}>
-            <p>{agentB}</p>
+            <p className={styles.name_agentB}>{agentB}</p>
             {agentB && (
               <Image
                 src={avatarImages[agentB as keyof typeof avatarImages]}
                 alt={`Avatar for ${agentB}`}
-                width={100}
+                layout="responsive"
                 height={100}
+                width={100}
               />
             )}
           </div>
@@ -58,9 +69,9 @@ export default function ConversationRoom() {
       </div>
 
       <div className={styles.chatInput}>
-        <button>Stop</button>
+        <button className={styles.button_stop}>◼︎</button>
         <input type="text" placeholder="Type your message..." />
-        <button>Send</button>
+        <button className={styles.button_send}>Send</button>
       </div>
     </>
   );
