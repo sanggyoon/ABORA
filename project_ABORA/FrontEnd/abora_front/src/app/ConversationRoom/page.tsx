@@ -17,12 +17,13 @@ export default function ConversationRoom() {
   const searchParams = useSearchParams();
   const agentA = searchParams.get('agentA');
   const agentB = searchParams.get('agentB');
+  const currentTime = new Date().toLocaleString();
 
   const avatarImages = {
-    Avatar_GPT: Avatar_A,
-    Avatar_Gemini: Avatar_B,
-    Avatar_Claude: Avatar_C,
-    Avatar_Llama: Avatar_D,
+    '분석적인 상균': Avatar_A,
+    '감성적인 채영': Avatar_B,
+    '철학적인 동년': Avatar_C,
+    '실무적인 정민': Avatar_D,
   };
 
   return (
@@ -46,9 +47,15 @@ export default function ConversationRoom() {
 
         {/* 채팅 영역 */}
         <div className={styles.chatBox}>
-          <UserBubble message="Hello, this is a user message!" />
-          <AgentABubble message="Hi, I am Agent A!" />
-          <AgentBBubble message="Hello, I am Agent B!" />
+          <UserBubble
+            message="Hello, this is a user message!"
+            timestamp={currentTime}
+          />
+          <AgentABubble message="Hi, I am Agent A!" timestamp={currentTime} />
+          <AgentBBubble
+            message="Hello, I am Agent B!"
+            timestamp={currentTime}
+          />
         </div>
 
         {/* 에이전트 B */}

@@ -17,10 +17,10 @@ export default function ChooseAgent() {
   };
 
   const slideData = [
-    'Avatar_GPT',
-    'Avatar_Gemini',
-    'Avatar_Claude',
-    'Avatar_Llama',
+    '분석적인 상균',
+    '감성적인 채영',
+    '철학적인 동년',
+    '실무적인 정민',
   ];
 
   const handleNextSlide = (
@@ -56,7 +56,8 @@ export default function ChooseAgent() {
                 transform: `translateX(${(index - currentSlideA) * 100}%)`,
               }}
             >
-              {item}
+              <div className={styles.agentBaseModel}></div>
+              <div className={styles.agentNameContainer}>{item}</div>
             </div>
           ))}
         </div>
@@ -85,7 +86,8 @@ export default function ChooseAgent() {
                 transform: `translateX(${(index - currentSlideB) * 100}%)`,
               }}
             >
-              {item}
+              <div className={styles.agentBaseModel}></div>
+              <div className={styles.agentNameContainer}>{item}</div>
             </div>
           ))}
         </div>
