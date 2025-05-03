@@ -1,4 +1,5 @@
-from pydantic import BaseModel
+# 📁 app/modules/chatsession/schemas.py
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
 class ChatSessionCreate(BaseModel):
@@ -11,5 +12,4 @@ class ChatSessionRead(BaseModel):
     chatsession_name: str
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
