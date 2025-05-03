@@ -1,11 +1,21 @@
 import { useGLTF } from '@react-three/drei'
 import { clone } from 'three/examples/jsm/utils/SkeletonUtils'
 
-export default function Avatar_Claude(props) {
-    const { scene } = useGLTF('/models/jungmin.glb')
-    const clonedScene = clone(scene) // ✅ 반드시 clone 해야 StrictMode에서 안깨짐
+// export default function Avatar_Claude(props) {
+//     const { scene } = useGLTF('/models/jungmin.glb')
+//     const clonedScene = clone(scene) // ✅ 반드시 clone 해야 StrictMode에서 안깨짐
+//
+//     return <primitive object={clonedScene} {...props} />
+// }
+//
+// useGLTF.preload('/models/jungmin.glb')
 
-    return <primitive object={clonedScene} {...props} />
-}
+import { useMemo, forwardRef } from 'react'
 
-useGLTF.preload('/models/jungmin.glb')
+const Avatar_Claude = forwardRef((props, ref) => {
+    const { scene } = useGLTF('/models/jungmin.glb') // 각자 모델 경로 맞게 변경
+    const cloned = useMemo(() => clone(scene), [scene])
+    return <primitive object={cloned} ref={ref} {...props} />
+})
+
+export default Avatar_Claude

@@ -8,6 +8,7 @@ import Avatar_Gemini from '../Components/Avatar/Avatar_Gemini'
 import Avatar_Claude from '../Components/Avatar/Avatar_Claude'
 import Avatar_Llama from '../Components/Avatar/Avatar_Llama'
 import AvatarScene from '../Components/Avatar/AvatarScene'
+import slideData from '../Components/ChooseAgent'
 
 export default function ChooseAgent() {
   const router = useRouter();
@@ -20,13 +21,7 @@ export default function ChooseAgent() {
     const agentB = slideData[currentSlideB];
     router.push(`/ConversationRoom?agentA=${agentA}&agentB=${agentB}`);
   };
-
-  const slideData = [
-    { name: 'Avatar_GPT', Component: Avatar_GPT },
-    { name: 'Avatar_Gemini', Component: Avatar_Gemini },
-    { name: 'Avatar_Claude', Component: Avatar_Claude },
-    { name: 'Avatar_Llama', Component: Avatar_Llama },
-  ];
+  
 
 
   const handleNextSlide = (
@@ -54,7 +49,7 @@ export default function ChooseAgent() {
           &#8592; {/* 왼쪽 화살표 */}
         </div>
         <div className={styles.slideBox}>
-          {slideData.map(({ name, Component }, index) => (
+          {slideData.map(({ name, Component,glb }, index) => (
               <div
                   key={index}
                   className={styles.slide}
@@ -62,7 +57,7 @@ export default function ChooseAgent() {
                     transform: `translateX(${(index - currentSlideA) * 100}%)`,
                   }}
               >
-                <AvatarScene ModelComponent={Component} />
+                <AvatarScene ModelComponent={Component} glbPath={glb}></AvatarScene>
                 <p>{name}</p>
               </div>
           ))}
@@ -85,7 +80,7 @@ export default function ChooseAgent() {
           &#8592; {/* 왼쪽 화살표 */}
         </div>
         <div className={styles.slideBox}>
-          {slideData.map(({ name, Component }, index) => (
+          {slideData.map(({ name, Component, glb }, index) => (
               <div
                   key={index}
                   className={styles.slide}
@@ -93,7 +88,7 @@ export default function ChooseAgent() {
                     transform: `translateX(${(index - currentSlideB) * 100}%)`,
                   }}
               >
-                <AvatarScene ModelComponent={Component}></AvatarScene>
+                <AvatarScene ModelComponent={Component} glbPath={glb}></AvatarScene>
                 <p>{name}</p>
               </div>
           ))}

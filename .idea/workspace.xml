@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="fix : 아바타 3D 모델 로딩을 위한 clone 메소드">
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="fix : 조명 및 아바타 카메라 회전하여 정면을 바라보도록 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,22 +40,21 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;3DModel&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/ABORA/project_ABORA/FrontEnd/abora_front/public/models&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/user/IdeaProjects/ABORA/project_ABORA/FrontEnd/abora_front/public/models",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\ABORA\project_ABORA\FrontEnd\abora_front\public\models" />
@@ -103,7 +99,10 @@
       <workItem from="1744596928858" duration="2559000" />
       <workItem from="1744682494081" duration="2049000" />
       <workItem from="1744697821170" duration="5140000" />
-      <workItem from="1744793977470" duration="6950000" />
+      <workItem from="1744793977470" duration="12012000" />
+      <workItem from="1745205946314" duration="175000" />
+      <workItem from="1745921316618" duration="2280000" />
+      <workItem from="1746264362907" duration="5731000" />
     </task>
     <task id="LOCAL-00001" summary="init : chaeyoung">
       <option name="closed" value="true" />
@@ -153,7 +152,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744804751973</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="css : Agent 블럭에 중앙배치 및 정상 회전 수정">
+      <option name="closed" value="true" />
+      <created>1744806548448</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744806548448</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix : 조명 및 아바타 카메라 회전하여 정면을 바라보도록 수정">
+      <option name="closed" value="true" />
+      <created>1744806587750</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744806587750</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +181,8 @@
     <MESSAGE value="fix : Gemini Avatar 추가" />
     <MESSAGE value="fix : 카드 열 정렬로 바꿈." />
     <MESSAGE value="fix : 아바타 3D 모델 로딩을 위한 clone 메소드" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix : 아바타 3D 모델 로딩을 위한 clone 메소드" />
+    <MESSAGE value="css : Agent 블럭에 중앙배치 및 정상 회전 수정" />
+    <MESSAGE value="fix : 조명 및 아바타 카메라 회전하여 정면을 바라보도록 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix : 조명 및 아바타 카메라 회전하여 정면을 바라보도록 수정" />
   </component>
 </project>
