@@ -11,16 +11,24 @@ export default function ChooseAgent() {
 
   // 선택된 아바타를 파라미터로 전달
   const handleButtonClick = () => {
-    const agentA = slideData[currentSlideA];
-    const agentB = slideData[currentSlideB];
+    const agentA = slideData[currentSlideA].name;
+    const agentB = slideData[currentSlideB].name;
     router.push(`/ConversationRoom?agentA=${agentA}&agentB=${agentB}`);
   };
 
   const slideData = [
-    'Avatar_GPT',
-    'Avatar_Gemini',
-    'Avatar_Claude',
-    'Avatar_Llama',
+    {
+      name: '분석적인 상균',
+      model: 'Chat-GPT',
+      description: '사실적 기반 분석',
+    },
+    { name: '감성적인 채영', model: 'Gemini', description: '감정 기반 분석' },
+    { name: '철학적인 동년', model: 'Claude', description: '철학적 기반 분석' },
+    {
+      name: '실무적인 정민',
+      model: 'Copilot',
+      description: '실무적 기반 분석',
+    },
   ];
 
   const handleNextSlide = (
@@ -56,7 +64,12 @@ export default function ChooseAgent() {
                 transform: `translateX(${(index - currentSlideA) * 100}%)`,
               }}
             >
-              {item}
+              <div className={styles.agentDescription}>
+                <span>{item.model}</span>
+                <br />
+                <span>{item.description}</span>
+              </div>
+              <div className={styles.agentNameContainer}>{item.name}</div>
             </div>
           ))}
         </div>
@@ -85,7 +98,12 @@ export default function ChooseAgent() {
                 transform: `translateX(${(index - currentSlideB) * 100}%)`,
               }}
             >
-              {item}
+              <div className={styles.agentDescription}>
+                <span>{item.model}</span>
+                <br />
+                <span>{item.description}</span>
+              </div>
+              <div className={styles.agentNameContainer}>{item.name}</div>
             </div>
           ))}
         </div>

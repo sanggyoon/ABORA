@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 70%;
   width: 100%;
   position: relative;
 }
@@ -18,8 +18,6 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-
-  border: 1px solid white; /*temp*/
 }
 
 .moveConversationRoom {
@@ -28,13 +26,20 @@
   bottom: 0;
   transform: translateX(-50%);
   padding: 1rem;
+  width: 15%;
+  height: 10%;
+  background-color: var(--background);
+  border: 1px solid white;
+  color: white;
+  line-height: 0%;
+  font-size: 1.3rem;
 }
 
 .slideBox {
   display: flex;
   overflow: hidden;
-  width: 300px;
-  height: 200px;
+  width: 50%;
+  height: 100%;
   position: relative;
 }
 
@@ -44,6 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
   background-color: #333;
   color: white;
   font-size: 1.5rem;
@@ -54,4 +60,24 @@
   cursor: pointer;
   font-size: 2rem;
   user-select: none;
+}
+
+.agentDescription {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--signature);
+  font-size: 1.5rem;
+  text-align: left;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.agentNameContainer {
+  position: absolute;
+  bottom: 20px;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  background-color: var(--background);
+  font-size: 1.3rem;
 }

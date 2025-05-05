@@ -38,7 +38,7 @@ header {
   color: var(--signature);
   padding: 1rem 0;
   border-bottom: solid 1px white;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
   position: fixed;
   top: 0;
   display: flex;
@@ -51,7 +51,7 @@ footer {
   color: var(--signature);
   padding: 1rem 0;
   border-top: solid 1px white;
-  margin-top: 3rem;
+  margin-top: 6rem;
   position: fixed;
   bottom: 0;
   display: flex;

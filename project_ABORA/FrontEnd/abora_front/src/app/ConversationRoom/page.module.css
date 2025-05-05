@@ -11,23 +11,17 @@
   height: 100%;
   width: 30%;
   position: relative;
-
-  border: 1px solid white; /*temp*/
 }
 
 .chatBox {
   height: 100%;
   width: 40%;
-
-  border: 1px solid white; /*temp*/
 }
 
 .choosenAgent_B {
   height: 100%;
   width: 30%;
   position: relative;
-
-  border: 1px solid white; /*temp*/
 }
 
 .agent_A_avartar,
@@ -36,6 +30,22 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+}
+
+.name_agentA,
+.name_agentB {
+  background-color: var(--signature);
+  color: white;
+  width: 50%;
+  height: 50px;
+  margin: 0 auto;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .chatInput {
@@ -45,17 +55,39 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+  height: 70px;
   padding: 1rem;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .chatInput input {
   width: 40%;
+  height: 100%;
   border: none;
   background-color: var(--background);
   color: var(--signature);
   margin: auto 0;
+  font-size: 2rem;
+}
+
+.button_stop {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.3rem;
+  line-height: 40px;
+  margin-right: 1rem;
+}
+
+.button_send {
+  border: 0px;
+  background-color: var(--signature);
+  color: white;
+  height: 40px;
+  padding: 0 1rem;
+  margin-left: 1rem;
 }
