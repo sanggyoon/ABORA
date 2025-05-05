@@ -1,0 +1,80 @@
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --signature: #8c7cff;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 6rem 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+  color: var(--signature);
+  padding: 1rem 0;
+  border-bottom: solid 1px white;
+  margin-bottom: 6rem;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  color: var(--signature);
+  padding: 1rem 0;
+  border-top: solid 1px white;
+  margin-top: 6rem;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+}
+
+header span,
+footer span {
+  animation: textMove 5s linear infinite;
+  padding: 0 1rem;
+}
+
+@keyframes textMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
