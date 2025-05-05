@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : workspace" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : 코드 리펙토링 및 breath (idle) 및 추후 모션 적용할 파일 생성">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="3DModel-Breath" />
+        <entry key="$PROJECT_DIR$" value="3DModel" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,22 +44,7 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/ABORA/project_ABORA/FrontEnd/abora_front/public/models",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
   }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\ABORA\project_ABORA\FrontEnd\abora_front\public\models" />
@@ -122,7 +109,6 @@
       <workItem from="1746274098497" duration="598000" />
       <workItem from="1746345222012" duration="1906000" />
       <workItem from="1746366829627" duration="1161000" />
-      <workItem from="1746423943396" duration="1583000" />
     </task>
     <task id="LOCAL-00001" summary="init : chaeyoung">
       <option name="closed" value="true" />
@@ -204,23 +190,6 @@
       <option name="project" value="LOCAL" />
       <updated>1746274212359</updated>
     </task>
-    <task id="LOCAL-00011" summary="doc : xml 수정개선">
-      <option name="closed" value="true" />
-      <created>1746424096311</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1746424096311</updated>
-    </task>
-    <task id="LOCAL-00012" summary="doc : prettier.xml">
-      <option name="closed" value="true" />
-      <created>1746425516279</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1746425516279</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,12 +217,5 @@
     <MESSAGE value="fix : 조명 및 아바타 카메라 회전하여 정면을 바라보도록 수정" />
     <MESSAGE value="fix : Breath 웹에 모션 적용 및 정상적용" />
     <MESSAGE value="doc : 코드 리펙토링 및 breath (idle) 및 추후 모션 적용할 파일 생성" />
-    <MESSAGE value="doc : xml 수정개선" />
-    <MESSAGE value="doc : prettier.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc : prettier.xml" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
