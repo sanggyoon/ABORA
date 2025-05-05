@@ -73,6 +73,7 @@ export default function ConversationRoom() {
             )}
           </div>
         </div>
+        
       </div>
 
       <div className={styles.chatInput}>

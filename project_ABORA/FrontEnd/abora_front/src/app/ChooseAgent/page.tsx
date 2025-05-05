@@ -3,6 +3,11 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
+import Avatar_GPT from '../Components/Avatar/Avatar_GPT';
+import Avatar_Gemini from '../Components/Avatar/Avatar_Gemini';
+import Avatar_Claude from '../Components/Avatar/Avatar_Claude';
+import Avatar_Llama from '../Components/Avatar/Avatar_Llama';
+import AvatarScene from '../Components/Avatar/AvatarScene';
 
 export default function ChooseAgent() {
   const router = useRouter();
@@ -21,13 +26,29 @@ export default function ChooseAgent() {
       name: '분석적인 상균',
       model: 'Chat-GPT',
       description: '사실적 기반 분석',
+      Component: Avatar_GPT,
+      glb: '/models/chaeyoung-breath.glb',
     },
-    { name: '감성적인 채영', model: 'Gemini', description: '감정 기반 분석' },
-    { name: '철학적인 동년', model: 'Claude', description: '철학적 기반 분석' },
+    {
+      name: '철학적인 동년',
+      model: 'Claude',
+      description: '철학적 기반 분석',
+      Component: Avatar_Claude,
+      glb: '/models/chaeyoung-breath.glb',
+    },
+    {
+      name: '감성적인 채영',
+      model: 'Gemini',
+      description: '감정 기반 분석',
+      Component: Avatar_Gemini,
+      glb: '/models/chaeyoung-breath.glb',
+    },
     {
       name: '실무적인 정민',
       model: 'Copilot',
       description: '실무적 기반 분석',
+      Component: Avatar_Llama,
+      glb: '/models/chaeyoung-breath.glb',
     },
   ];
 
@@ -64,6 +85,10 @@ export default function ChooseAgent() {
                 transform: `translateX(${(index - currentSlideA) * 100}%)`,
               }}
             >
+              <AvatarScene
+                ModelComponent={item.Component}
+                glbPath={item.glb}
+              ></AvatarScene>
               <div className={styles.agentDescription}>
                 <span>{item.model}</span>
                 <br />
@@ -73,6 +98,7 @@ export default function ChooseAgent() {
             </div>
           ))}
         </div>
+
         <div
           className={styles.arrow}
           onClick={() => handleNextSlide(setCurrentSlideA, currentSlideA)}
@@ -98,6 +124,10 @@ export default function ChooseAgent() {
                 transform: `translateX(${(index - currentSlideB) * 100}%)`,
               }}
             >
+              <AvatarScene
+                ModelComponent={item.Component}
+                glbPath={item.glb}
+              ></AvatarScene>
               <div className={styles.agentDescription}>
                 <span>{item.model}</span>
                 <br />
