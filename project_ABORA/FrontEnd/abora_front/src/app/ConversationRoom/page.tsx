@@ -1,5 +1,6 @@
 'use client';
 
+import React, { Suspense } from 'react';
 import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
@@ -7,13 +8,13 @@ import {
   UserBubble,
   AgentABubble,
   AgentBBubble,
-} from '../components/ChatBubble';
+} from '../Components/ChatBubble';
 import Avatar_A from '../Img/Agent_A.png';
 import Avatar_B from '../Img/Agent_B.png';
 import Avatar_C from '../Img/Agent_C.png';
 import Avatar_D from '../Img/Agent_D.png';
 
-export default function ConversationRoom() {
+function ConversationContent() {
   const searchParams = useSearchParams();
   const agentA = searchParams.get('agentA');
   const agentB = searchParams.get('agentB');
@@ -73,7 +74,6 @@ export default function ConversationRoom() {
             )}
           </div>
         </div>
-        
       </div>
 
       <div className={styles.chatInput}>
@@ -82,5 +82,13 @@ export default function ConversationRoom() {
         <button className={styles.button_send}>Send</button>
       </div>
     </>
+  );
+}
+
+export default function ConversationRoom() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ConversationContent />
+    </Suspense>
   );
 }

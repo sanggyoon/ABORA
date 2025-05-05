@@ -1,5 +1,5 @@
-import { useGLTF } from '@react-three/drei'
-import { clone } from 'three/examples/jsm/utils/SkeletonUtils'
+import { useGLTF } from '@react-three/drei';
+import { clone } from 'three/examples/jsm/utils/SkeletonUtils';
 
 // export default function Avatar_Claude(props) {
 //     const { scene } = useGLTF('/models/jungmin.glb')
@@ -10,12 +10,13 @@ import { clone } from 'three/examples/jsm/utils/SkeletonUtils'
 //
 // useGLTF.preload('/models/jungmin.glb')
 
-import { useMemo, forwardRef } from 'react'
+import { useMemo, forwardRef } from 'react';
 
 const Avatar_Claude = forwardRef((props, ref) => {
-    const { scene } = useGLTF('/models/jungmin.glb') // 각자 모델 경로 맞게 변경
-    const cloned = useMemo(() => clone(scene), [scene])
-    return <primitive object={cloned} ref={ref} {...props} />
-})
+  const { scene } = useGLTF('/models/jungmin.glb'); // 각자 모델 경로 맞게 변경
+  const cloned = useMemo(() => clone(scene), [scene]);
+  return <primitive object={cloned} ref={ref} {...props} />;
+});
 
-export default Avatar_Claude
+useGLTF.preload('/models/jungmin-breath.glb');
+export default Avatar_Claude;
