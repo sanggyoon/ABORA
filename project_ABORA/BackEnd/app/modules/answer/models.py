@@ -13,4 +13,4 @@ class Answer(Base):
     content = Column(String, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
-    chatsessions = relationship("ChatSession", back_populates="user")
+    question = relationship("Question", back_populates="answers")
