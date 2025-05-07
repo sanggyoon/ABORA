@@ -8,7 +8,7 @@ function UpdateCamera({ zoom }) {
 
   useEffect(() => {
     camera.zoom = zoom;
-    camera.updateProjectionMatrix(); // 카메라 설정 업데이트
+    camera.updateProjectionMatrix();
   }, [zoom, camera]);
 
   return null;
@@ -22,7 +22,7 @@ export default function AvatarScene({ ModelComponent, glbPath }) {
     const resizeObserver = new ResizeObserver((entries) => {
       for (let entry of entries) {
         const { width } = entry.contentRect;
-        setCameraZoom(width / 2); // Adjust zoom factor as needed
+        setCameraZoom(width / 2.5);
       }
     });
 
@@ -38,7 +38,7 @@ export default function AvatarScene({ ModelComponent, glbPath }) {
   }, []);
 
   return (
-    <div ref={containerRef} style={{ width: '100%', height: '100%' }}>
+    <div ref={containerRef} style={{ height: '60vh', width: '100%' }}>
       <Canvas
         orthographic
         camera={{
@@ -47,7 +47,6 @@ export default function AvatarScene({ ModelComponent, glbPath }) {
           far: 50,
           position: [0, 0, 45],
         }}
-        style={{ width: '100%', height: '100%' }}
       >
         <UpdateCamera zoom={cameraZoom} />
         <ambientLight intensity={1.5} />
@@ -59,7 +58,6 @@ export default function AvatarScene({ ModelComponent, glbPath }) {
             glbPath={glbPath}
           />
         </Suspense>
-        <OrbitControls />
       </Canvas>
     </div>
   );

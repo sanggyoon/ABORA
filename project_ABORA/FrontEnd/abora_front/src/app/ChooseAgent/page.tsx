@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { BiSolidLeftArrow } from 'react-icons/bi';
+import { BiSolidRightArrow } from 'react-icons/bi';
+
 import styles from './page.module.css';
 import Avatar_GPT from '../Components/Avatar/Avatar_GPT';
 import Avatar_Gemini from '../Components/Avatar/Avatar_Gemini';
@@ -74,7 +77,7 @@ export default function ChooseAgent() {
           className={styles.arrow}
           onClick={() => handlePrevSlide(setCurrentSlideA, currentSlideA)}
         >
-          &#8592; {/* 왼쪽 화살표 */}
+          <BiSolidLeftArrow />
         </div>
         <div className={styles.slideBox}>
           {slideData.map((item, index) => (
@@ -103,7 +106,7 @@ export default function ChooseAgent() {
           className={styles.arrow}
           onClick={() => handleNextSlide(setCurrentSlideA, currentSlideA)}
         >
-          &#8594; {/* 오른쪽 화살표 */}
+          <BiSolidRightArrow />
         </div>
       </div>
 
@@ -113,7 +116,7 @@ export default function ChooseAgent() {
           className={styles.arrow}
           onClick={() => handlePrevSlide(setCurrentSlideB, currentSlideB)}
         >
-          &#8592; {/* 왼쪽 화살표 */}
+          <BiSolidLeftArrow />
         </div>
         <div className={styles.slideBox}>
           {slideData.map((item, index) => (
@@ -141,7 +144,7 @@ export default function ChooseAgent() {
           className={styles.arrow}
           onClick={() => handleNextSlide(setCurrentSlideB, currentSlideB)}
         >
-          &#8594; {/* 오른쪽 화살표 */}
+          <BiSolidRightArrow />
         </div>
       </div>
 

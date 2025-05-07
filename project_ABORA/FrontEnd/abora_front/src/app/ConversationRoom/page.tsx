@@ -3,16 +3,16 @@
 import React, { Suspense } from 'react';
 import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
-import Image from 'next/image';
+import AvatarScene from '../Components/Avatar/AvatarScene';
+import Avatar_GPT from '../Components/Avatar/Avatar_GPT';
+import Avatar_Gemini from '../Components/Avatar/Avatar_Gemini';
+import Avatar_Claude from '../Components/Avatar/Avatar_Claude';
+import Avatar_Llama from '../Components/Avatar/Avatar_Llama';
 import {
   UserBubble,
   AgentABubble,
   AgentBBubble,
 } from '../Components/ChatBubble';
-import Avatar_A from '../Img/Agent_A.png';
-import Avatar_B from '../Img/Agent_B.png';
-import Avatar_C from '../Img/Agent_C.png';
-import Avatar_D from '../Img/Agent_D.png';
 
 function ConversationContent() {
   const searchParams = useSearchParams();
@@ -20,27 +20,28 @@ function ConversationContent() {
   const agentB = searchParams.get('agentB');
   const currentTime = new Date().toLocaleString();
 
-  const avatarImages = {
-    '분석적인 상균': Avatar_A,
-    '감성적인 채영': Avatar_B,
-    '철학적인 동년': Avatar_C,
-    '실무적인 정민': Avatar_D,
+  const avatarComponents = {
+    '분석적인 상균': Avatar_GPT,
+    '감성적인 채영': Avatar_Gemini,
+    '철학적인 동년': Avatar_Claude,
+    '실무적인 정민': Avatar_Llama,
   };
+
+  const avatarGlbPath = '/models/chaeyoung-breath.glb';
 
   return (
     <>
       <div className={styles.conversationRoomContainer}>
         {/* 에이전트 A */}
         <div className={styles.choosenAgent_A}>
-          <div className={styles.agent_A_avartar}>
+          <div className={styles.agent_A_avatar}>
             <p className={styles.name_agentA}>{agentA}</p>
             {agentA && (
-              <Image
-                src={avatarImages[agentA as keyof typeof avatarImages]}
-                alt={`Avatar for ${agentA}`}
-                layout="responsive"
-                height={100}
-                width={100}
+              <AvatarScene
+                ModelComponent={
+                  avatarComponents[agentA as keyof typeof avatarComponents]
+                }
+                glbPath={avatarGlbPath}
               />
             )}
           </div>
@@ -61,15 +62,14 @@ function ConversationContent() {
 
         {/* 에이전트 B */}
         <div className={styles.choosenAgent_B}>
-          <div className={styles.agent_B_avartar}>
+          <div className={styles.agent_B_avatar}>
             <p className={styles.name_agentB}>{agentB}</p>
             {agentB && (
-              <Image
-                src={avatarImages[agentB as keyof typeof avatarImages]}
-                alt={`Avatar for ${agentB}`}
-                layout="responsive"
-                height={100}
-                width={100}
+              <AvatarScene
+                ModelComponent={
+                  avatarComponents[agentB as keyof typeof avatarComponents]
+                }
+                glbPath={avatarGlbPath}
               />
             )}
           </div>

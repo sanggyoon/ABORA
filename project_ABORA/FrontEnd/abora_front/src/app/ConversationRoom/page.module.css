@@ -7,21 +7,19 @@
   height: 100vh;
 }
 
-.choosenAgent_A {
+.choosenAgent_A,
+.choosenAgent_B {
   height: 100%;
   width: 30%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .chatBox {
   height: 100%;
   width: 40%;
-}
-
-.choosenAgent_B {
-  height: 100%;
-  width: 30%;
-  position: relative;
 }
 
 .agent_A_avartar,
@@ -31,7 +29,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .name_agentA,
