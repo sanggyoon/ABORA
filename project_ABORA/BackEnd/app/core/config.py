@@ -18,6 +18,9 @@ class Settings(BaseSettings):
     db_name: str
     server_name: str
     database_url: str
+    openai_api_key: str
+    gemini_api_key: str
+    perplexity_api_key: str
 
     model_config = ConfigDict(env_file=".env")
 
