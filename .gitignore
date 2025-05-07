@@ -1,0 +1,78 @@
+# ✅ Node.js (프론트엔드)
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# 테스트
+coverage/
+
+# next.js
+.next/
+out/
+
+# production
+build/
+
+# 기타
+.DS_Store
+*.pem
+
+# 디버깅
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 환경 설정 파일
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+
+# ✅ Python (백엔드)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+*.log
+
+# 가상 환경
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# 환경 변수
+.env
+.env.*
+
+# 테스트 캐시
+.mypy_cache/
+.pytest_cache/
+.dmypy.json
+.coverage
+.cache/
+htmlcov/
+
+# DB 및 민감 정보
+*.sqlite3
+*.db
+
+# macOS
+.DS_Store
+
+# Docker 관련
+**/__pycache__/
+*.pyc
+docker-compose.override.yml
