@@ -92,7 +92,7 @@ def build_gemini_agent(name, system_message):
     return GeminiAgent(name=name, system_message=system_message)
 
 
-def run_structured_chat(user_idea):
+def run_structured_chat(user_idea, db=None, question_id=None):
     from app.modules.ai.agents import ConversableAgent
 
     sonar = enrich_question_with_sonar(user_idea)
@@ -140,6 +140,21 @@ def run_structured_chat(user_idea):
         reply = speaker.generate_reply(messages=messages)
         messages.append({"role": "assistant", "name": speaker.name, "content": reply})
         responses.append({"speaker": speaker.name, "message": reply})
+
+        # ✅ DB에 AI 응답 저장
+        if db and question_id:
+            try:
+                from app.modules.answer.schemas import AnswerCreate
+                from app.modules.answer.crud import create_answer
+
+                create_answer(db, AnswerCreate(
+                    question_id=question_id,
+                    speaker=speaker.name,
+                    content=reply
+                ))
+            except Exception as e:
+                import traceback
+                traceback.print_exc()
 
     return {
         "enhanced_question": sonar['enhanced_question'],
