@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import AvatarScene from '../Components/Avatar/AvatarScene';
@@ -20,6 +20,11 @@ function ConversationContent() {
   const agentB = searchParams.get('agentB');
   const currentTime = new Date().toLocaleString();
 
+  const [inputValue, setInputValue] = useState('');
+  const [userMessages, setUserMessages] = useState<
+    { message: string; timestamp: string }[]
+  >([]);
+
   const avatarComponents = {
     '분석적인 상균': Avatar_GPT,
     '감성적인 채영': Avatar_Gemini,
@@ -28,6 +33,14 @@ function ConversationContent() {
   };
 
   const avatarGlbPath = '/models/chaeyoung-breath.glb';
+
+  const handleSendMessage = () => {
+    if (inputValue.trim() !== '') {
+      const timestamp = new Date().toLocaleString();
+      setUserMessages((prev) => [...prev, { message: inputValue, timestamp }]);
+      setInputValue('');
+    }
+  };
 
   return (
     <>
@@ -49,10 +62,13 @@ function ConversationContent() {
 
         {/* 채팅 영역 */}
         <div className={styles.chatBox}>
-          <UserBubble
-            message="Hello, this is a user message!"
-            timestamp={currentTime}
-          />
+          {userMessages.map((msg, index) => (
+            <UserBubble
+              key={index}
+              message={msg.message}
+              timestamp={msg.timestamp}
+            />
+          ))}
           <AgentABubble message="Hi, I am Agent A!" timestamp={currentTime} />
           <AgentBBubble
             message="Hello, I am Agent B!"
@@ -78,8 +94,15 @@ function ConversationContent() {
 
       <div className={styles.chatInput}>
         <button className={styles.button_stop}>◼︎</button>
-        <input type="text" placeholder="Type your message..." />
-        <button className={styles.button_send}>Send</button>
+        <input
+          type="text"
+          placeholder="Type your message..."
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button className={styles.button_send} onClick={handleSendMessage}>
+          Send
+        </button>
       </div>
     </>
   );
