@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : 코드 리펙토링 및 breath (idle) 및 추후 모션 적용할 파일 생성">
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/public/models/chaeyoung-breath.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/public/models/sanggyun.glb" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/public/models/sanggyun.glb" afterDir="false" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : 3D glb 파일 적용">
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,13 +128,13 @@
       <workItem from="1746615700640" duration="914000" />
       <workItem from="1746623135418" duration="673000" />
     </task>
-    <task id="LOCAL-00001" summary="init : chaeyoung">
+    <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
       <option name="closed" value="true" />
-      <created>1743310542827</created>
+      <created>1746624874614</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1743310542827</updated>
+      <updated>1746624874614</updated>
     </task>
     <task id="LOCAL-00002" summary="init : chaeyoung - 1">
       <option name="closed" value="true" />
@@ -209,6 +208,7 @@
       <option name="project" value="LOCAL" />
       <updated>1746274212359</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,5 +236,7 @@
     <MESSAGE value="fix : 조명 및 아바타 카메라 회전하여 정면을 바라보도록 수정" />
     <MESSAGE value="fix : Breath 웹에 모션 적용 및 정상적용" />
     <MESSAGE value="doc : 코드 리펙토링 및 breath (idle) 및 추후 모션 적용할 파일 생성" />
+    <MESSAGE value="doc : 3D glb 파일 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc : 3D glb 파일 적용" />
   </component>
 </project>
