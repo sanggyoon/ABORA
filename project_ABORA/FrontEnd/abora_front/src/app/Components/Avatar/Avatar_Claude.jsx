@@ -13,10 +13,10 @@ import { clone } from 'three/examples/jsm/utils/SkeletonUtils';
 import { useMemo, forwardRef } from 'react';
 
 const Avatar_Claude = forwardRef((props, ref) => {
-  const { scene } = useGLTF('/models/jungmin.glb'); // 각자 모델 경로 맞게 변경
+  const { scene } = useGLTF('/models/dongnyeon.glb'); // 각자 모델 경로 맞게 변경
   const cloned = useMemo(() => clone(scene), [scene]);
   return <primitive object={cloned} ref={ref} {...props} />;
 });
 
-useGLTF.preload('/models/jungmin-breath.glb');
+useGLTF.preload('/models/dongnyeon.glb');
 export default Avatar_Claude;
