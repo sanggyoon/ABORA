@@ -6,6 +6,6 @@ from app.db.session import Base
 class ChatSession(Base):
     __tablename__ = "chatsession"
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(Integer, nullable=False)
+    user_id = Column(Integer, ForeignKey("user.id"), nullable=False)
     chatsession_name = Column(String, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)

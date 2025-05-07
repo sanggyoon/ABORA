@@ -17,9 +17,9 @@ def create_chatSession(db: Session, chat_session: schemas.ChatSessionCreate):
 def get_chatSession(db: Session, session_id: int):
     return db.query(models.ChatSession).filter(models.ChatSession.id == session_id).first()
 
-# 모든 채팅 세션 조회
-def get_all_chatSessions(db: Session):
-    return db.query(models.ChatSession).all()
+# 특정 사용자(user_id)의 모든 채팅 세션 조회
+def get_all_chatSessions_by_user(db: Session, user_id: int):
+    return db.query(models.ChatSession).filter(models.ChatSession.user_id == user_id).all()
 
 # 채팅 세션 삭제
 def delete_chatSession(db: Session, session_id: int):
