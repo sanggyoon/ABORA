@@ -1,0 +1,21 @@
+.moveConversationRoom {
+  font-size: 3rem;
+  color: var(--signature);
+  background-color: var(--background);
+  padding: 1rem 3rem;
+  border: 1px solid white;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.moveConversationRoom:hover {
+  background-color: var(--signature);
+  color: var(--background);
+  cursor: pointer;
+  border: 1px solid var(--signature);
+}
