@@ -4,8 +4,6 @@ from sqlalchemy.orm import declarative_base
 from datetime import datetime, timezone
 from app.db.session import Base
 
-Base = declarative_base()
-
 class User(Base):
     # 이 클래스가 어떤 데이터베이스 테이블과 연결될지를 정의
     __tablename__ = "user"
