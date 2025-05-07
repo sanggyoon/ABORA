@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from typing import List
 from app.db.session import get_db
 from . import schemas, crud
+from app.modules.answer.crud import get_answers_by_question
 
 router = APIRouter(prefix="/questions", tags=["Questions"])
 
@@ -29,3 +30,28 @@ def delete_question(question_id: int, db: Session = Depends(get_db)):
     if not success:
         raise HTTPException(status_code=404, detail="Question not found")
     return {"detail": "Question deleted successfully"}
+
+# ✅ 질문 + 연결된 답변 함께 조회
+@router.get("/{question_id}/with_answers")
+def get_question_with_answers(question_id: int, db: Session = Depends(get_db)):
+    db_question = crud.get_question(db, question_id)
+    if not db_question:
+        raise HTTPException(status_code=404, detail="Question not found")
+
+    answers = get_answers_by_question(db, question_id)
+
+    return {
+        "question": {
+            "id": db_question.id,
+            "userprompt": db_question.userprompt,
+            "created_at": db_question.created_at
+        },
+        "answers": [
+            {
+                "speaker": answer.speaker,
+                "content": answer.content,
+                "created_at": answer.created_at
+            }
+            for answer in answers
+        ]
+    }
