@@ -139,7 +139,7 @@
       <workItem from="1746366829627" duration="1161000" />
       <workItem from="1746615700640" duration="914000" />
       <workItem from="1746623135418" duration="673000" />
-      <workItem from="1746673171631" duration="2780000" />
+      <workItem from="1746673171631" duration="2840000" />
     </task>
     <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
       <option name="closed" value="true" />
@@ -205,13 +205,13 @@
       <option name="project" value="LOCAL" />
       <updated>1746675980784</updated>
     </task>
-    <task id="LOCAL-00009" summary="fix : Breath 웹에 모션 적용 및 정상적용">
+    <task id="LOCAL-00009" summary="fix : 사용하지않은 파일 삭제">
       <option name="closed" value="true" />
-      <created>1746274176182</created>
+      <created>1746675999667</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1746274176182</updated>
+      <updated>1746675999667</updated>
     </task>
     <task id="LOCAL-00010" summary="doc : 코드 리펙토링 및 breath (idle) 및 추후 모션 적용할 파일 생성">
       <option name="closed" value="true" />
@@ -221,7 +221,7 @@
       <option name="project" value="LOCAL" />
       <updated>1746274212359</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
