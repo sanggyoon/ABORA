@@ -2,7 +2,7 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
-export default function AvatarModelWithBreath({
+export default function Breath({
   ModelComponent,
   glbPath,
 }: {
@@ -17,7 +17,7 @@ export default function AvatarModelWithBreath({
   const { actions } = useAnimations(animations, modelRef);
 
   useEffect(() => {
-    if (actions.breath) {
+    if (actions.breath) { //breath 모션 실행
       actions.breath.reset().fadeIn(0.3).play();
     }
   }, [actions]);

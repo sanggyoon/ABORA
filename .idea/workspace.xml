@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : 3D glb 파일 적용">
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" afterDir="false" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : Agent_A,b,c,d image delete -&gt; unused">
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/Breath.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/Reading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarModelWithBreath.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarModelWithBreath.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,24 +50,25 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "3Dmodel-2",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/projects/abora/project_ABORA/FrontEnd/abora_front/public/models",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;3Dmodel-2&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projects/abora/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\src\app\Components\Avatar\motion" />
       <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\public\models" />
       <recent name="C:\Users\user\IdeaProjects\ABORA\project_ABORA\FrontEnd\abora_front\public\models" />
     </key>
@@ -72,6 +79,19 @@
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ABORA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ABORA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ABORA" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,6 +147,7 @@
       <workItem from="1746366829627" duration="1161000" />
       <workItem from="1746615700640" duration="914000" />
       <workItem from="1746623135418" duration="673000" />
+      <workItem from="1746673171631" duration="2472000" />
     </task>
     <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
       <option name="closed" value="true" />
@@ -136,29 +157,29 @@
       <option name="project" value="LOCAL" />
       <updated>1746624874614</updated>
     </task>
-    <task id="LOCAL-00002" summary="init : chaeyoung - 1">
+    <task id="LOCAL-00002" summary="doc : 3D glb 파일 정민 수정">
       <option name="closed" value="true" />
-      <created>1744596300400</created>
+      <created>1746625064215</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1744596300400</updated>
+      <updated>1746625064215</updated>
     </task>
-    <task id="LOCAL-00003" summary="fix : Avatar 추가 및 아바타 리팩토링">
+    <task id="LOCAL-00003" summary="fix : 캐릭터 slideData glb 수정">
       <option name="closed" value="true" />
-      <created>1744800717450</created>
+      <created>1746625092820</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1744800717450</updated>
+      <updated>1746625092820</updated>
     </task>
-    <task id="LOCAL-00004" summary="fix : Gemini Avatar 추가">
+    <task id="LOCAL-00004" summary="doc : Agent_A,b,c,d image delete -&gt; unused">
       <option name="closed" value="true" />
-      <created>1744800831753</created>
+      <created>1746673372562</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1744800831753</updated>
+      <updated>1746673372562</updated>
     </task>
     <task id="LOCAL-00005" summary="fix : 카드 열 정렬로 바꿈.">
       <option name="closed" value="true" />
@@ -208,7 +229,7 @@
       <option name="project" value="LOCAL" />
       <updated>1746274212359</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +258,9 @@
     <MESSAGE value="fix : Breath 웹에 모션 적용 및 정상적용" />
     <MESSAGE value="doc : 코드 리펙토링 및 breath (idle) 및 추후 모션 적용할 파일 생성" />
     <MESSAGE value="doc : 3D glb 파일 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc : 3D glb 파일 적용" />
+    <MESSAGE value="doc : 3D glb 파일 정민 수정" />
+    <MESSAGE value="fix : 캐릭터 slideData glb 수정" />
+    <MESSAGE value="doc : Agent_A,b,c,d image delete -&gt; unused" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc : Agent_A,b,c,d image delete -&gt; unused" />
   </component>
 </project>

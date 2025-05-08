@@ -1,7 +1,7 @@
 import { Canvas, useThree } from '@react-three/fiber';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { OrbitControls } from '@react-three/drei';
-import AvatarModelWithBreath from './AvatarModelWithBreath';
+import Breath from '../Avatar/motion/Breath';
 
 function UpdateCamera({ zoom }) {
   const { camera } = useThree();
@@ -53,7 +53,7 @@ export default function AvatarScene({ ModelComponent, glbPath }) {
         <directionalLight position={[5, 5, 0]} intensity={1} />
 
         <Suspense fallback={null}>
-          <AvatarModelWithBreath
+          <Breath
             ModelComponent={ModelComponent}
             glbPath={glbPath}
           />
