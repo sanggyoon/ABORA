@@ -32,7 +32,7 @@ function ConversationContent() {
     '실무적인 정민': Avatar_Llama,
   };
 
-  const avatarGlbPath = '/models/chaeyoung-breath.glb';
+  const avatarGlbPath = '/models/chaeyoung.glb';
 
   const handleSendMessage = () => {
     if (inputValue.trim() !== '') {
