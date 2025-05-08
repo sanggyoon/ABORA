@@ -1,3 +1,5 @@
+
+
 .chooseAgentContainer {
   display: flex;
   flex-direction: row;
@@ -33,6 +35,13 @@
   color: white;
   line-height: 0%;
   font-size: 1.3rem;
+}
+
+.moveConversationRoom:hover{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .slideBox {
