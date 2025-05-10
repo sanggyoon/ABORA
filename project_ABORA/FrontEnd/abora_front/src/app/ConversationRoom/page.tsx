@@ -4,7 +4,7 @@ import React, { Suspense, useState } from 'react';
 import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import AvatarScene from '../Components/Avatar/AvatarScene';
-import slideData from '../SlideData'
+import slideData from '../slideData'
 
 import {
   UserBubble,
@@ -36,7 +36,7 @@ function ConversationContent() {
       setInputValue('');
     }
   };
-  const currentActionA = isFocused ? 'left_Reading' : 'breath';
+  const currentActionA = isFocused ? 'left_reading' : 'breath';
   const currentActionB = isFocused ? 'right_reading' : 'breath';
 
 
