@@ -24,6 +24,7 @@ function ConversationContent() {
   >([]);
   const [isFocused, setIsFocused] = useState(false);
 
+  //agent이름과 같은 slideData에서 찾음.
   const agentDataA = slideData.find(item => item.name === agentA) || null;
   const agentDataB = slideData.find(item => item.name === agentB) || null;
 
@@ -35,19 +36,24 @@ function ConversationContent() {
       setInputValue('');
     }
   };
+  const currentActionA = isFocused ? 'left_Reading' : 'breath';
+  const currentActionB = isFocused ? 'right_reading' : 'breath';
 
 
-  const renderAvatar = (agent: typeof slideData[0]| null) => {
+
+  const renderAvatar = (
+      agent: typeof slideData[0] | null,
+      currentAction: string
+  ) => {
     if (!agent) return null;
     return (
         <AvatarScene
             ModelComponent={agent.Component}
             glbPath={agent.glb}
-            currentAction={isFocused ? 'Reading' : 'Idle'}
+            currentAction={currentAction}
         />
     );
   };
-
 
 
   return (
@@ -57,7 +63,7 @@ function ConversationContent() {
         <div className={styles.choosenAgent_A}>
           <div className={styles.agent_A_avatar}>
             <p className={styles.name_agentA}>{agentA}</p>
-            {renderAvatar(agentDataA)}
+            {renderAvatar(agentDataA,currentActionA)}
           </div>
         </div>
 
@@ -81,7 +87,7 @@ function ConversationContent() {
         <div className={styles.choosenAgent_B}>
           <div className={styles.agent_B_avatar}>
             <p className={styles.name_agentB}>{agentB}</p>
-            {renderAvatar(agentDataB)}
+            {renderAvatar(agentDataB,currentActionB)}
           </div>
         </div>
       </div>
