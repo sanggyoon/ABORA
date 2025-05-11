@@ -4,7 +4,7 @@ import React, { Suspense, useState } from 'react';
 import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import AvatarScene from '../Components/Avatar/AvatarScene';
-import slideData from '../slideData'
+import slideData from '../slideData';
 
 import {
   UserBubble,
@@ -25,9 +25,8 @@ function ConversationContent() {
   const [isFocused, setIsFocused] = useState(false);
 
   //agent이름과 같은 slideData에서 찾음.
-  const agentDataA = slideData.find(item => item.name === agentA) || null;
-  const agentDataB = slideData.find(item => item.name === agentB) || null;
-
+  const agentDataA = slideData.find((item) => item.name === agentA) || null;
+  const agentDataB = slideData.find((item) => item.name === agentB) || null;
 
   const handleSendMessage = () => {
     if (inputValue.trim() !== '') {
@@ -39,22 +38,19 @@ function ConversationContent() {
   const currentActionA = isFocused ? 'left_reading' : 'breath';
   const currentActionB = isFocused ? 'right_reading' : 'breath';
 
-
-
   const renderAvatar = (
-      agent: typeof slideData[0] | null,
-      currentAction: string
+    agent: (typeof slideData)[0] | null,
+    currentAction: string
   ) => {
     if (!agent) return null;
     return (
-        <AvatarScene
-            ModelComponent={agent.Component}
-            glbPath={agent.glb}
-            currentAction={currentAction}
-        />
+      <AvatarScene
+        ModelComponent={agent.Component}
+        glbPath={agent.glb}
+        currentAction={currentAction}
+      />
     );
   };
-
 
   return (
     <>
@@ -63,7 +59,7 @@ function ConversationContent() {
         <div className={styles.choosenAgent_A}>
           <div className={styles.agent_A_avatar}>
             <p className={styles.name_agentA}>{agentA}</p>
-            {renderAvatar(agentDataA,currentActionA)}
+            {renderAvatar(agentDataA, currentActionA)}
           </div>
         </div>
 
@@ -87,7 +83,7 @@ function ConversationContent() {
         <div className={styles.choosenAgent_B}>
           <div className={styles.agent_B_avatar}>
             <p className={styles.name_agentB}>{agentB}</p>
-            {renderAvatar(agentDataB,currentActionB)}
+            {renderAvatar(agentDataB, currentActionB)}
           </div>
         </div>
       </div>
@@ -98,6 +94,8 @@ function ConversationContent() {
           type="text"
           placeholder="Type your message..."
           value={inputValue}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
