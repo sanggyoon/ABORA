@@ -95,12 +95,15 @@ function ConversationContent() {
       <div className={styles.chatInput}>
         <button className={styles.button_stop}>◼︎</button>
         <input
-            type="text"
-            placeholder="Type your message..."
-            value={inputValue}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            onChange={(e) => setInputValue(e.target.value)}
+          type="text"
+          placeholder="Type your message..."
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleSendMessage();
+            }
+          }}
         />
         <button className={styles.button_send} onClick={handleSendMessage}>
           Send

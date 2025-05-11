@@ -1,6 +1,7 @@
 .userBubbleContainer {
   position: relative;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .userBubble {
@@ -8,8 +9,6 @@
   color: black;
   padding: 1rem;
   border-radius: 20px;
-  max-width: 100%;
-  margin: 0.5rem auto;
   align-self: flex-end;
 }
 
@@ -18,8 +17,6 @@
   color: white;
   padding: 1rem;
   border-radius: 20px;
-  max-width: 100%;
-  margin: 0.5rem 0;
   align-self: flex-end;
   border: 1px solid white;
 }
@@ -29,8 +26,6 @@
   color: white;
   padding: 1rem;
   border-radius: 20px;
-  max-width: 100%;
-  margin: 0.5rem 0;
   align-self: flex-start;
   border: 1px solid white;
 }
