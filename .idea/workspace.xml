@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="refactor : 불필요한 파일 삭제">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : tts -&gt; GoogleAPI fetch" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +46,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "3Dmodel-2",
+    "git-widget-placeholder": "3Dmodel-3",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/projects/abora/project_ABORA/FrontEnd/abora_front/public/models",
     "node.js.detected.package.eslint": "true",
@@ -283,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746881195215</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat : tts -&gt; GoogleAPI fetch">
+      <option name="closed" value="true" />
+      <created>1746934575679</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1746934575679</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +307,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init : chaeyoung - 1" />
     <MESSAGE value="fix : Avatar 추가 및 아바타 리팩토링" />
     <MESSAGE value="fix : Gemini Avatar 추가" />
     <MESSAGE value="fix : 카드 열 정렬로 바꿈." />
@@ -326,6 +331,7 @@
     <MESSAGE value="doc : NLA 모션 이름 일관성 유지" />
     <MESSAGE value="refactor : 문서 이름 오류제거" />
     <MESSAGE value="refactor : 불필요한 파일 삭제" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor : 불필요한 파일 삭제" />
+    <MESSAGE value="feat : tts -&gt; GoogleAPI fetch" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : tts -&gt; GoogleAPI fetch" />
   </component>
 </project>
