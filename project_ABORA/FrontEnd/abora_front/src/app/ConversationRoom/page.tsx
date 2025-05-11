@@ -4,10 +4,8 @@ import React, { Suspense, useState } from 'react';
 import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import AvatarScene from '../Components/Avatar/AvatarScene';
-import Avatar_GPT from '../Components/Avatar/Avatar_GPT';
-import Avatar_Gemini from '../Components/Avatar/Avatar_Gemini';
-import Avatar_Claude from '../Components/Avatar/Avatar_Claude';
-import Avatar_Llama from '../Components/Avatar/Avatar_Llama';
+import slideData from '../slideData'
+
 import {
   UserBubble,
   AgentABubble,
@@ -24,15 +22,12 @@ function ConversationContent() {
   const [userMessages, setUserMessages] = useState<
     { message: string; timestamp: string }[]
   >([]);
+  const [isFocused, setIsFocused] = useState(false);
 
-  const avatarComponents = {
-    '분석적인 상균': Avatar_GPT,
-    '감성적인 채영': Avatar_Gemini,
-    '철학적인 동년': Avatar_Claude,
-    '실무적인 정민': Avatar_Llama,
-  };
+  //agent이름과 같은 slideData에서 찾음.
+  const agentDataA = slideData.find(item => item.name === agentA) || null;
+  const agentDataB = slideData.find(item => item.name === agentB) || null;
 
-  const avatarGlbPath = '/models/chaeyoung-breath.glb';
 
   const handleSendMessage = () => {
     if (inputValue.trim() !== '') {
@@ -41,6 +36,25 @@ function ConversationContent() {
       setInputValue('');
     }
   };
+  const currentActionA = isFocused ? 'left_reading' : 'breath';
+  const currentActionB = isFocused ? 'right_reading' : 'breath';
+
+
+
+  const renderAvatar = (
+      agent: typeof slideData[0] | null,
+      currentAction: string
+  ) => {
+    if (!agent) return null;
+    return (
+        <AvatarScene
+            ModelComponent={agent.Component}
+            glbPath={agent.glb}
+            currentAction={currentAction}
+        />
+    );
+  };
+
 
   return (
     <>
@@ -49,14 +63,7 @@ function ConversationContent() {
         <div className={styles.choosenAgent_A}>
           <div className={styles.agent_A_avatar}>
             <p className={styles.name_agentA}>{agentA}</p>
-            {agentA && (
-              <AvatarScene
-                ModelComponent={
-                  avatarComponents[agentA as keyof typeof avatarComponents]
-                }
-                glbPath={avatarGlbPath}
-              />
-            )}
+            {renderAvatar(agentDataA,currentActionA)}
           </div>
         </div>
 
@@ -80,14 +87,7 @@ function ConversationContent() {
         <div className={styles.choosenAgent_B}>
           <div className={styles.agent_B_avatar}>
             <p className={styles.name_agentB}>{agentB}</p>
-            {agentB && (
-              <AvatarScene
-                ModelComponent={
-                  avatarComponents[agentB as keyof typeof avatarComponents]
-                }
-                glbPath={avatarGlbPath}
-              />
-            )}
+            {renderAvatar(agentDataB,currentActionB)}
           </div>
         </div>
       </div>
