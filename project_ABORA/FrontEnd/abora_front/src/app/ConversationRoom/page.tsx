@@ -65,6 +65,14 @@ function ConversationContent() {
 
         {/* 채팅 영역 */}
         <div className={styles.chatBox}>
+          <AgentABubble
+            message={`안녕하세요, 저는 ${agentA} 입니다`}
+            timestamp={currentTime}
+          />
+          <AgentBBubble
+            message={`안녕하세요, 저는 ${agentB} 입니다`}
+            timestamp={currentTime}
+          />
           {userMessages.map((msg, index) => (
             <UserBubble
               key={index}
@@ -72,11 +80,6 @@ function ConversationContent() {
               timestamp={msg.timestamp}
             />
           ))}
-          <AgentABubble message="Hi, I am Agent A!" timestamp={currentTime} />
-          <AgentBBubble
-            message="Hello, I am Agent B!"
-            timestamp={currentTime}
-          />
         </div>
 
         {/* 에이전트 B */}

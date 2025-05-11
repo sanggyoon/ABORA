@@ -22,7 +22,7 @@ export const AgentABubble: React.FC<ChatBubbleProps> = ({
   message,
   timestamp,
 }) => (
-  <div className={styles.userBubbleContainer}>
+  <div className={styles.agentABubbleContainer}>
     {timestamp && <span className={styles.timestamp}>{timestamp}</span>}
     <div className={styles.agentABubble}>
       <p>{message}</p>
@@ -34,7 +34,7 @@ export const AgentBBubble: React.FC<ChatBubbleProps> = ({
   message,
   timestamp,
 }) => (
-  <div className={styles.userBubbleContainer}>
+  <div className={styles.agentBBubbleContainer}>
     {timestamp && <span className={styles.timestamp}>{timestamp}</span>}
     <div className={styles.agentBBubble}>
       <p>{message}</p>

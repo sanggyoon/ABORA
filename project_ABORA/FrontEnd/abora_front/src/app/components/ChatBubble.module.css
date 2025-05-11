@@ -12,6 +12,13 @@
   align-self: flex-end;
 }
 
+.agentABubbleContainer,
+.agentBBubbleContainer {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .agentABubble {
   background-color: var(--background);
   color: white;
@@ -19,6 +26,19 @@
   border-radius: 20px;
   align-self: flex-end;
   border: 1px solid white;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.agentABubble::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  display: block;
 }
 
 .agentBBubble {
@@ -28,6 +48,19 @@
   border-radius: 20px;
   align-self: flex-start;
   border: 1px solid white;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.agentBBubble::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  display: block;
 }
 
 .timestamp {
