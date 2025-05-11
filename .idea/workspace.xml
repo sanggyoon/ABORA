@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : tts api로 input text와 google tts 연결">
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/pages/api/whisper.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/LipSync/AvatarLipSyncController.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/LipSync/LipSyncAvatar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/FullAvatar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/mapKoreanToShape.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/transcribe_mp3.py" afterDir="false" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : TTS 파일 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/public/tts/tts_output.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/public/tts/tts_output.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Api/tts.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/LipSync/AvatarLipSyncController.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/Breath.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/Breath.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/handleSendMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/handleSendMessage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -341,7 +328,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746940450392</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="feat : LipSync 기능 추가 파일 작성">
+      <option name="closed" value="true" />
+      <created>1746953422284</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1746953422284</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat : TTS 파일 변경">
+      <option name="closed" value="true" />
+      <created>1746953440436</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1746953440436</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,8 +362,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix : 카드 열 정렬로 바꿈." />
-    <MESSAGE value="fix : 아바타 3D 모델 로딩을 위한 clone 메소드" />
     <MESSAGE value="css : Agent 블럭에 중앙배치 및 정상 회전 수정" />
     <MESSAGE value="fix : 조명 및 아바타 카메라 회전하여 정면을 바라보도록 수정" />
     <MESSAGE value="fix : Breath 웹에 모션 적용 및 정상적용" />
@@ -384,7 +385,9 @@
     <MESSAGE value="feat : tts -&gt; GoogleAPI fetch" />
     <MESSAGE value="feat : post mp3" />
     <MESSAGE value="feat : tts api로 input text와 google tts 연결" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : tts api로 input text와 google tts 연결" />
+    <MESSAGE value="feat : LipSync 기능 추가 파일 작성" />
+    <MESSAGE value="feat : TTS 파일 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : TTS 파일 변경" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

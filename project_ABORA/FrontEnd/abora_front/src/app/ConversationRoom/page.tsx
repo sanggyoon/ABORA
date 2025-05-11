@@ -15,8 +15,8 @@ import {
 
 function ConversationContent() {
   const searchParams = useSearchParams();
-  const agentA = searchParams.get('agentA');
-  const agentB = searchParams.get('agentB');
+  const agentA = searchParams.get('agentA') ?? 'AgentA';
+  const agentB = searchParams.get('agentB') ?? 'AgentB';
   const currentTime = new Date().toLocaleString();
 
   const [inputValue, setInputValue] = useState('');
