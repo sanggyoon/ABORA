@@ -20,7 +20,6 @@ export default function Breath({
   const { actions } = useAnimations(animations, modelRef);
 
   useEffect(() => {
-    console.log('Available Actions:', Object.keys(actions || {}));
     if (!actions || !currentAction) return;
 
     const mappedAction = currentAction === 'Reading' ? 'left_Reading'
