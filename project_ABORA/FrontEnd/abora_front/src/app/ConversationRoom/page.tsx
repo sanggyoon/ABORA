@@ -99,6 +99,11 @@ function ConversationContent() {
           placeholder="Type your message..."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleSendMessage();
+            }
+          }}
         />
         <button className={styles.button_send} onClick={handleSendMessage}>
           Send
