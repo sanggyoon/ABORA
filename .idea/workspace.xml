@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="refactor : 불필요한 파일 삭제">
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Api/tts.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +49,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "3Dmodel-2",
+    "git-widget-placeholder": "3Dmodel-3",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/projects/abora/project_ABORA/FrontEnd/abora_front/public/models",
     "node.js.detected.package.eslint": "true",
