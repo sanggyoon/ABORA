@@ -4,13 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : tts -&gt; GoogleAPI fetch" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : tts api로 input text와 google tts 연결">
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/pages/api/whisper.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/LipSync/AvatarLipSyncController.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/LipSync/LipSyncAvatar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/FullAvatar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/mapKoreanToShape.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/transcribe_mp3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/public/tts/tts_output.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/public/tts/tts_output.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Api/tts.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/Breath.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/Breath.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/handleSendMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/handleSendMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="frontend" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="frontend" />
@@ -45,24 +76,29 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "3Dmodel-3",
+    "git-widget-placeholder": "3Dmodel-4",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/projects/abora/project_ABORA/FrontEnd/abora_front/public/models",
+    "last_opened_file_path": "C:/projects/abora/project_ABORA/FrontEnd/abora_front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\projects\\abora\\project_ABORA\\FrontEnd\\abora_front",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\src\app\utils" />
+      <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\pages\api" />
+      <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front" />
       <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\public\models" />
       <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\src\app\Components\Avatar\motion" />
-      <recent name="C:\Users\user\IdeaProjects\ABORA\project_ABORA\FrontEnd\abora_front\public\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\IdeaProjects\ABORA\project_ABORA\FrontEnd\abora_front\src\app\Components" />
@@ -289,7 +325,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746934575679</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat : post mp3">
+      <option name="closed" value="true" />
+      <created>1746940349887</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1746940349887</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat : tts api로 input text와 google tts 연결">
+      <option name="closed" value="true" />
+      <created>1746940450392</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1746940450392</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,8 +359,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix : Avatar 추가 및 아바타 리팩토링" />
-    <MESSAGE value="fix : Gemini Avatar 추가" />
     <MESSAGE value="fix : 카드 열 정렬로 바꿈." />
     <MESSAGE value="fix : 아바타 3D 모델 로딩을 위한 clone 메소드" />
     <MESSAGE value="css : Agent 블럭에 중앙배치 및 정상 회전 수정" />
@@ -332,6 +382,12 @@
     <MESSAGE value="refactor : 문서 이름 오류제거" />
     <MESSAGE value="refactor : 불필요한 파일 삭제" />
     <MESSAGE value="feat : tts -&gt; GoogleAPI fetch" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : tts -&gt; GoogleAPI fetch" />
+    <MESSAGE value="feat : post mp3" />
+    <MESSAGE value="feat : tts api로 input text와 google tts 연결" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : tts api로 input text와 google tts 연결" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
