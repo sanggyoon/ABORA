@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="fix : 사용하지않은 파일 삭제" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="refactor : 불필요한 파일 삭제">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,26 +44,26 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;3Dmodel-2&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projects/abora/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "3Dmodel-2",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/projects/abora/project_ABORA/FrontEnd/abora_front/public/models",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\src\app\Components\Avatar\motion" />
       <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\public\models" />
+      <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\src\app\Components\Avatar\motion" />
       <recent name="C:\Users\user\IdeaProjects\ABORA\project_ABORA\FrontEnd\abora_front\public\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -140,6 +142,10 @@
       <workItem from="1746615700640" duration="914000" />
       <workItem from="1746623135418" duration="673000" />
       <workItem from="1746673171631" duration="2840000" />
+      <workItem from="1746683837615" duration="17000" />
+      <workItem from="1746714090932" duration="493000" />
+      <workItem from="1746854558746" duration="9000" />
+      <workItem from="1746873119861" duration="8065000" />
     </task>
     <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
       <option name="closed" value="true" />
@@ -213,15 +219,71 @@
       <option name="project" value="LOCAL" />
       <updated>1746675999667</updated>
     </task>
-    <task id="LOCAL-00010" summary="doc : 코드 리펙토링 및 breath (idle) 및 추후 모션 적용할 파일 생성">
+    <task id="LOCAL-00010" summary="doc : 아바타 glb 옷 수정">
       <option name="closed" value="true" />
-      <created>1746274212359</created>
+      <created>1746875165844</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1746274212359</updated>
+      <updated>1746875165844</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00011" summary="doc : slideData 리팩토링">
+      <option name="closed" value="true" />
+      <created>1746877387210</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746877387210</updated>
+    </task>
+    <task id="LOCAL-00012" summary="doc : slideData 변화에 따른 props 변경">
+      <option name="closed" value="true" />
+      <created>1746877949895</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746877949895</updated>
+    </task>
+    <task id="LOCAL-00013" summary="doc : Breath, Reading 메소드 추가">
+      <option name="closed" value="true" />
+      <created>1746879618980</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746879618980</updated>
+    </task>
+    <task id="LOCAL-00014" summary="doc : Breath, Reading 모션 추가">
+      <option name="closed" value="true" />
+      <created>1746879639172</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746879639172</updated>
+    </task>
+    <task id="LOCAL-00015" summary="doc : NLA 모션 이름 일관성 유지">
+      <option name="closed" value="true" />
+      <created>1746880985863</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1746880985863</updated>
+    </task>
+    <task id="LOCAL-00016" summary="refactor : 문서 이름 오류제거">
+      <option name="closed" value="true" />
+      <created>1746881015279</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746881015279</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor : 불필요한 파일 삭제">
+      <option name="closed" value="true" />
+      <created>1746881195215</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746881195215</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +301,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init : chaeyoung" />
     <MESSAGE value="init : chaeyoung - 1" />
     <MESSAGE value="fix : Avatar 추가 및 아바타 리팩토링" />
     <MESSAGE value="fix : Gemini Avatar 추가" />
@@ -257,6 +318,14 @@
     <MESSAGE value="css : select - hover 추가" />
     <MESSAGE value="fix : Reading 파일 추가 &gt; 코드변경 필요" />
     <MESSAGE value="fix : 사용하지않은 파일 삭제" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix : 사용하지않은 파일 삭제" />
+    <MESSAGE value="doc : 아바타 glb 옷 수정" />
+    <MESSAGE value="doc : slideData 리팩토링" />
+    <MESSAGE value="doc : slideData 변화에 따른 props 변경" />
+    <MESSAGE value="doc : Breath, Reading 메소드 추가" />
+    <MESSAGE value="doc : Breath, Reading 모션 추가" />
+    <MESSAGE value="doc : NLA 모션 이름 일관성 유지" />
+    <MESSAGE value="refactor : 문서 이름 오류제거" />
+    <MESSAGE value="refactor : 불필요한 파일 삭제" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor : 불필요한 파일 삭제" />
   </component>
 </project>
