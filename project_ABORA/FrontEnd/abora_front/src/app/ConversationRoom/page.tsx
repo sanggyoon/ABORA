@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import AvatarScene from '../Components/Avatar/AvatarScene';
 import slideData from '../slideData';
+import handleSendMessage from "../Components/handleSendMessage"
 
 import {
   UserBubble,
@@ -14,8 +15,8 @@ import {
 
 function ConversationContent() {
   const searchParams = useSearchParams();
-  const agentA = searchParams.get('agentA');
-  const agentB = searchParams.get('agentB');
+  const agentA = searchParams.get('agentA') ?? 'AgentA';
+  const agentB = searchParams.get('agentB') ?? 'AgentB';
   const currentTime = new Date().toLocaleString();
 
   const [inputValue, setInputValue] = useState('');
@@ -28,10 +29,12 @@ function ConversationContent() {
     }[]
   >([]);
   const [isFocused, setIsFocused] = useState(false);
+  
 
   //agent이름과 같은 slideData에서 찾음.
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
+
 
   const handleSendMessage = async () => {
     if (inputValue.trim() === '') return;
@@ -165,12 +168,12 @@ function ConversationContent() {
           onBlur={() => setIsFocused(false)}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
-              handleSendMessage();
+            if (e.key === 'Enter'  && !e.nativeEvent.isComposing) {
+              handleSendMessage(inputValue, setInputValue, setUserMessages);
             }
           }}
         />
-        <button className={styles.button_send} onClick={handleSendMessage}>
+        <button className={styles.button_send} onClick={()=>handleSendMessage(inputValue, setInputValue, setUserMessages)}>
           Send
         </button>
       </div>

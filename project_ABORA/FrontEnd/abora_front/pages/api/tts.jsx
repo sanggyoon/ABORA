@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     const data = await response.json()
     const audioBuffer = Buffer.from(data.audioContent, 'base64')
 
-    const filePath = path.join(process.cwd(), 'public', 'tts_output.mp3')
+    const filePath = path.join(process.cwd(), 'public/tts', 'tts_output.mp3')
     fs.writeFileSync(filePath, audioBuffer)
 
     return res.status(200).json({ success: true })
