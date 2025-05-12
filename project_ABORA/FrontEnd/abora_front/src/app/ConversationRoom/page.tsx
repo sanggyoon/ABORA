@@ -19,8 +19,13 @@ function ConversationContent() {
   const currentTime = new Date().toLocaleString();
 
   const [inputValue, setInputValue] = useState('');
-  const [userMessages, setUserMessages] = useState<
-    { message: string; timestamp: string }[]
+  const [messages, setMessages] = useState<
+    {
+      speaker: string;
+      message: string;
+      type: 'user' | 'agentA' | 'agentB';
+      timestamp: string;
+    }[]
   >([]);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -28,12 +33,50 @@ function ConversationContent() {
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
 
-  const handleSendMessage = () => {
-    if (inputValue.trim() !== '') {
-      const timestamp = new Date().toLocaleString();
-      setUserMessages((prev) => [...prev, { message: inputValue, timestamp }]);
-      setInputValue('');
+  const handleSendMessage = async () => {
+    if (inputValue.trim() === '') return;
+
+    // 사용자 메시지 추가
+    setMessages((prev) => [
+      ...prev,
+      {
+        speaker: '사용자',
+        message: inputValue,
+        type: 'user',
+        timestamp: new Date().toLocaleString(),
+      },
+    ]);
+
+    try {
+      // 백엔드로 메시지 전송
+      const response = await fetch('/api/questions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userprompt: inputValue }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch response from the server');
+      }
+
+      const data = await response.json();
+
+      // 백엔드에서 받은 conversation 추가
+      const newMessages = data.conversation.map((item: any, index: number) => ({
+        speaker: item.speaker,
+        message: item.message,
+        type: index % 2 === 0 ? 'agentA' : 'agentB', // 짝수는 AgentA, 홀수는 AgentB
+        timestamp: new Date().toLocaleString(),
+      }));
+
+      setMessages((prev) => [...prev, ...newMessages]);
+    } catch (error) {
+      console.error('Error:', error);
     }
+
+    setInputValue('');
   };
   const currentActionA = isFocused ? 'left_reading' : 'breath';
   const currentActionB = isFocused ? 'right_reading' : 'breath';
@@ -73,13 +116,34 @@ function ConversationContent() {
             message={`안녕하세요, 저는 ${agentB} 입니다`}
             timestamp={currentTime}
           />
-          {userMessages.map((msg, index) => (
-            <UserBubble
-              key={index}
-              message={msg.message}
-              timestamp={msg.timestamp}
-            />
-          ))}
+          {messages.map((msg, index) => {
+            if (msg.type === 'user') {
+              return (
+                <UserBubble
+                  key={index}
+                  message={msg.message}
+                  timestamp={msg.timestamp}
+                />
+              );
+            } else if (msg.type === 'agentA') {
+              return (
+                <AgentABubble
+                  key={index}
+                  message={msg.message}
+                  timestamp={msg.timestamp}
+                />
+              );
+            } else if (msg.type === 'agentB') {
+              return (
+                <AgentBBubble
+                  key={index}
+                  message={msg.message}
+                  timestamp={msg.timestamp}
+                />
+              );
+            }
+            return null;
+          })}
         </div>
 
         {/* 에이전트 B */}

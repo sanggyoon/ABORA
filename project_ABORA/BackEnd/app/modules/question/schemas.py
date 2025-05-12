@@ -2,9 +2,10 @@
 
 from pydantic import BaseModel
 from datetime import datetime
+from typing import Optional
 
 class QuestionCreate(BaseModel):
-    chatsession_id: int
+    chatsession_id: Optional[int] = None
     userprompt: str
 
 class QuestionRead(BaseModel):

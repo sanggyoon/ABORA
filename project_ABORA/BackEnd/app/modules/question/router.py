@@ -6,6 +6,7 @@ from typing import List
 from app.db.session import get_db
 from . import schemas, crud
 from app.modules.answer.crud import get_answers_by_question
+from app.modules.ai.logic import run_structured_chat
 
 router = APIRouter(prefix="/questions", tags=["Questions"])
 
@@ -55,3 +56,16 @@ def get_question_with_answers(question_id: int, db: Session = Depends(get_db)):
             for answer in answers
         ]
     }
+
+@router.post("/chat")
+def chat_with_agents(data: dict, db: Session = Depends(get_db)):
+    print(f"Received data: {data}")  # 요청 데이터 출력
+    userprompt = data.get("userprompt")
+
+    try:
+        result = run_structured_chat(user_idea=userprompt, db=db)
+        return {
+            "conversation": result["conversation"]
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error processing chat: {str(e)}")

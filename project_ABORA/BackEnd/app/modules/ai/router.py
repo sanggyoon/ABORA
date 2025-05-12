@@ -26,10 +26,6 @@ def generate_ai_discussion(request: ChatRequest, db: Session = Depends(get_db)):
         result = run_structured_chat(request.user_idea, db=db, question_id=question.id)
 
         return {
-            "question_id": question.id,
-            "enhanced_question": result["enhanced_question"],
-            "keywords": result["keywords"],
-            "market_summary": result["market_summary"],
             "conversation": result["conversation"]
         }
     except Exception as e:
