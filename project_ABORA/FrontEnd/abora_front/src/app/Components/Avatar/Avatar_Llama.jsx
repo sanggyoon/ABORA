@@ -15,5 +15,5 @@ const Avatar_Llama = forwardRef((props, ref) => {
   return <primitive object={cloned} ref={ref} {...props} />;
 });
 
-useGLTF.preload('/models/jungmin-breath.glb');
+useGLTF.preload('/models/jungmin.glb');
 export default Avatar_Llama;

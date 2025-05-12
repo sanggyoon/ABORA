@@ -17,10 +17,10 @@ useGLTF.preload('/models/chaeyoung-breath.glb')
 
 // Avatar_GPT.tsx 예시
 const Avatar_GPT = forwardRef((props, ref) => {
-    const { scene } = useGLTF('/models/chaeyoung-breath.glb')
+    const { scene } = useGLTF('/models/sanggyun.glb')
     const cloned = useMemo(() => clone(scene), [scene])
     return <primitive object={cloned} ref={ref} {...props} />
 });
 
-useGLTF.preload('/models/chaeyoung-breath.glb')
+useGLTF.preload('/models/sanggyun.glb')
 export default Avatar_GPT
