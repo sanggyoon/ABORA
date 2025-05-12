@@ -165,7 +165,7 @@ function ConversationContent() {
           onBlur={() => setIsFocused(false)}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+            if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
               handleSendMessage();
             }
           }}
