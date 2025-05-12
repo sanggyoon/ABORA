@@ -11,7 +11,12 @@ router = APIRouter(prefix="/questions", tags=["Questions"])
 
 @router.post("/", response_model=schemas.QuestionRead, status_code=201)
 def create_question(question: schemas.QuestionCreate, db: Session = Depends(get_db)):
-    return crud.create_question(db, question)
+    # chatsession_id를 자동 설정 (예: 1로 하드코딩 또는 동적으로 설정)
+    chatsession_id = 1  # 기본값 또는 동적 조회
+    question_data = question.dict()
+    question_data["chatsession_id"] = chatsession_id
+
+    return crud.create_question(db, schemas.QuestionCreate(**question_data))
 
 @router.get("/{question_id}", response_model=schemas.QuestionRead)
 def read_question(question_id: int, db: Session = Depends(get_db)):

@@ -8,6 +8,7 @@ from app.modules.chatsession.router import router as chatsession_router
 from app.modules.question.router import router as question_router
 from app.modules.answer.router import router as answer_router
 from app.modules.ai.router import router as ai_router
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
@@ -21,3 +22,10 @@ app.include_router(chatsession_router)
 app.include_router(question_router)
 app.include_router(answer_router)
 app.include_router(ai_router)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)

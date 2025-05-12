@@ -28,10 +28,29 @@ function ConversationContent() {
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (inputValue.trim() !== '') {
       const timestamp = new Date().toLocaleString();
       setUserMessages((prev) => [...prev, { message: inputValue, timestamp }]);
+
+      // API 호출
+      try {
+        const response = await fetch('/api/questions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ userprompt: inputValue }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to send message to the server');
+        }
+
+        console.log('Message sent to the server successfully');
+      } catch (error) {
+        console.error('Error sending message:', error);
+      }
       setInputValue('');
     }
   };
@@ -91,6 +110,7 @@ function ConversationContent() {
         </div>
       </div>
 
+      {/* 채팅 입력 영역 */}
       <div className={styles.chatInput}>
         <button className={styles.button_stop}>◼︎</button>
         <input
