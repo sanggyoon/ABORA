@@ -5,7 +5,7 @@ from datetime import datetime
 from typing import Optional
 
 class QuestionCreate(BaseModel):
-    chatsession_id: Optional[int] = None
+    chatsession_id: Optional[int] = None  # 선택적 필드로 변경
     userprompt: str
 
 class QuestionRead(BaseModel):
