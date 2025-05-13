@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import AvatarScene from '../Components/Avatar/AvatarScene';
 import slideData from '../slideData';
+import handleSendMessage from '../Components/handleSendMessage'
 
 import {
   UserBubble,
@@ -33,6 +34,7 @@ function ConversationContent() {
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
 
+  /*
   const handleSendMessage = async () => {
     if (inputValue.trim() === '') return;
 
@@ -78,6 +80,8 @@ function ConversationContent() {
 
     setInputValue('');
   };
+
+   */
   const currentActionA = isFocused ? 'left_reading' : 'breath';
   const currentActionB = isFocused ? 'right_reading' : 'breath';
 
@@ -166,11 +170,11 @@ function ConversationContent() {
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
-              handleSendMessage();
+              handleSendMessage(inputValue, setInputValue, setMessages);
             }
           }}
         />
-        <button className={styles.button_send} onClick={handleSendMessage}>
+        <button className={styles.button_send} onClick={()=>handleSendMessage(inputValue, setInputValue, setMessages)}>
           Send
         </button>
       </div>
