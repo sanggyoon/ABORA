@@ -1,92 +1,45 @@
-'use client';
+"use client";
 
-import React, { Suspense, useState } from 'react';
-import styles from './page.module.css';
-import { useSearchParams } from 'next/navigation';
-import AvatarScene from '../Components/Avatar/AvatarScene';
-import slideData from '../slideData';
-import handleSendMessage from "../Components/handleSendMessage"
+import React, { Suspense, useState } from "react";
+import styles from "./page.module.css";
+import { useSearchParams } from "next/navigation";
+import AvatarScene from "../Components/Avatar/AvatarScene";
+import slideData from "../slideData";
+import handleSendMessage from "../Components/handleSendMessage";
 
 import {
   UserBubble,
   AgentABubble,
   AgentBBubble,
-} from '../Components/ChatBubble';
+} from "../Components/ChatBubble";
 
 function ConversationContent() {
   const searchParams = useSearchParams();
-  const agentA = searchParams.get('agentA') ?? 'AgentA';
-  const agentB = searchParams.get('agentB') ?? 'AgentB';
+  const agentA = searchParams.get("agentA") ?? "AgentA";
+  const agentB = searchParams.get("agentB") ?? "AgentB";
   const currentTime = new Date().toLocaleString();
 
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState<
     {
       speaker: string;
       message: string;
-      type: 'user' | 'agentA' | 'agentB';
+      type: "user" | "agentA" | "agentB";
       timestamp: string;
     }[]
   >([]);
   const [isFocused, setIsFocused] = useState(false);
-  
 
   //agent이름과 같은 slideData에서 찾음.
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
 
-
-  const handleSendMessage = async () => {
-    if (inputValue.trim() === '') return;
-
-    // 사용자 메시지 추가
-    setMessages((prev) => [
-      ...prev,
-      {
-        speaker: '사용자',
-        message: inputValue,
-        type: 'user',
-        timestamp: new Date().toLocaleString(),
-      },
-    ]);
-
-    try {
-      // 백엔드로 메시지 전송
-      const response = await fetch('/api/questions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userprompt: inputValue }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch response from the server');
-      }
-
-      const data = await response.json();
-
-      // 백엔드에서 받은 conversation 추가
-      const newMessages = data.conversation.map((item: any, index: number) => ({
-        speaker: item.speaker,
-        message: item.message,
-        type: index % 2 === 0 ? 'agentA' : 'agentB', // 짝수는 AgentA, 홀수는 AgentB
-        timestamp: new Date().toLocaleString(),
-      }));
-
-      setMessages((prev) => [...prev, ...newMessages]);
-    } catch (error) {
-      console.error('Error:', error);
-    }
-
-    setInputValue('');
-  };
-  const currentActionA = isFocused ? 'left_reading' : 'breath';
-  const currentActionB = isFocused ? 'right_reading' : 'breath';
+  const currentActionA = isFocused ? "left_reading" : "breath";
+  const currentActionB = isFocused ? "right_reading" : "breath";
 
   const renderAvatar = (
     agent: (typeof slideData)[0] | null,
-    currentAction: string
+    currentAction: string,
   ) => {
     if (!agent) return null;
     return (
@@ -120,7 +73,7 @@ function ConversationContent() {
             timestamp={currentTime}
           />
           {messages.map((msg, index) => {
-            if (msg.type === 'user') {
+            if (msg.type === "user") {
               return (
                 <UserBubble
                   key={index}
@@ -128,7 +81,7 @@ function ConversationContent() {
                   timestamp={msg.timestamp}
                 />
               );
-            } else if (msg.type === 'agentA') {
+            } else if (msg.type === "agentA") {
               return (
                 <AgentABubble
                   key={index}
@@ -136,7 +89,7 @@ function ConversationContent() {
                   timestamp={msg.timestamp}
                 />
               );
-            } else if (msg.type === 'agentB') {
+            } else if (msg.type === "agentB") {
               return (
                 <AgentBBubble
                   key={index}
@@ -168,12 +121,17 @@ function ConversationContent() {
           onBlur={() => setIsFocused(false)}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter'  && !e.nativeEvent.isComposing) {
-              handleSendMessage(inputValue, setInputValue, setUserMessages);
+            if (e.key === "Enter" && !e.nativeEvent.isComposing) {
+              handleSendMessage(inputValue, setInputValue, setMessages);
             }
           }}
         />
-        <button className={styles.button_send} onClick={()=>handleSendMessage(inputValue, setInputValue, setUserMessages)}>
+        <button
+          className={styles.button_send}
+          onClick={() =>
+            handleSendMessage(inputValue, setInputValue, setMessages)
+          }
+        >
           Send
         </button>
       </div>

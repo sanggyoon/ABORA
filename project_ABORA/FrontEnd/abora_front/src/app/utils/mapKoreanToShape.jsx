@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 // 한글 자모 → 입모양 이름 매핑
 export default function mapKoreanToShape(jamo) {
-    if ('ㅏㅑㅓㅕ'.includes(jamo)) return 'AA'
-    if ('ㅣㅐㅔ'.includes(jamo)) return 'II'
-    if ('ㅗㅛ'.includes(jamo)) return 'OO'
-    if ('ㅜㅠㅡ'.includes(jamo)) return 'UU'
-    if ('ㅁㅂㅍ'.includes(jamo)) return 'EE'  // 예외 처리로 사용
-    return 'Idle'
+  if ("ㅏㅑㅓㅕ".includes(jamo)) return "AA";
+  if ("ㅣㅐㅔ".includes(jamo)) return "II";
+  if ("ㅗㅛ".includes(jamo)) return "OO";
+  if ("ㅜㅠㅡ".includes(jamo)) return "UU";
+  if ("ㅁㅂㅍ".includes(jamo)) return "EE"; // 예외 처리로 사용
+  return "Idle";
 }
 
 /*
