@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : handleSendMessage 코드 정리">
+
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : workspace">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/ai/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/ai/logic.py" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +154,8 @@
       <workItem from="1747210970584" duration="4767000" />
       <workItem from="1747228527555" duration="156000" />
       <workItem from="1747228983153" duration="647000" />
-      <workItem from="1747230206074" duration="317000" />
+      <workItem from="1747231102761" duration="1162000" />
+
     </task>
     <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
       <option name="closed" value="true" />
@@ -427,7 +431,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix : Reading 파일 추가 &gt; 코드변경 필요" />
     <MESSAGE value="fix : 사용하지않은 파일 삭제" />
     <MESSAGE value="doc : 아바타 glb 옷 수정" />
     <MESSAGE value="doc : slideData 리팩토링" />
@@ -452,6 +455,7 @@
     <MESSAGE value="feat : tts가 모두 끝나면 mp3삭제" />
     <MESSAGE value="doc : LipSync 모듈 생성" />
     <MESSAGE value="doc : router 파일 코드 정리" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc : router 파일 코드 정리" />
+    <MESSAGE value="doc : workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc : workspace" />
   </component>
 </project>

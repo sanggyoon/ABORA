@@ -62,7 +62,7 @@ def build_gemini_agent(name, system_message):
 너는 {self.name}이고, 다음과 같은 방식으로 회의에 참여해.
 
 1. 상대방 말에 1문장으로 반응해.
-2. 너의 생각이나 아이디어를 2~3문장 덧붙여.
+2. 너의 생각이나 아이디어를 1문장 덧붙여.
 3. 마지막에는 질문하거나 다음 논의 주제를 제안해.
 
 말투는 친구나 동료처럼 자연스럽게, 발표문처럼 말하지 마.
@@ -107,10 +107,10 @@ def run_structured_chat(user_idea, db=None, question_id=None):
         name="상균",
         system_message=f"""분석형 기술 전문가입니다.
 {context}
-- 기술 구현 가능성, 경쟁 분석, 비용 예측, 사용자 중심 설계를 고려해서 조언해줘.
+- 기술 구현 가능성, 경쟁 분석, 사용자 중심 설계를 고려해서 조언해줘.
 - 말투는 자연스럽고 편안하게, 동료랑 이야기하듯 가볍게.
-- 마지막 발화일 경우엔 아이디어 확장을 위한 창의적인 제안 하나를 던져줘.
 - 문장은 너무 형식적으로 쓰지 말고, 대화하듯 짧고 캐주얼하게 말해줘.
+- 답변을 할때 너무 길지 않게 전체 300byte 이내로 요약해서 답변 해줘.
 """,
         llm_config={"config_list": [{"model": "gpt-3.5-turbo", "api_key": os.environ["OPENAI_API_KEY"]}]},
         human_input_mode="NEVER"
