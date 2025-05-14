@@ -34,6 +34,10 @@ function ConversationContent() {
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
 
+  //voice 탐색
+  const voiceA = agentDataA?.voice;
+  const voiceB = agentDataB?.voice;
+
   const currentActionA = isFocused ? 'left_reading' : 'breath';
   const currentActionB = isFocused ? 'right_reading' : 'breath';
 
@@ -122,11 +126,11 @@ function ConversationContent() {
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
-              handleSendMessage(inputValue, setInputValue, setMessages);
+              handleSendMessage(voiceA,voiceB, inputValue, setInputValue, setMessages);
             }
           }}
         />
-        <button className={styles.button_send} onClick={()=>handleSendMessage(inputValue, setInputValue, setMessages)}>
+        <button className={styles.button_send} onClick={()=>handleSendMessage(voiceA,voiceB,inputValue, setInputValue, setMessages)}>
           Send
         </button>
       </div>
