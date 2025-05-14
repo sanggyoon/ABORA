@@ -54,11 +54,16 @@ export default async function handleSendMessage(
             timestamp: new Date().toLocaleString(),
         }));
 
-        //TTS 요청
+        //메시지 1개씩 받고 TTS 요청
         for (const msg of newMessages) {
             if (msg.type === 'agentA' || msg.type === 'agentB') {
+                //1. UI에 표시
+                setMessages((prev)=>[...prev,msg])
+
+                //2. voice 선택
                 const voice = msg.type === 'agentA' ? voiceA : voiceB;
 
+                //3. tts 요청
                 const res = await fetch('http://localhost:8000/tts/speak', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -72,11 +77,11 @@ export default async function handleSendMessage(
                     audio.onended = resolve;
                     audio.play();
                 });
+            }else{
+                //사용자 메시지는 바로 반영됨
+                setMessages((prev)=>[...prev,msg])
             }
         }
-
-
-        setMessages((prev) => [...prev, ...newMessages]);
     } catch (error) {
         console.error('Error:', error);
     }
