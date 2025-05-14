@@ -1,4 +1,7 @@
+
 export default async function handleSendMessage(
+    voiceA: string,
+    voiceB: string,
     inputValue: string,
     setInputValue: React.Dispatch<React.SetStateAction<string>>,
     setMessages: React.Dispatch<
@@ -12,6 +15,7 @@ export default async function handleSendMessage(
         >
     >,
 ): Promise<void> {
+
     if (inputValue.trim() === '') return;
     // 사용자 메시지 추가
     setMessages((prev) => [
@@ -50,16 +54,35 @@ export default async function handleSendMessage(
             timestamp: new Date().toLocaleString(),
         }));
 
+        //TTS 요청
+        for (const msg of newMessages) {
+            if (msg.type === 'agentA' || msg.type === 'agentB') {
+                const voice = msg.type === 'agentA' ? voiceA : voiceB;
+
+                const res = await fetch('http://localhost:8000/tts/speak', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: msg.message, voice : voice || 'ko-KR-Wavenet-A'})
+                });
+
+                const data = await res.json();
+                const audio = new Audio(`http://localhost:8000/tts/${data.filename}`);
+
+                await new Promise((resolve) => {
+                    audio.onended = resolve;
+                    audio.play();
+                });
+            }
+        }
+
+
         setMessages((prev) => [...prev, ...newMessages]);
     } catch (error) {
         console.error('Error:', error);
     }
-        // ✅ 1. TTS API 호출
-        await fetch("/api/tts", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ inputValue }),
-        });
+
+
+
 
         // 2. Whisper 분석된 타이밍 JSON 불러오기
         //const res = await fetch('/tts/tts_output.json');
