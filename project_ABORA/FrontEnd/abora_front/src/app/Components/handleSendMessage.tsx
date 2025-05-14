@@ -97,9 +97,6 @@ export default async function handleSendMessage(
         console.error('Error:', error);
     }
 
-
-
-
         // 2. Whisper 분석된 타이밍 JSON 불러오기
         //const res = await fetch('/tts/tts_output.json');
         //const segments = await res.json();
