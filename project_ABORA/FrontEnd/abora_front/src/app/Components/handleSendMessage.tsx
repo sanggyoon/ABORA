@@ -54,6 +54,7 @@ export default async function handleSendMessage(
             timestamp: new Date().toLocaleString(),
         }));
 
+        const playedFiles: string[] = []; //재생된 파일 이름들을 따로 저장
         //메시지 1개씩 받고 TTS 요청
         for (const msg of newMessages) {
             if (msg.type === 'agentA' || msg.type === 'agentB') {
@@ -71,8 +72,11 @@ export default async function handleSendMessage(
                 });
 
                 const data = await res.json();
-                const audio = new Audio(`http://localhost:8000/tts/${data.filename}`);
+                const filename = data.filename;
+                playedFiles.push(filename);
 
+                //4. 순차적으로 audio 재생
+                const audio = new Audio(`http://localhost:8000/tts/${data.filename}`);
                 await new Promise((resolve) => {
                     audio.onended = resolve;
                     audio.play();
@@ -81,6 +85,13 @@ export default async function handleSendMessage(
                 //사용자 메시지는 바로 반영됨
                 setMessages((prev)=>[...prev,msg])
             }
+        }
+
+        for(const file of playedFiles){
+            await fetch(`http://localhost:8000/tts/${file}`,{
+                method:`DELETE`
+            })
+
         }
     } catch (error) {
         console.error('Error:', error);

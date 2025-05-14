@@ -2,7 +2,7 @@
 import os
 import base64
 import requests
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
 import uuid
@@ -49,3 +49,13 @@ async def speak(request: Request):
 
 
     return JSONResponse({ "filename": filename })
+
+@router.delete("/{filename}")
+async def delete_mp3(filename: str):
+    filepath = f"public/tts/{filename}"
+
+    if os.path.exists(filepath):
+        os.remove(filepath)
+        return {"message": f"{filename} deleted"}
+    else:
+        raise HTTPException(status_code=404, detail="File not found")
