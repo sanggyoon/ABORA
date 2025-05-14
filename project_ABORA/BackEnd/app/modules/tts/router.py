@@ -10,8 +10,6 @@ import uuid
 
 load_dotenv()
 
-#mp3 파일명을 메시지마다 고유하게 설정
-
 router = APIRouter(prefix="/tts", tags=["TTS"])
 GOOGLE_TTS_API_KEY = os.getenv("GOOGLE_TTS_API_KEY")
 
@@ -50,6 +48,8 @@ async def speak(request: Request):
 
     return JSONResponse({ "filename": filename })
 
+
+#mp3 파일 삭제 라우터
 @router.delete("/{filename}")
 async def delete_mp3(filename: str):
     filepath = f"public/tts/{filename}"
