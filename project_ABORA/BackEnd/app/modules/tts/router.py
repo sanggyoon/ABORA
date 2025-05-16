@@ -6,12 +6,17 @@ from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
 import uuid
+from faster_whisper import WhisperModel
+from app.modules.tts.whisper import analyze_whisper
 
 
 load_dotenv()
 
 router = APIRouter(prefix="/tts", tags=["TTS"])
 GOOGLE_TTS_API_KEY = os.getenv("GOOGLE_TTS_API_KEY")
+
+# Whisper 모델 로딩 (전역에서 1회만 로드)
+whisper_model = WhisperModel("base", device="cpu", compute_type="int8")
 
 @router.post("/speak")
 async def speak(request: Request):
@@ -40,13 +45,16 @@ async def speak(request: Request):
     filepath = f"public/tts/{filename}"
 
 
-
     with open(filepath, "wb") as f:
         f.write(audio_bytes)
 
+    json_filename = filename.replace(".mp3", ".json")
+    json_path = os.path.join("public", "json", json_filename)
+
+    analyze_whisper(filepath, json_path)
 
 
-    return JSONResponse({ "filename": filename })
+    return JSONResponse({ "filename": filename, "json" : json_filename })
 
 
 #mp3 파일 삭제 라우터
@@ -59,3 +67,4 @@ async def delete_mp3(filename: str):
         return {"message": f"{filename} deleted"}
     else:
         raise HTTPException(status_code=404, detail="File not found")
+
