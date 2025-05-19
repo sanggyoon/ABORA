@@ -123,9 +123,7 @@ function ConversationContent() {
           </div>
         </div>
       </div>
-
       <div className={styles.chatInput}>
-        <button className={styles.button_stop}>◼︎</button>
         <input
           type="text"
           placeholder="Type your message..."
