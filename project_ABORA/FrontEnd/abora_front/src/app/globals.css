@@ -47,6 +47,7 @@ header {
   align-items: center;
   z-index: 100;
   background-color: var(--background);
+  overflow-x: hidden;
 }
 
 footer {
@@ -72,6 +73,8 @@ header span,
 footer span {
   animation: textMove 5s linear infinite;
   padding: 0 1rem;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 @keyframes textMove {

@@ -26,89 +26,39 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <header>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
         </header>
         {children}
         <footer>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
-          <span>ABORA</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
+          <span>Ideation Deep Dive...</span>
         </footer>
       </body>
     </html>
