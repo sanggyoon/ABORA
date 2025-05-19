@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : mp3 + tts apply / 중첩 audio.play() 주의 필요">
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/LipSyncWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/LipSyncTiming.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/playAudioWithLipSync.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat :  개발환경 packagejson 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/tts/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/tts/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/ModelController.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/ModelController.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Motion/Breath.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Motion/LipSyncAvatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/LipSyncAvatar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/mapKoreanToShape.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/mapKoreanToShape.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/handleSendMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/handleSendMessage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +343,8 @@
       <workItem from="1747547045055" duration="1635000" />
       <workItem from="1747549007122" duration="7771000" />
       <workItem from="1747557243094" duration="1779000" />
-      <workItem from="1747620906403" duration="1637000" />
+      <workItem from="1747620906403" duration="2005000" />
+      <workItem from="1747622998449" duration="298000" />
     </task>
     <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
       <option name="closed" value="true" />
@@ -646,7 +634,71 @@
       <option name="project" value="LOCAL" />
       <updated>1747559003741</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="feat : breath, reading 모션 적용 오류 수정">
+      <option name="closed" value="true" />
+      <created>1747622640797</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1747622640797</updated>
+    </task>
+    <task id="LOCAL-00038" summary="feat : Breath -&gt; ModelController로 명명">
+      <option name="closed" value="true" />
+      <created>1747622675830</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1747622675830</updated>
+    </task>
+    <task id="LOCAL-00039" summary="feat :  사용하지 않는 코드 주석 처리">
+      <option name="closed" value="true" />
+      <created>1747622768875</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1747622768875</updated>
+    </task>
+    <task id="LOCAL-00040" summary="feat :  JSX -&gt; TSX 파일 확장자 변경">
+      <option name="closed" value="true" />
+      <created>1747622787231</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1747622787231</updated>
+    </task>
+    <task id="LOCAL-00041" summary="feat :  LipSync 파라미터 추가">
+      <option name="closed" value="true" />
+      <created>1747622813653</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1747622813653</updated>
+    </task>
+    <task id="LOCAL-00042" summary="feat :  사용하지 않는 메소드 주석으로 변경">
+      <option name="closed" value="true" />
+      <created>1747622845278</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1747622845278</updated>
+    </task>
+    <task id="LOCAL-00043" summary="feat :  json get, delete 메소드">
+      <option name="closed" value="true" />
+      <created>1747622882893</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1747622882893</updated>
+    </task>
+    <task id="LOCAL-00044" summary="feat :  개발환경 packagejson 변경">
+      <option name="closed" value="true" />
+      <created>1747622903838</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1747622903838</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,14 +716,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doc : slideData 변화에 따른 props 변경" />
-    <MESSAGE value="doc : Breath, Reading 메소드 추가" />
-    <MESSAGE value="doc : Breath, Reading 모션 추가" />
-    <MESSAGE value="doc : NLA 모션 이름 일관성 유지" />
-    <MESSAGE value="refactor : 문서 이름 오류제거" />
-    <MESSAGE value="refactor : 불필요한 파일 삭제" />
-    <MESSAGE value="feat : tts -&gt; GoogleAPI fetch" />
-    <MESSAGE value="feat : handleSendMessage 리팩토링 모듈 분리" />
     <MESSAGE value="doc : whisper TTS 관련 백엔드 모듈 생성" />
     <MESSAGE value="doc : 불필요한 코드 삭제" />
     <MESSAGE value="refactor : handleSendMessage 모듈 분리" />
@@ -689,6 +733,14 @@
     <MESSAGE value="refactor : 사용하지 않음" />
     <MESSAGE value="doc : hangul types ignore" />
     <MESSAGE value="feat : mp3 + tts apply / 중첩 audio.play() 주의 필요" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : mp3 + tts apply / 중첩 audio.play() 주의 필요" />
+    <MESSAGE value="feat : breath, reading 모션 적용 오류 수정" />
+    <MESSAGE value="feat : Breath -&gt; ModelController로 명명" />
+    <MESSAGE value="feat :  사용하지 않는 코드 주석 처리" />
+    <MESSAGE value="feat :  JSX -&gt; TSX 파일 확장자 변경" />
+    <MESSAGE value="feat :  LipSync 파라미터 추가" />
+    <MESSAGE value="feat :  사용하지 않는 메소드 주석으로 변경" />
+    <MESSAGE value="feat :  json get, delete 메소드" />
+    <MESSAGE value="feat :  개발환경 packagejson 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat :  개발환경 packagejson 변경" />
   </component>
 </project>

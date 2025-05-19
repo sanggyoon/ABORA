@@ -62,7 +62,8 @@ export default async function handleSendMessage(
         }));
 
 
-        //const playedFiles: string[] = []; //재생된 파일 이름들을 따로 저장
+        //파라미터 mp3, json을 배열형태
+        const toDeleteFiles: { mp3: string; json: string }[] = [];
         //메시지 1개씩 받고 TTS 요청
         for (const msg of newMessages) {
             if (msg.type === 'agentA' || msg.type === 'agentB') {
@@ -83,21 +84,31 @@ export default async function handleSendMessage(
                 const filename = data.filename;
                 const json = data.json;
 
-                // 4. 립싱크 json/mp3 세팅
+                // 삭제할 파일 리스트에 저장
+                toDeleteFiles.push({ mp3: filename, json });
+
+                // 4. 립싱크 세팅
                 const setLipSync = msg.type === 'agentA' ? setLipSyncA : setLipSyncB;
                 setLipSync({ json, mp3: filename });
 
-                // 5. 음성 재생 완료까지 대기 (Promise로 감싼 다음 실행)
+                // 5. 오디오 재생 완료까지 대기
                 await new Promise<void>((resolve) => {
                     const audio = new Audio(`http://localhost:8000/tts/${filename}`);
                     audio.onended = resolve;
-                    audio.play();//play가 중첩
+                    audio.play();
                 });
-
             } else {
                 setMessages((prev) => [...prev, msg]);
             }
         }
+
+        // 모든 메시지 처리 완료 후 mp3/json 삭제 요청
+        for (const file of toDeleteFiles) {
+            await fetch(`http://localhost:8000/tts/${file.mp3}`, {
+                method: 'DELETE'
+            });
+        }
+
 
 
     } catch (error) {
