@@ -30,6 +30,10 @@ function ConversationContent() {
   >([]);
   const [isFocused, setIsFocused] = useState(false);
 
+  //립싱크 제어
+  const [lipSyncA, setLipSyncA] = useState<{ json: string, mp3: string } | null>(null);
+  const [lipSyncB, setLipSyncB] = useState<{ json: string, mp3: string } | null>(null);
+
   //agent이름과 같은 slideData에서 찾음.
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
@@ -38,12 +42,15 @@ function ConversationContent() {
   const voiceA = agentDataA?.voice;
   const voiceB = agentDataB?.voice;
 
+  //모션 제어
   const currentActionA = isFocused ? 'left_reading' : 'breath';
   const currentActionB = isFocused ? 'right_reading' : 'breath';
 
+
   const renderAvatar = (
     agent: (typeof slideData)[0] | null,
-    currentAction: string
+    currentAction: string,
+    lipSync : {json: string; mp3: string } | null
   ) => {
     if (!agent) return null;
     return (
@@ -51,6 +58,8 @@ function ConversationContent() {
         ModelComponent={agent.Component}
         glbPath={agent.glb}
         currentAction={currentAction}
+        jsonFilename={lipSync?.json}
+        mp3Filename={lipSync?.mp3}
       />
     );
   };
@@ -62,7 +71,7 @@ function ConversationContent() {
         <div className={styles.choosenAgent_A}>
           <div className={styles.agent_A_avatar}>
             <p className={styles.name_agentA}>{agentA}</p>
-            {renderAvatar(agentDataA, currentActionA)}
+            {renderAvatar(agentDataA, currentActionA, lipSyncA)}
           </div>
         </div>
 
@@ -110,7 +119,7 @@ function ConversationContent() {
         <div className={styles.choosenAgent_B}>
           <div className={styles.agent_B_avatar}>
             <p className={styles.name_agentB}>{agentB}</p>
-            {renderAvatar(agentDataB, currentActionB)}
+            {renderAvatar(agentDataB, currentActionB, lipSyncB)}
           </div>
         </div>
       </div>
@@ -126,11 +135,11 @@ function ConversationContent() {
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
-              handleSendMessage(voiceA,voiceB, inputValue, setInputValue, setMessages);
+              handleSendMessage(voiceA ,voiceB, inputValue, setLipSyncA, setLipSyncB,setInputValue, setMessages);
             }
           }}
         />
-        <button className={styles.button_send} onClick={()=>handleSendMessage(voiceA,voiceB,inputValue, setInputValue, setMessages)}>
+        <button className={styles.button_send} onClick={()=>handleSendMessage(voiceA,voiceB,inputValue, setLipSyncA, setLipSyncB,setInputValue, setMessages)}>
           Send
         </button>
       </div>
