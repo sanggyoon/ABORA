@@ -1,8 +1,14 @@
+import slideData from "../slideData";
+import AvatarScene from "./Avatar/AvatarScene";
+import LipSyncWrapper from "./Avatar/motion/LipSyncWrapper";
+import ModelController from "./Avatar/motion/ModelController";
 
 export default async function handleSendMessage(
     voiceA: string,
     voiceB: string,
     inputValue: string,
+    setLipSyncA:React.Dispatch<React.SetStateAction<{ json: string, mp3: string } | null>>,
+    setLipSyncB:React.Dispatch<React.SetStateAction<{ json: string, mp3: string } | null>>,
     setInputValue: React.Dispatch<React.SetStateAction<string>>,
     setMessages: React.Dispatch<
         React.SetStateAction<
@@ -17,7 +23,7 @@ export default async function handleSendMessage(
 ): Promise<void> {
 
     if (inputValue.trim() === '') return;
-    // 사용자 메시지 추가
+    // 1. 사용자 입력 메시지 추가
     setMessages((prev) => [
         ...prev,
         {
@@ -28,10 +34,11 @@ export default async function handleSendMessage(
         },
     ]);
 
+    // 1-1. input값을 공백으로 만듬
     setInputValue('');
 
     try {
-        // 백엔드로 메시지 전송
+        // 2. 백엔드로 메시지 전송
         const response = await fetch('/api/questions', {
             method: 'POST',
             headers: {
@@ -54,58 +61,58 @@ export default async function handleSendMessage(
             timestamp: new Date().toLocaleString(),
         }));
 
-        const playedFiles: string[] = []; //재생된 파일 이름들을 따로 저장
+
+        //파라미터 mp3, json을 배열형태
+        const toDeleteFiles: { mp3: string; json: string }[] = [];
         //메시지 1개씩 받고 TTS 요청
         for (const msg of newMessages) {
             if (msg.type === 'agentA' || msg.type === 'agentB') {
-                //1. UI에 표시
-                setMessages((prev)=>[...prev,msg])
+                // 1. 메시지 표시
+                setMessages((prev) => [...prev, msg]);
 
-                //2. voice 선택
+                // 2. voice 선택
                 const voice = msg.type === 'agentA' ? voiceA : voiceB;
 
-                //3. tts 요청
+                // 3. TTS 요청
                 const res = await fetch('http://localhost:8000/tts/speak', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ text: msg.message, voice : voice || 'ko-KR-Wavenet-A'})
+                    body: JSON.stringify({ text: msg.message, voice: voice || 'ko-KR-Wavenet-A' })
                 });
 
                 const data = await res.json();
                 const filename = data.filename;
-                playedFiles.push(filename);
+                const json = data.json;
 
-                //4. 순차적으로 audio 재생
-                const audio = new Audio(`http://localhost:8000/tts/${data.filename}`);
-                await new Promise((resolve) => {
+                // 삭제할 파일 리스트에 저장
+                toDeleteFiles.push({ mp3: filename, json });
+
+                // 4. 립싱크 세팅
+                const setLipSync = msg.type === 'agentA' ? setLipSyncA : setLipSyncB;
+                setLipSync({ json, mp3: filename });
+
+                // 5. 오디오 재생 완료까지 대기
+                await new Promise<void>((resolve) => {
+                    const audio = new Audio(`http://localhost:8000/tts/${filename}`);
                     audio.onended = resolve;
                     audio.play();
                 });
-            }else{
-                //사용자 메시지는 바로 반영됨
-                setMessages((prev)=>[...prev,msg])
+            } else {
+                setMessages((prev) => [...prev, msg]);
             }
         }
 
-        for(const file of playedFiles){
-            await fetch(`http://localhost:8000/tts/${file}`,{
-                method:`DELETE`
-            })
-
+        // 모든 메시지 처리 완료 후 mp3/json 삭제 요청
+        for (const file of toDeleteFiles) {
+            await fetch(`http://localhost:8000/tts/${file.mp3}`, {
+                method: 'DELETE'
+            });
         }
+
+
+
     } catch (error) {
         console.error('Error:', error);
     }
-
-        // 2. Whisper 분석된 타이밍 JSON 불러오기
-        //const res = await fetch('/tts/tts_output.json');
-        //const segments = await res.json();
-
-        // 4. mp3 재생 & 립싱크 실행
-        const audio = new Audio(`/tts/tts_output.mp3?ts=${Date.now()}`);
-        // audio.onplay = () => {
-        //     const startTime = Date.now();
-        // };
-        audio.play();
 
 }

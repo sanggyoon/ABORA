@@ -1,6 +1,6 @@
 import React from "react";
 // 한글 자모 → 입모양 이름 매핑
-export default function mapKoreanToShape(jamo) {
+export default function mapKoreanToShape(jamo: string) {
     if ("ㅏㅑㅓㅕ".includes(jamo)) return "AA";
     if ("ㅣㅐㅔ".includes(jamo)) return "II";
     if ("ㅗㅛ".includes(jamo)) return "OO";
