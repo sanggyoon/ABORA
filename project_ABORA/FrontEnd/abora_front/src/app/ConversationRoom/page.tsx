@@ -1,11 +1,12 @@
 'use client';
 
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
+import LoadingComponent from '../Components/LoadingComponent';
 import styles from './page.module.css';
 import { useSearchParams } from 'next/navigation';
 import AvatarScene from '../Components/Avatar/AvatarScene';
 import slideData from '../slideData';
-import handleSendMessage from '../Components/handleSendMessage'
+import handleSendMessage from '../Components/handleSendMessage';
 
 import {
   UserBubble,
@@ -15,8 +16,8 @@ import {
 
 function ConversationContent() {
   const searchParams = useSearchParams();
-  const agentA = searchParams.get('agentA');
-  const agentB = searchParams.get('agentB');
+  const agentA = searchParams?.get('agentA') || '';
+  const agentB = searchParams?.get('agentB') || '';
   const currentTime = new Date().toLocaleString();
 
   const [inputValue, setInputValue] = useState('');
@@ -29,28 +30,39 @@ function ConversationContent() {
     }[]
   >([]);
   const [isFocused, setIsFocused] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentSpeaker, setCurrentSpeaker] = useState<
+    'agentA' | 'agentB' | null
+  >(null);
 
-  //립싱크 제어
-  const [lipSyncA, setLipSyncA] = useState<{ json: string, mp3: string } | null>(null);
-  const [lipSyncB, setLipSyncB] = useState<{ json: string, mp3: string } | null>(null);
+  const chatBoxRef = useRef<HTMLDivElement>(null); // 채팅 영역 참조
 
-  //agent이름과 같은 slideData에서 찾음.
+  // 립싱크 제어
+  const [lipSyncA, setLipSyncA] = useState<{
+    json: string;
+    mp3: string;
+  } | null>(null);
+  const [lipSyncB, setLipSyncB] = useState<{
+    json: string;
+    mp3: string;
+  } | null>(null);
+
+  // agent 이름과 같은 slideData에서 찾음
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
 
-  //voice 탐색
+  // voice 탐색
   const voiceA = agentDataA?.voice;
   const voiceB = agentDataB?.voice;
 
-  //모션 제어
+  // 모션 제어
   const currentActionA = isFocused ? 'left_reading' : 'breath';
   const currentActionB = isFocused ? 'right_reading' : 'breath';
-
 
   const renderAvatar = (
     agent: (typeof slideData)[0] | null,
     currentAction: string,
-    lipSync : {json: string; mp3: string } | null
+    lipSync: { json: string; mp3: string } | null
   ) => {
     if (!agent) return null;
     return (
@@ -64,11 +76,52 @@ function ConversationContent() {
     );
   };
 
+  // 메시지가 변경될 때 마지막 메시지를 기반으로 currentSpeaker 업데이트
+  useEffect(() => {
+    if (messages.length > 0) {
+      const lastMessage = messages[messages.length - 1];
+      if (lastMessage.type === 'agentA' || lastMessage.type === 'agentB') {
+        setCurrentSpeaker(lastMessage.type);
+      }
+    }
+  }, [messages]);
+
+  // 메시지가 추가될 때마다 스크롤을 가장 하단으로 이동
+  useEffect(() => {
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  const handleSendMessageWithLoading = async () => {
+    setIsLoading(true); // 로딩 시작
+    try {
+      // 메시지 전송 로직
+      await handleSendMessage(
+        voiceA || 'defaultVoiceA',
+        voiceB || 'defaultVoiceB',
+        inputValue,
+        setLipSyncA,
+        setLipSyncB,
+        setInputValue,
+        setMessages
+      );
+    } finally {
+      setIsLoading(false); // 로딩 종료
+    }
+  };
+
   return (
     <>
       <div className={styles.conversationRoomContainer}>
         {/* 에이전트 A */}
         <div className={styles.choosenAgent_A}>
+          {isLoading && (
+            <LoadingComponent
+              type="agentA"
+              isActive={currentSpeaker === 'agentA'}
+            />
+          )}
           <div className={styles.agent_A_avatar}>
             <p className={styles.name_agentA}>{agentA}</p>
             {renderAvatar(agentDataA, currentActionA, lipSyncA)}
@@ -76,7 +129,7 @@ function ConversationContent() {
         </div>
 
         {/* 채팅 영역 */}
-        <div className={styles.chatBox}>
+        <div className={styles.chatBox} ref={chatBoxRef}>
           <AgentABubble
             message={`안녕하세요, 저는 ${agentA} 입니다`}
             timestamp={currentTime}
@@ -117,6 +170,12 @@ function ConversationContent() {
 
         {/* 에이전트 B */}
         <div className={styles.choosenAgent_B}>
+          {isLoading && (
+            <LoadingComponent
+              type="agentB"
+              isActive={currentSpeaker === 'agentB'}
+            />
+          )}
           <div className={styles.agent_B_avatar}>
             <p className={styles.name_agentB}>{agentB}</p>
             {renderAvatar(agentDataB, currentActionB, lipSyncB)}
@@ -133,11 +192,14 @@ function ConversationContent() {
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
-              handleSendMessage(voiceA ,voiceB, inputValue, setLipSyncA, setLipSyncB,setInputValue, setMessages);
+              handleSendMessageWithLoading();
             }
           }}
         />
-        <button className={styles.button_send} onClick={()=>handleSendMessage(voiceA,voiceB,inputValue, setLipSyncA, setLipSyncB,setInputValue, setMessages)}>
+        <button
+          className={styles.button_send}
+          onClick={handleSendMessageWithLoading}
+        >
           Send
         </button>
       </div>
