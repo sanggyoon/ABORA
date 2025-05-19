@@ -23,9 +23,9 @@ type TimelineItem = {
 export default function ModelController({
                                             ModelComponent,
                                             glbPath,
+                                            currentAction = 'breath',
                                             jsonFilename,
                                             mp3Filename,
-
                                         }: Props) {
     const modelRef = useRef<THREE.Object3D>(null);
     const meshRef = useRef<THREE.Mesh | null>(null);
@@ -34,8 +34,7 @@ export default function ModelController({
     const { actions } = useAnimations(animations, modelRef);
 
     const [currentPhoneme, setCurrentPhoneme] = useState<'AA' | 'II' | 'UU' | 'EE' | 'OO' | 'Idle'>('Idle');
-    const [currentAction, setCurrentAction] = useState<string>('breath');
-    const [targetInfluences, setTargetInfluences] = useState<number[]>(Array(6).fill(0));
+    const [targetInfluences, setTargetInfluences] = useState<number[]>(Array(7).fill(0)); // 0~6
 
     const phonemeToIndex: Record<typeof currentPhoneme, number> = {
         Idle: 1,
@@ -66,14 +65,8 @@ export default function ModelController({
                 const duration = end - start;
                 const per = duration / jamos.length;
 
-
                 if (jamos.length === 0) {
-                    // 묵음 처리: II
-                    timeline.push({
-                        phoneme: 'II',
-                        start: start,
-                        end: end,
-                    });
+                    timeline.push({ phoneme: 'II', start, end });
                 } else {
                     jamos.forEach((j: string, i: number) => {
                         const phoneme = mapKoreanToShape(j);
@@ -87,7 +80,6 @@ export default function ModelController({
             }
 
             const audio = new Audio(`http://localhost:8000/tts/${mp3Filename}`);
-            const startTime = Date.now();
 
             audio.onplay = () => {
                 timeline.forEach(({ phoneme, start, end }) => {
@@ -96,32 +88,30 @@ export default function ModelController({
                 });
             };
 
-
-            await new Promise((resolve) => {
+            await new Promise<void>((resolve) => {
                 audio.onended = resolve;
                 audio.play();
             });
         };
 
         playWithLipSync();
-    }, [jsonFilename, mp3Filename, setCurrentPhoneme]);
+    }, [jsonFilename, mp3Filename]);
 
-
-    // 입모양 애니메이션 적용
+    // 입모양 쉐이프키 변경
     useEffect(() => {
-        const newTargets = Array(7).fill(0); // 쉐이프키 influence 배열 (0~6)
-
+        const newTargets = Array(7).fill(0);
         const index = phonemeToIndex[currentPhoneme];
 
         if (currentPhoneme === 'Idle') {
-            newTargets[1] = 1; // Idle 상태일 때 쉐이프키 1번만 1
+            newTargets[1] = 1;
         } else if (index !== undefined && index !== null) {
-            newTargets[index] = 1; // 발음할 때는 해당 음소만 1 (Idle은 0)
+            newTargets[index] = 1;
         }
 
         setTargetInfluences(newTargets);
     }, [currentPhoneme]);
 
+    // 부드럽게 쉐이프키 적용
     useFrame(() => {
         if (!meshRef.current || !meshRef.current.morphTargetInfluences) return;
         const influences = meshRef.current.morphTargetInfluences;
@@ -130,9 +120,20 @@ export default function ModelController({
         }
     });
 
-    // 모션 애니메이션 전환
+    // 🤖 입모양 타겟 메쉬 찾아오기
+    useEffect(() => {
+        if (!modelRef.current) return;
+        modelRef.current.traverse((child: any) => {
+            if (child.isMesh && child.morphTargetInfluences && child.name.toLowerCase().includes('mouse')) {
+                meshRef.current = child;
+            }
+        });
+    }, []);
+
+    // 애니메이션 전환
     useEffect(() => {
         if (!actions || !currentAction) return;
+
         const mappedAction =
             currentAction === 'Reading' ? 'left_Reading' :
                 currentAction === 'Idle' ? 'breath' :
@@ -145,22 +146,10 @@ export default function ModelController({
         const actionToPlay = actions[mappedAction];
         if (actionToPlay) {
             actionToPlay.reset().fadeIn(0.3).play();
+        } else {
+            console.warn("🚫 애니메이션 없음:", mappedAction);
         }
     }, [actions, currentAction]);
 
-    return (
-        <ModelComponent
-            ref={(obj: THREE.Object3D | null) => {
-                modelRef.current = obj;
-                obj?.traverse((child: any) => {
-                    if (child.isMesh && child.morphTargetInfluences &&
-                        child.name.toLowerCase().includes("mouse")) {
-                        meshRef.current = child;
-                    }
-
-                });
-
-            }}
-        />
-    );
+    return <ModelComponent ref={modelRef} />;
 }
