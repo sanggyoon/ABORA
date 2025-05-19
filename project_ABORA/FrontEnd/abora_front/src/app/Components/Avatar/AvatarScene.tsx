@@ -1,9 +1,17 @@
 import { Canvas, useThree } from '@react-three/fiber';
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { OrbitControls } from '@react-three/drei';
-import Breath from '../Avatar/motion/Breath';
+import ModelController from './motion/ModelController';
 
-function UpdateCamera({ zoom }) {
+type AvatarSceneProps = {
+    jsonFilename?: string;
+    mp3Filename?: string;
+    ModelComponent: React.ForwardRefExoticComponent<any>;
+    glbPath: string;
+    currentAction?: string;
+};
+
+function UpdateCamera({ zoom }: { zoom: number }) {
     const { camera } = useThree();
 
     useEffect(() => {
@@ -14,13 +22,19 @@ function UpdateCamera({ zoom }) {
     return null;
 }
 
-export default function AvatarScene({ ModelComponent, glbPath, currentAction = 'idle' }) {
-    const containerRef = useRef(null);
+export default function AvatarScene({
+                                        jsonFilename,
+                                        mp3Filename,
+                                        ModelComponent,
+                                        glbPath,
+                                        currentAction = 'breath',
+                                    }: AvatarSceneProps) {
+    const containerRef = useRef<HTMLDivElement>(null);
     const [cameraZoom, setCameraZoom] = useState(200);
 
     useEffect(() => {
         const resizeObserver = new ResizeObserver((entries) => {
-            for (let entry of entries) {
+            for (const entry of entries) {
                 const { width } = entry.contentRect;
                 setCameraZoom(width / 2.5);
             }
@@ -53,9 +67,11 @@ export default function AvatarScene({ ModelComponent, glbPath, currentAction = '
                 <directionalLight position={[5, 5, 0]} intensity={1} />
 
                 <Suspense fallback={null}>
-                    <Breath
+                    <ModelController
                         ModelComponent={ModelComponent}
                         glbPath={glbPath}
+                        jsonFilename={jsonFilename}
+                        mp3Filename={mp3Filename}
                         currentAction={currentAction}
                     />
                 </Suspense>
