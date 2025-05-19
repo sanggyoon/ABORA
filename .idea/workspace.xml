@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat :  개발환경 packagejson 변경">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/handleSendMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/handleSendMessage.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat :  재생 후 mp3, json 삭제" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -344,7 +341,7 @@
       <workItem from="1747549007122" duration="7771000" />
       <workItem from="1747557243094" duration="1779000" />
       <workItem from="1747620906403" duration="2005000" />
-      <workItem from="1747622998449" duration="298000" />
+      <workItem from="1747622998449" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
       <option name="closed" value="true" />
@@ -698,7 +695,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747622903838</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="feat :  재생 후 mp3, json 삭제">
+      <option name="closed" value="true" />
+      <created>1747623659520</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1747623659520</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -716,7 +721,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doc : whisper TTS 관련 백엔드 모듈 생성" />
     <MESSAGE value="doc : 불필요한 코드 삭제" />
     <MESSAGE value="refactor : handleSendMessage 모듈 분리" />
     <MESSAGE value="feat : google tts api key 추가" />
@@ -741,6 +745,7 @@
     <MESSAGE value="feat :  사용하지 않는 메소드 주석으로 변경" />
     <MESSAGE value="feat :  json get, delete 메소드" />
     <MESSAGE value="feat :  개발환경 packagejson 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat :  개발환경 packagejson 변경" />
+    <MESSAGE value="feat :  재생 후 mp3, json 삭제" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat :  재생 후 mp3, json 삭제" />
   </component>
 </project>
