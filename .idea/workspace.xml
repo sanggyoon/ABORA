@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : workspace">
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : mp3 + tts apply / 중첩 audio.play() 주의 필요">
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/LipSyncWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/LipSyncTiming.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/playAudioWithLipSync.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/ai/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/ai/logic.py" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/tts/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/tts/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/AvatarScene.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/ModelController.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/ModelController.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Motion/Breath.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Motion/LipSyncAvatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/LipSyncAvatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/mapKoreanToShape.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/utils/mapKoreanToShape.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +62,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TTS-3&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projects/abora/project_ABORA/FrontEnd/abora_front/public/models&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projects/ABORA_2/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,6 +76,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\ABORA_2\project_ABORA\FrontEnd\abora_front\src\app\Components\Avatar\motion" />
       <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\public\models" />
       <recent name="C:\projects\abora\project_ABORA\FrontEnd\abora_front\src\app\Components\Avatar\motion" />
       <recent name="C:\Users\user\IdeaProjects\ABORA\project_ABORA\FrontEnd\abora_front\public\models" />
@@ -86,6 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ABORA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="ABORA" />
       <option name="filePath" />
@@ -99,6 +117,97 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ABORA" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ABORA" />
@@ -112,6 +221,90 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SharedIndexes">
@@ -154,8 +347,16 @@
       <workItem from="1747210970584" duration="4767000" />
       <workItem from="1747228527555" duration="156000" />
       <workItem from="1747228983153" duration="647000" />
-      <workItem from="1747231102761" duration="1162000" />
-
+      <workItem from="1747230206074" duration="317000" />
+      <workItem from="1747320334251" duration="5000" />
+      <workItem from="1747378123336" duration="1596000" />
+      <workItem from="1747380879737" duration="2125000" />
+      <workItem from="1747383205875" duration="16155000" />
+      <workItem from="1747544684276" duration="1295000" />
+      <workItem from="1747547045055" duration="1635000" />
+      <workItem from="1747549007122" duration="7771000" />
+      <workItem from="1747557243094" duration="1779000" />
+      <workItem from="1747620906403" duration="1637000" />
     </task>
     <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
       <option name="closed" value="true" />
@@ -413,7 +614,39 @@
       <option name="project" value="LOCAL" />
       <updated>1747214968659</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat : whisper json 파일 생성">
+      <option name="closed" value="true" />
+      <created>1747382212297</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1747382212297</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactor : 사용하지 않음">
+      <option name="closed" value="true" />
+      <created>1747384404691</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1747384404691</updated>
+    </task>
+    <task id="LOCAL-00035" summary="doc : hangul types ignore">
+      <option name="closed" value="true" />
+      <created>1747385316503</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1747385316503</updated>
+    </task>
+    <task id="LOCAL-00036" summary="feat : mp3 + tts apply / 중첩 audio.play() 주의 필요">
+      <option name="closed" value="true" />
+      <created>1747559003741</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1747559003741</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,9 +664,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix : 사용하지않은 파일 삭제" />
-    <MESSAGE value="doc : 아바타 glb 옷 수정" />
-    <MESSAGE value="doc : slideData 리팩토링" />
     <MESSAGE value="doc : slideData 변화에 따른 props 변경" />
     <MESSAGE value="doc : Breath, Reading 메소드 추가" />
     <MESSAGE value="doc : Breath, Reading 모션 추가" />
@@ -455,7 +685,10 @@
     <MESSAGE value="feat : tts가 모두 끝나면 mp3삭제" />
     <MESSAGE value="doc : LipSync 모듈 생성" />
     <MESSAGE value="doc : router 파일 코드 정리" />
-    <MESSAGE value="doc : workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc : workspace" />
+    <MESSAGE value="feat : whisper json 파일 생성" />
+    <MESSAGE value="refactor : 사용하지 않음" />
+    <MESSAGE value="doc : hangul types ignore" />
+    <MESSAGE value="feat : mp3 + tts apply / 중첩 audio.play() 주의 필요" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : mp3 + tts apply / 중첩 audio.play() 주의 필요" />
   </component>
 </project>
