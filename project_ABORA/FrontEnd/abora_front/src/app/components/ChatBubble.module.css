@@ -21,11 +21,11 @@
 
 .agentABubble {
   background-color: var(--background);
-  color: white;
+  color: #c5ae65;
   padding: 1rem;
   border-radius: 20px;
   align-self: flex-end;
-  border: 1px solid white;
+  border: 1px solid #c5ae65;
   max-width: 100%;
   word-wrap: break-word;
 }
@@ -37,17 +37,17 @@
   left: 0px;
   width: 15px;
   height: 15px;
-  background-color: white;
+  background-color: #c5ae65;
   display: block;
 }
 
 .agentBBubble {
   background-color: var(--background);
-  color: white;
+  color: #8fa2c3;
   padding: 1rem;
   border-radius: 20px;
   align-self: flex-start;
-  border: 1px solid white;
+  border: 1px solid #8fa2c3;
   max-width: 100%;
   word-wrap: break-word;
 }
@@ -59,7 +59,7 @@
   right: 0px;
   width: 15px;
   height: 15px;
-  background-color: white;
+  background-color: #8fa2c3;
   display: block;
 }
 
