@@ -182,6 +182,8 @@ function ConversationContent() {
           </div>
         </div>
       </div>
+
+      {/* 채팅 입력 영역 */}
       <div className={styles.chatInput}>
         <input
           type="text"
@@ -191,14 +193,16 @@ function ConversationContent() {
           onBlur={() => setIsFocused(false)}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
+            if (e.key === 'Enter' && !e.nativeEvent.isComposing && !isLoading) {
               handleSendMessageWithLoading();
             }
           }}
+          disabled={isLoading} // isLoading이 true일 때 비활성화
         />
         <button
           className={styles.button_send}
           onClick={handleSendMessageWithLoading}
+          disabled={isLoading} // isLoading이 true일 때 비활성화
         >
           Send
         </button>
