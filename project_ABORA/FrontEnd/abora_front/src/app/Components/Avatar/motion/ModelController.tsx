@@ -12,6 +12,7 @@ type Props = {
     currentAction?: string;
     jsonFilename?: string;
     mp3Filename?: string;
+    onAudioEnd?: () => void;
 };
 
 type TimelineItem = {
@@ -26,6 +27,7 @@ export default function ModelController({
                                             currentAction = 'breath',
                                             jsonFilename,
                                             mp3Filename,
+                                            onAudioEnd
                                         }: Props) {
     const modelRef = useRef<THREE.Object3D>(null);
     const meshRef = useRef<THREE.Mesh | null>(null);
@@ -89,9 +91,14 @@ export default function ModelController({
             };
 
             await new Promise<void>((resolve) => {
-                audio.onended = resolve;
+                audio.onended = () => {
+                    onAudioEnd?.(); // 외부로 재생 끝 알림
+                    resolve();
+                };
                 audio.play();
             });
+
+
         };
 
         playWithLipSync();

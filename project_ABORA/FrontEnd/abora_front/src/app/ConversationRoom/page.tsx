@@ -19,8 +19,10 @@ function ConversationContent() {
   const agentA = searchParams?.get('agentA') || '';
   const agentB = searchParams?.get('agentB') || '';
   const currentTime = new Date().toLocaleString();
+  const [currentIndex, setCurrentIndex] = useState(-1);
 
   const [inputValue, setInputValue] = useState('');
+  const [messagesToPlay, setMessagesToPlay] = useState([]);
   const [messages, setMessages] = useState<
     {
       speaker: string;
@@ -47,6 +49,8 @@ function ConversationContent() {
     mp3: string;
   } | null>(null);
 
+
+
   // agent 이름과 같은 slideData에서 찾음
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
@@ -66,7 +70,8 @@ function ConversationContent() {
   const renderAvatar = (
     agent: (typeof slideData)[0] | null,
     currentAction: string,
-    lipSync: { json: string; mp3: string } | null
+    lipSync: { json: string; mp3: string } | null,
+    onAudioEnd: () => void
   ) => {
     if (!agent) return null;
     return (
@@ -76,6 +81,7 @@ function ConversationContent() {
         currentAction={currentAction}
         jsonFilename={lipSync?.json}
         mp3Filename={lipSync?.mp3}
+        onAudioEnd={onAudioEnd}
       />
     );
   };
@@ -89,6 +95,32 @@ function ConversationContent() {
       }
     }
   }, [messages]);
+
+  useEffect(() => {
+    const play = async () => {
+      const msg = messagesToPlay[currentIndex];
+      if (!msg) return;
+
+      setMessages((prev) => [...prev, msg]);
+
+      const voice = msg.type === 'agentA' ? voiceA : voiceB;
+
+      const res = await fetch('http://localhost:8000/tts/speak', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: msg.message, voice }),
+      });
+
+      const data = await res.json();
+      const filename = data.filename;
+      const json = data.json;
+
+      const setLipSync = msg.type === 'agentA' ? setLipSyncA : setLipSyncB;
+      setLipSync({ json, mp3: filename });
+    };
+
+    if (currentIndex >= 0) play();
+  }, [currentIndex]);
 
   // 메시지가 추가될 때마다 스크롤을 가장 하단으로 이동
   useEffect(() => {
@@ -108,7 +140,9 @@ function ConversationContent() {
         setLipSyncA,
         setLipSyncB,
         setInputValue,
-        setMessages
+        setMessages,
+        setMessagesToPlay,
+        setCurrentIndex,
       );
     } finally {
       setIsLoading(false); // 로딩 종료
@@ -128,7 +162,9 @@ function ConversationContent() {
           )}
           <div className={styles.agent_A_avatar}>
             <p className={styles.name_agentA}>{agentA}</p>
-            {renderAvatar(agentDataA, currentActionA, lipSyncA)}
+            {renderAvatar(agentDataA, currentActionA, lipSyncA, () => {
+              if (currentSpeaker === 'agentA') setCurrentIndex((prev) => prev + 1);
+            })}
           </div>
         </div>
 
@@ -182,7 +218,9 @@ function ConversationContent() {
           )}
           <div className={styles.agent_B_avatar}>
             <p className={styles.name_agentB}>{agentB}</p>
-            {renderAvatar(agentDataB, currentActionB, lipSyncB)}
+            {renderAvatar(agentDataB, currentActionB, lipSyncB, () => {
+              if (currentSpeaker === 'agentB') setCurrentIndex((prev) => prev + 1);
+            })}
           </div>
         </div>
       </div>

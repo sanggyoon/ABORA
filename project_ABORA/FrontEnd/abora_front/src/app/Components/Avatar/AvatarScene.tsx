@@ -9,6 +9,7 @@ type AvatarSceneProps = {
     ModelComponent: React.ForwardRefExoticComponent<any>;
     glbPath: string;
     currentAction?: string;
+    onAudioEnd?: () => void;
 };
 
 function UpdateCamera({ zoom }: { zoom: number }) {
@@ -28,6 +29,7 @@ export default function AvatarScene({
                                         ModelComponent,
                                         glbPath,
                                         currentAction = 'breath',
+                                        onAudioEnd,
                                     }: AvatarSceneProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [cameraZoom, setCameraZoom] = useState(200);
@@ -73,6 +75,7 @@ export default function AvatarScene({
                         jsonFilename={jsonFilename}
                         mp3Filename={mp3Filename}
                         currentAction={currentAction}
+                        onAudioEnd={onAudioEnd}
                     />
                 </Suspense>
             </Canvas>

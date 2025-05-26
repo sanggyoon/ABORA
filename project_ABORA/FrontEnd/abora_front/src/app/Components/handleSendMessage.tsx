@@ -22,7 +22,19 @@ export default async function handleSendMessage(
         timestamp: string;
       }[]
     >
-  >
+  >,
+  setMessagesToPlay: React.Dispatch<
+      React.SetStateAction<
+          {
+            speaker: string;
+            message: string;
+            type: 'agentA' | 'agentB';
+            timestamp: string;
+          }[]
+      >
+  >,
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>
+
 ): Promise<void> {
   if (inputValue.trim() === '') return;
   // 1. 사용자 입력 메시지 추가
@@ -63,58 +75,13 @@ export default async function handleSendMessage(
         message: item.message,
         type: index % 2 === 0 ? 'agentA' : 'agentB', // 짝수는 AgentA, 홀수는 AgentB
         timestamp: new Date().toLocaleString(),
-      })
-    );
+      }));
 
-    //파라미터 mp3, json을 배열형태
-    const toDeleteFiles: { mp3: string; json: string }[] = [];
-    //메시지 1개씩 받고 TTS 요청
-    for (const msg of newMessages) {
-      if (msg.type === 'agentA' || msg.type === 'agentB') {
-        // 1. 메시지 표시
-        setMessages((prev) => [...prev, msg]);
 
-        // 2. voice 선택
-        const voice = msg.type === 'agentA' ? voiceA : voiceB;
-
-        // 3. TTS 요청
-        const res = await fetch('http://localhost:8000/tts/speak', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            text: msg.message,
-            voice: voice || 'ko-KR-Wavenet-A',
-          }),
-        });
-
-        const data = await res.json();
-        const filename = data.filename;
-        const json = data.json;
-
-        // 삭제할 파일 리스트에 저장
-        toDeleteFiles.push({ mp3: filename, json });
-
-        // 4. 립싱크 세팅
-        const setLipSync = msg.type === 'agentA' ? setLipSyncA : setLipSyncB;
-        setLipSync({ json, mp3: filename });
-
-        // 5. 오디오 재생 완료까지 대기
-        await new Promise<void>((resolve) => {
-          const audio = new Audio(`http://localhost:8000/tts/${filename}`);
-          audio.onended = () => resolve();
-          audio.play();
-        });
-      } else {
-        setMessages((prev) => [...prev, msg]);
-      }
-    }
-
+    setMessagesToPlay(newMessages);       // 전체 메시지 큐 설정
+    setCurrentIndex(0);                   // 첫 메시지부터 시작
     // 모든 메시지 처리 완료 후 mp3/json 삭제 요청
-    for (const file of toDeleteFiles) {
-      await fetch(`http://localhost:8000/tts/${file.mp3}`, {
-        method: 'DELETE',
-      });
-    }
+
   } catch (error) {
     console.error('Error:', error);
   }
