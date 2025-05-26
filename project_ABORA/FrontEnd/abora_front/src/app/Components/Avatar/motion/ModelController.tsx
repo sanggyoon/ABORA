@@ -147,7 +147,7 @@ export default function ModelController({
         if (actionToPlay) {
 
             if (mappedAction === 'left_pending' || mappedAction === 'right_pending') {
-                actionToPlay.timeScale = 0.7; // 원래 속도의 60%
+                actionToPlay.timeScale = 0.5; // 원래 속도의 60%
             } else {
                 actionToPlay.timeScale = 1.0; // 나머지는 기본 속도
             }
