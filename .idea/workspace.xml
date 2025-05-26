@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat :  재생 후 mp3, json 삭제" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="doc : unused code delete">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/ModelController.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/ModelController.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="TTS-3" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,7 +50,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "pending-motion",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/projects/ABORA_2/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion",
     "node.js.detected.package.eslint": "true",
@@ -703,7 +707,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747623659520</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="doc : unused code delete">
+      <option name="closed" value="true" />
+      <created>1748239338791</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1748239338791</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -721,7 +733,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doc : 불필요한 코드 삭제" />
     <MESSAGE value="refactor : handleSendMessage 모듈 분리" />
     <MESSAGE value="feat : google tts api key 추가" />
     <MESSAGE value="feat : voicd 추가" />
@@ -746,6 +757,7 @@
     <MESSAGE value="feat :  json get, delete 메소드" />
     <MESSAGE value="feat :  개발환경 packagejson 변경" />
     <MESSAGE value="feat :  재생 후 mp3, json 삭제" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat :  재생 후 mp3, json 삭제" />
+    <MESSAGE value="doc : unused code delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc : unused code delete" />
   </component>
 </project>

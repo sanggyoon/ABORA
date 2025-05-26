@@ -56,8 +56,12 @@ function ConversationContent() {
   const voiceB = agentDataB?.voice;
 
   // 모션 제어
-  const currentActionA = isFocused ? 'left_reading' : 'breath';
-  const currentActionB = isFocused ? 'right_reading' : 'breath';
+  const currentActionA = isLoading ? 'left_pending' :
+      isFocused ? 'left_reading' : 'breath';
+
+  const currentActionB = isLoading ? 'right_pending' :
+      isFocused ? 'right_reading' : 'breath';
+
 
   const renderAvatar = (
     agent: (typeof slideData)[0] | null,
