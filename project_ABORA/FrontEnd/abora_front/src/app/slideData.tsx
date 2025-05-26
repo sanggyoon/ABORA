@@ -10,7 +10,7 @@ const slideData = [
         description: '사실적 기반 분석',
         Component: Avatar_GPT,
         glb: '/models/sanggyun.glb',
-        voice : 'ko-KR-Standard-C',
+        voice : 'ko-KR-Chirp3-HD-Achird',
     },
     {
         name: '철학적인 동년',
@@ -26,7 +26,7 @@ const slideData = [
         description: '감정 기반 분석',
         Component: Avatar_Gemini,
         glb: '/models/chaeyoung.glb',
-        voice :'ko-KR-Wavenet-A',
+        voice :'ko-KR-Chirp3-HD-Achernar',
     },
     {
         name: '실무적인 정민',
