@@ -1,6 +1,5 @@
 import slideData from '../slideData';
 import AvatarScene from './Avatar/AvatarScene';
-import LipSyncWrapper from './Avatar/motion/LipSyncWrapper';
 import ModelController from './Avatar/motion/ModelController';
 
 export default async function handleSendMessage(
