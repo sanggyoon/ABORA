@@ -145,9 +145,17 @@ export default function ModelController({
 
         const actionToPlay = actions[mappedAction];
         if (actionToPlay) {
+
+            if (mappedAction === 'left_pending' || mappedAction === 'right_pending') {
+                actionToPlay.timeScale = 0.5; // 원래 속도의 60%
+            } else {
+                actionToPlay.timeScale = 1.0; // 나머지는 기본 속도
+            }
+
+
             actionToPlay.reset().fadeIn(0.3).play();
         } else {
-            console.warn("🚫 애니메이션 없음:", mappedAction);
+            console.warn(" 애니메이션 없음:", mappedAction);
         }
     }, [actions, currentAction]);
 
