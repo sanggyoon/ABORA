@@ -71,30 +71,30 @@ async def get_json(filename: str):
     return FileResponse(json_path)
 
 
-#mp3 파일 삭제 라우터
 @router.delete("/{filename}")
 async def delete_mp3(filename: str):
-    mp3_path = os.path.join("public", "tts", filename)
+    global json_filename
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    mp3_path = os.path.join(base_dir, "..", "..", "public", "tts", filename)
 
-    #mp3 파일을 json파일로 바꿔서 json 경로 생성
+    # mp3 → json 이름 변환
     if filename.endswith(".mp3"):
         json_filename = filename.replace(".mp3", ".json")
-        json_path = os.path.join("public", "json", json_filename)
+        json_path = os.path.join(base_dir, "..", "..", "public", "json", json_filename)
     else:
         json_path = None
 
+    deleted_files = []
 
-    #mp3 삭제
     if os.path.exists(mp3_path):
         os.remove(mp3_path)
-
+        deleted_files.append(filename)
     else:
-        raise HTTPException(status_code=404, detail="File not found")
+        raise HTTPException(status_code=404, detail="MP3 file not found")
 
-
-    # json 삭제 (존재할 경우만)
     if json_path and os.path.exists(json_path):
         os.remove(json_path)
+        deleted_files.append(json_filename)
 
-    return {"message": f"{filename} and its .json (if any) deleted"}
+    return {"deleted": deleted_files}
 
