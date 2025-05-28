@@ -63,12 +63,18 @@ function ConversationContent() {
   const voiceA = agentDataA?.voice;
   const voiceB = agentDataB?.voice;
 
-  // 모션 제어
-  const currentActionA = isLoading ? 'left_pending' :
-      isFocused ? 'left_reading' : 'breath';
+  // 상호작용에 따른 모션 제어
+  const currentActionA = isLoading
+      ? 'left_pending' : isSpeakingA ? 'breath' : currentSpeaker === 'agentB' ? 'left_pending'
+      : isFocused
+          ? 'left_reading'
+          : 'breath';
 
-  const currentActionB = isLoading ? 'right_pending' :
-      isFocused ? 'right_reading' : 'breath';
+  const currentActionB = isLoading
+      ? 'right_pending' : isSpeakingB ? 'breath' :currentSpeaker === 'agentA' ? 'right_pending'
+      : isFocused
+          ? 'right_reading'
+          : 'breath';
 
 
   const renderAvatar = (
