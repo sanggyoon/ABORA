@@ -70,3 +70,18 @@
   top: -1rem;
   left: 1rem;
 }
+
+@keyframes bubbleSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bubbleAnimation {
+  animation: bubbleSlideUp 2s ease-in-out;
+}
