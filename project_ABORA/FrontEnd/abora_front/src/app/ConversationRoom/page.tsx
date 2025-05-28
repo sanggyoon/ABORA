@@ -55,6 +55,10 @@ function ConversationContent() {
   const agentDataA = slideData.find((item) => item.name === agentA) || null;
   const agentDataB = slideData.find((item) => item.name === agentB) || null;
 
+  const [isSpeakingA, setIsSpeakingA] = useState(false);
+  const [isSpeakingB, setIsSpeakingB] = useState(false);
+
+
   // voice 탐색
   const voiceA = agentDataA?.voice;
   const voiceB = agentDataB?.voice;
@@ -105,6 +109,9 @@ function ConversationContent() {
 
       const voice = msg.type === 'agentA' ? voiceA : voiceB;
 
+      if (msg.type === 'agentA') setIsSpeakingA(true);
+      else if (msg.type === 'agentB') setIsSpeakingB(true);
+
       const res = await fetch('http://localhost:8000/tts/speak', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -154,15 +161,16 @@ function ConversationContent() {
       <div className={styles.conversationRoomContainer}>
         {/* 에이전트 A */}
         <div className={styles.choosenAgent_A}>
-          {isLoading && (
-            <LoadingComponent
-              type="agentA"
-              isActive={currentSpeaker === 'agentA'}
-            />
+          {(isLoading || isSpeakingA) && (
+              <LoadingComponent
+                  type="agentA"
+                  isActive={currentSpeaker === 'agentA'}
+              />
           )}
           <div className={styles.agent_A_avatar}>
             <p className={styles.name_agentA}>{agentA}</p>
             {renderAvatar(agentDataA, currentActionA, lipSyncA, () => {
+              setIsSpeakingA(false); // 재생 종료
               if (currentSpeaker === 'agentA') setCurrentIndex((prev) => prev + 1);
             })}
           </div>
@@ -210,15 +218,16 @@ function ConversationContent() {
 
         {/* 에이전트 B */}
         <div className={styles.choosenAgent_B}>
-          {isLoading && (
-            <LoadingComponent
-              type="agentB"
-              isActive={currentSpeaker === 'agentB'}
-            />
+          {(isLoading || isSpeakingB) && (
+              <LoadingComponent
+                  type="agentB"
+                  isActive={currentSpeaker === 'agentB'}
+              />
           )}
           <div className={styles.agent_B_avatar}>
             <p className={styles.name_agentB}>{agentB}</p>
             {renderAvatar(agentDataB, currentActionB, lipSyncB, () => {
+              setIsSpeakingB(false); // 재생 종료
               if (currentSpeaker === 'agentB') setCurrentIndex((prev) => prev + 1);
             })}
           </div>
