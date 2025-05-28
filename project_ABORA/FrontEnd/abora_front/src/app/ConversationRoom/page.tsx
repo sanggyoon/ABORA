@@ -177,7 +177,12 @@ function ConversationContent() {
             <p className={styles.name_agentA}>{agentA}</p>
             {renderAvatar(agentDataA, currentActionA, lipSyncA, () => {
               setIsSpeakingA(false); // 재생 종료
-              if (currentSpeaker === 'agentA') setCurrentIndex((prev) => prev + 1);
+              if (currentSpeaker === 'agentA')
+                if (currentIndex + 1 >= messagesToPlay.length) {
+                setCurrentSpeaker(null); // 모든 메시지 끝났을 때 초기화
+              } else {
+                setCurrentIndex((prev) => prev + 1);
+              }
             })}
           </div>
         </div>
@@ -234,7 +239,12 @@ function ConversationContent() {
             <p className={styles.name_agentB}>{agentB}</p>
             {renderAvatar(agentDataB, currentActionB, lipSyncB, () => {
               setIsSpeakingB(false); // 재생 종료
-              if (currentSpeaker === 'agentB') setCurrentIndex((prev) => prev + 1);
+              if (currentSpeaker === 'agentB')
+                if (currentIndex + 1 >= messagesToPlay.length) {
+                setCurrentSpeaker(null); // 모든 메시지 끝났을 때 초기화
+              } else {
+                setCurrentIndex((prev) => prev + 1);
+              }
             })}
           </div>
         </div>
