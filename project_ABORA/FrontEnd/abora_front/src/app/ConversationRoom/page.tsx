@@ -63,12 +63,18 @@ function ConversationContent() {
   const voiceA = agentDataA?.voice;
   const voiceB = agentDataB?.voice;
 
-  // 모션 제어
-  const currentActionA = isLoading ? 'left_pending' :
-      isFocused ? 'left_reading' : 'breath';
+  // 상호작용에 따른 모션 제어
+  const currentActionA = isLoading
+      ? 'left_pending' : isSpeakingA ? 'breath' : currentSpeaker === 'agentB' ? 'left_pending'
+      : isFocused
+          ? 'left_reading'
+          : 'breath';
 
-  const currentActionB = isLoading ? 'right_pending' :
-      isFocused ? 'right_reading' : 'breath';
+  const currentActionB = isLoading
+      ? 'right_pending' : isSpeakingB ? 'breath' :currentSpeaker === 'agentA' ? 'right_pending'
+      : isFocused
+          ? 'right_reading'
+          : 'breath';
 
 
   const renderAvatar = (
@@ -171,7 +177,12 @@ function ConversationContent() {
             <p className={styles.name_agentA}>{agentA}</p>
             {renderAvatar(agentDataA, currentActionA, lipSyncA, () => {
               setIsSpeakingA(false); // 재생 종료
-              if (currentSpeaker === 'agentA') setCurrentIndex((prev) => prev + 1);
+              if (currentSpeaker === 'agentA')
+                if (currentIndex + 1 >= messagesToPlay.length) {
+                setCurrentSpeaker(null); // 모든 메시지 끝났을 때 초기화
+              } else {
+                setCurrentIndex((prev) => prev + 1);
+              }
             })}
           </div>
         </div>
@@ -228,7 +239,12 @@ function ConversationContent() {
             <p className={styles.name_agentB}>{agentB}</p>
             {renderAvatar(agentDataB, currentActionB, lipSyncB, () => {
               setIsSpeakingB(false); // 재생 종료
-              if (currentSpeaker === 'agentB') setCurrentIndex((prev) => prev + 1);
+              if (currentSpeaker === 'agentB')
+                if (currentIndex + 1 >= messagesToPlay.length) {
+                setCurrentSpeaker(null); // 모든 메시지 끝났을 때 초기화
+              } else {
+                setCurrentIndex((prev) => prev + 1);
+              }
             })}
           </div>
         </div>
