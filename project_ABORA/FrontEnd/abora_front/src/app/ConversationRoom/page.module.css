@@ -48,12 +48,14 @@
 
 .name_agentA,
 .name_agentB {
-  background-color: var(--signature);
-  color: white;
+  background-color: #282631;
+  color: #ebdbff;
+  border: solid 1px #ae9ecd;
+  border-radius: 10px;
   width: 50%;
   height: 50px;
   margin: 0 auto;
-  font-size: 2rem;
+  font-size: 1.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +76,8 @@
   align-items: center;
 }
 
-.chatInput::placeholder{
+.chatInput input::placeholder{
+  font-size: 1.5rem;
 
 }
 
@@ -85,8 +88,10 @@
   background-color: var(--background);
   color: var(--signature);
   margin: auto 0;
-  font-size: 2rem;
+  font-size: 1.3rem;
+  outline: none;
 }
+
 
 .button_stop {
   border-radius: 50%;
@@ -102,6 +107,10 @@
   background-color: var(--signature);
   color: white;
   height: 40px;
-  padding: 0 1rem;
+  padding: 10px 25px;
+  font-size: 1.2rem;
   margin-left: 1rem;
+  display: flex;
+  align-content: center;
+  cursor: pointer;
 }
