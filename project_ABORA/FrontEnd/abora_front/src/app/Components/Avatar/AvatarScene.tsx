@@ -54,19 +54,19 @@ export default function AvatarScene({
     }, []);
 
     return (
-        <div ref={containerRef} style={{ height: '60vh', width: '100%' }}>
+        <div ref={containerRef} style={{ height: '58vh', width: '70%'}}>
             <Canvas
                 orthographic
                 camera={{
                     zoom: cameraZoom,
                     near: 1,
                     far: 50,
-                    position: [0, 0, 45],
+                    position: [0, 0, 30],
                 }}
             >
                 <UpdateCamera zoom={cameraZoom} />
-                <ambientLight intensity={1.5} />
-                <directionalLight position={[5, 5, 0]} intensity={1} />
+                <ambientLight intensity={1.7} />
+                <directionalLight position={[10, 5, 0]} intensity={1} />
 
                 <Suspense fallback={null}>
                     <ModelController
