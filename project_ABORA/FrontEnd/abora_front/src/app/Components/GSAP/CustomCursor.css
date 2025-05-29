@@ -5,7 +5,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: white;  /* 보통 white 또는 bright color */
+    background: #c5ffae;  /* 보통 white 또는 bright color */
     mix-blend-mode: difference;
     pointer-events: none;
     transform: translate(-50%, -50%);
