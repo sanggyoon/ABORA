@@ -70,3 +70,9 @@
   top: -1rem;
   left: 1rem;
 }
+
+.agentBubble_typing{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
