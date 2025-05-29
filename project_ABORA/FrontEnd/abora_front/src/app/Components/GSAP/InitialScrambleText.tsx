@@ -16,7 +16,7 @@ interface InitialScrambleTextProps {
 
 export default function InitialScrambleText({
                                                 to,
-                                                duration = 1,
+                                                duration = 1.5,
                                                 delay = 0,
                                                 className = '',
                                                 scrambleChars = "!<>-_\\/[]{}—=+*^?#",

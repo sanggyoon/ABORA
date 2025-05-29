@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : customCursor 추가" />
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : workspace 업로드">
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -441,14 +443,6 @@
       <workItem from="1747622998449" duration="662000" />
       <workItem from="1748257423865" duration="306000" />
     </task>
-    <task id="LOCAL-00008" summary="fix : 사용하지않은 파일 삭제">
-      <option name="closed" value="true" />
-      <created>1746675980784</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1746675980784</updated>
-    </task>
     <task id="LOCAL-00009" summary="fix : 사용하지않은 파일 삭제">
       <option name="closed" value="true" />
       <created>1746675999667</created>
@@ -833,7 +827,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748545537867</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="feat : workspace 업로드">
+      <option name="closed" value="true" />
+      <created>1748547860093</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1748547860093</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -851,7 +853,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doc : router 파일 코드 정리" />
     <MESSAGE value="feat : whisper json 파일 생성" />
     <MESSAGE value="refactor : 사용하지 않음" />
     <MESSAGE value="doc : hangul types ignore" />
@@ -876,6 +877,7 @@
     <MESSAGE value="feat : 배경 색 white -&gt; 보라색으로 변경" />
     <MESSAGE value="feat : 조명 추가" />
     <MESSAGE value="feat : customCursor 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : customCursor 추가" />
+    <MESSAGE value="feat : workspace 업로드" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : workspace 업로드" />
   </component>
 </project>

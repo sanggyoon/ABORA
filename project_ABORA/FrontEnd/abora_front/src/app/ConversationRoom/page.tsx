@@ -14,6 +14,7 @@ import {
   AgentBBubble,
 } from '../Components/ChatBubble';
 import TypingText from '../Components/GSAP/TypingText';
+import InitialScrambleText from '../Components/GSAP/InitialScrambleText';
 
 function ConversationContent() {
   const searchParams = useSearchParams();
@@ -176,7 +177,7 @@ function ConversationContent() {
           )}
           <div className={styles.agent_A_avatar}>
             <div className={styles.name_agentA}>
-              <TypingText text={agentA}/>
+              <InitialScrambleText to={agentA}/>
             </div>
             {renderAvatar(agentDataA, currentActionA, lipSyncA, () => {
               setIsSpeakingA(false); // 재생 종료
@@ -239,7 +240,7 @@ function ConversationContent() {
               />
           )}
           <div className={styles.agent_B_avatar}>
-            <div className={styles.name_agentB}><TypingText text={agentB}/></div>
+            <div className={styles.name_agentB}><InitialScrambleText to={agentB}/></div>
             {renderAvatar(agentDataB, currentActionB, lipSyncB, () => {
               setIsSpeakingB(false); // 재생 종료
               if (currentSpeaker === 'agentB')
