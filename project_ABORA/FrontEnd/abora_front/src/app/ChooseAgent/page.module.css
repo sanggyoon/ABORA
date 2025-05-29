@@ -100,3 +100,67 @@
 .myTyping{
   font-family: 'Pretendard-regular', sans-serif;
 }
+
+
+.fillBlink_AL {
+  animation: fillFlash0 2s infinite;
+  stroke: white;
+  stroke-width: 1px;
+
+  fill: #ffffff;
+}
+
+.fillBlink_AR{
+  animation: fillFlash1 2s infinite;
+  stroke: white;
+  stroke-width: 1px;
+
+  fill: #ffffff;
+}
+
+.fillBlink_BL{
+  animation: fillFlash2 2s infinite;
+  stroke: white;
+  stroke-width: 1px;
+
+  fill: #ffffff;
+}
+
+.fillBlink_BR{
+  animation: fillFlash3 2s infinite;
+  stroke: white;
+  stroke-width: 1px;
+
+  fill: #ffffff;
+}
+
+@keyframes fillFlash0 {
+  0%   { fill: transparent; }
+  15%  { fill: white; }
+  50%  { fill: white; }
+  65%  { fill: transparent; }
+  100% { fill: transparent; }
+}
+
+@keyframes fillFlash1 {
+  0%   { fill: transparent; }
+  30%  { fill: white; }
+  65%  { fill: white; }
+  80%  { fill: transparent; }
+  100% { fill: transparent; }
+}
+
+@keyframes fillFlash2 {
+  0%   { fill: transparent; }
+  45%  { fill: white; }
+  80%  { fill: white; }
+  95%  { fill: transparent; }
+  100% { fill: transparent; }
+}
+
+@keyframes fillFlash3 {
+  0%   { fill: transparent; }
+  60%  { fill: white; }
+  95%  { fill: white; }
+  100% { fill: transparent; }
+}
