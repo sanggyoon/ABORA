@@ -56,7 +56,7 @@ export default function HoverScramble({ from, to, className }: HoverScrambleProp
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className={className}
-            style={{ cursor: 'pointer', display: 'inline-block' }}
+            style={{ display: 'inline-block' }}
         />
     );
 }
