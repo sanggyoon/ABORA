@@ -11,17 +11,7 @@ type AvatarSceneProps = {
   currentAction?: string;
   onAudioEnd?: () => void;
 };
-/*
-function UpdateCamera({ zoom }: { zoom: number }) {
-  const { camera } = useThree();
 
-  useEffect(() => {
-    camera.zoom = zoom;
-    camera.updateProjectionMatrix();
-  }, [zoom, camera]);
-
-  return null;
-}*/
 
 export default function AvatarScene({
   jsonFilename,
