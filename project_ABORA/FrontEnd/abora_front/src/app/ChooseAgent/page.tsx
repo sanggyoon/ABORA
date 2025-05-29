@@ -64,8 +64,8 @@ export default function ChooseAgent() {
                 currentAction="breath"
               ></AvatarScene>
               <div className={styles.agentDescription}>
-                <span><TypingText text = {item.model} className={styles.myTyping} duration={1} /></span>
-                <span><TypingText text = {item.description}  className={styles.myTyping} delay={1}/></span>
+                <span><TypingText text = {item.model} className={styles.myTyping} /></span>
+                <span><TypingText text = {item.description}  className={styles.myTyping} /></span>
               </div>
               <div className={styles.agentNameContainer}><InitialScrambleText to = {item.name} duration={1.5}/></div>
             </div>
