@@ -13,6 +13,7 @@ import {
   AgentABubble,
   AgentBBubble,
 } from '../Components/ChatBubble';
+import TypingText from '../Components/GSAP/TypingText';
 
 function ConversationContent() {
   const searchParams = useSearchParams();
@@ -174,7 +175,9 @@ function ConversationContent() {
               />
           )}
           <div className={styles.agent_A_avatar}>
-            <p className={styles.name_agentA}>{agentA}</p>
+            <p className={styles.name_agentA}>
+              <TypingText text={agentA}/>
+            </p>
             {renderAvatar(agentDataA, currentActionA, lipSyncA, () => {
               setIsSpeakingA(false); // 재생 종료
               if (currentSpeaker === 'agentA')
@@ -190,11 +193,11 @@ function ConversationContent() {
         {/* 채팅 영역 */}
         <div className={styles.chatBox} ref={chatBoxRef}>
           <AgentABubble
-            message={`안녕, 나는 ${agentA}이야.`}
+            message={`안녕, 나는 <b>${agentA}</b>이야.`}
             timestamp={currentTime}
           />
           <AgentBBubble
-            message={`안녕, 나는 ${agentB}이야.`}
+            message={`안녕, 나는  <b>${agentB}</b>이야.`}
             timestamp={currentTime}
           />
           {messages.map((msg, index) => {
@@ -236,7 +239,7 @@ function ConversationContent() {
               />
           )}
           <div className={styles.agent_B_avatar}>
-            <p className={styles.name_agentB}>{agentB}</p>
+            <p className={styles.name_agentB}><TypingText text={agentB}/></p>
             {renderAvatar(agentDataB, currentActionB, lipSyncB, () => {
               setIsSpeakingB(false); // 재생 종료
               if (currentSpeaker === 'agentB')
@@ -254,7 +257,7 @@ function ConversationContent() {
       <div className={styles.chatInput}>
         <input
           type="text"
-          placeholder="ex) "
+          placeholder="ex) " //예시 주석 달아주세요
           value={inputValue}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
