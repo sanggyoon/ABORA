@@ -74,6 +74,10 @@
   align-items: center;
 }
 
+.chatInput::placeholder{
+
+}
+
 .chatInput input {
   width: 40%;
   height: 100%;
