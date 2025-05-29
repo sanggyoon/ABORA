@@ -67,7 +67,7 @@
 
 .timestamp {
   font-size: 0.75rem;
-  color: var(--signature);
+  color: #b1b1b1;
   position: absolute;
   top: -1rem;
   left: 1rem;
@@ -84,7 +84,7 @@
 @keyframes bubbleSlideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -93,6 +93,6 @@
 }
 
 .bubbleAnimation {
-  animation: bubbleSlideUp 2s ease-in-out;
+  animation: bubbleSlideUp 1s ease-in-out;
 }
 
