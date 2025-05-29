@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : motion pending모션 추가 : 속도60%">
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : 조명 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/ModelController.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion/ModelController.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/components/ChatBubble.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/components/ChatBubble.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="GSAP" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,22 +52,22 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;pending-motion&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projects/ABORA_2/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/projects/ABORA_2/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projects\ABORA_2\project_ABORA\FrontEnd\abora_front\src\app\Components\Avatar\motion" />
@@ -444,54 +451,6 @@
       <workItem from="1747622998449" duration="662000" />
       <workItem from="1748257423865" duration="306000" />
     </task>
-    <task id="LOCAL-00001" summary="doc : 3D glb 파일 적용">
-      <option name="closed" value="true" />
-      <created>1746624874614</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1746624874614</updated>
-    </task>
-    <task id="LOCAL-00002" summary="doc : 3D glb 파일 정민 수정">
-      <option name="closed" value="true" />
-      <created>1746625064215</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1746625064215</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fix : 캐릭터 slideData glb 수정">
-      <option name="closed" value="true" />
-      <created>1746625092820</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1746625092820</updated>
-    </task>
-    <task id="LOCAL-00004" summary="doc : Agent_A,b,c,d image delete -&gt; unused">
-      <option name="closed" value="true" />
-      <created>1746673372562</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1746673372562</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fix : 파일구조 변경 Breath 파일명 변경">
-      <option name="closed" value="true" />
-      <created>1746675836265</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1746675836265</updated>
-    </task>
-    <task id="LOCAL-00006" summary="css : select - hover 추가">
-      <option name="closed" value="true" />
-      <created>1746675862017</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1746675862017</updated>
-    </task>
     <task id="LOCAL-00007" summary="fix : Reading 파일 추가 &gt; 코드변경 필요">
       <option name="closed" value="true" />
       <created>1746675878604</created>
@@ -820,7 +779,71 @@
       <option name="project" value="LOCAL" />
       <updated>1748247917958</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="feat : 선택창에서 아바타 크기 크게 바꿈">
+      <option name="closed" value="true" />
+      <created>1748529321940</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1748529321940</updated>
+    </task>
+    <task id="LOCAL-00049" summary="feat : 선택창에서 아바타 블럭 heigth 조절">
+      <option name="closed" value="true" />
+      <created>1748529333553</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1748529333553</updated>
+    </task>
+    <task id="LOCAL-00050" summary="feat : 쓰지 않는 duration props 제거">
+      <option name="closed" value="true" />
+      <created>1748529347067</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1748529347067</updated>
+    </task>
+    <task id="LOCAL-00051" summary="feat : camera 정적 데이터로 바꿈">
+      <option name="closed" value="true" />
+      <created>1748534438518</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1748534438518</updated>
+    </task>
+    <task id="LOCAL-00052" summary="feat : LoaderGrid 로딩 추가">
+      <option name="closed" value="true" />
+      <created>1748534469759</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1748534469759</updated>
+    </task>
+    <task id="LOCAL-00053" summary="feat : TypingText 0.8">
+      <option name="closed" value="true" />
+      <created>1748534569076</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1748534569076</updated>
+    </task>
+    <task id="LOCAL-00054" summary="feat : 배경 색 white -&gt; 보라색으로 변경">
+      <option name="closed" value="true" />
+      <created>1748534899303</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1748534899303</updated>
+    </task>
+    <task id="LOCAL-00055" summary="feat : 조명 추가">
+      <option name="closed" value="true" />
+      <created>1748541035396</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541035396</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -838,14 +861,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat : google tts api key 추가" />
-    <MESSAGE value="feat : voicd 추가" />
-    <MESSAGE value="feat : Message에 따른 TTS mp3 재생" />
-    <MESSAGE value="feat : tts speak router 추가" />
-    <MESSAGE value="feat : tts speak router mp3로 각각 멘트마다 저장 &lt;speaker&gt;가 달라짐" />
-    <MESSAGE value="feat : 답변 하나씩 순차적으로 1. UI에 text 표현, 2. voice선택 3.tts 요청 이 진행됨." />
-    <MESSAGE value="feat : props로 voice추가" />
-    <MESSAGE value="feat : tts가 모두 끝나면 mp3삭제" />
     <MESSAGE value="doc : LipSync 모듈 생성" />
     <MESSAGE value="doc : router 파일 코드 정리" />
     <MESSAGE value="feat : whisper json 파일 생성" />
@@ -863,6 +878,14 @@
     <MESSAGE value="feat :  재생 후 mp3, json 삭제" />
     <MESSAGE value="doc : unused code delete" />
     <MESSAGE value="feat : motion pending모션 추가 : 속도60%" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : motion pending모션 추가 : 속도60%" />
+    <MESSAGE value="feat : 선택창에서 아바타 크기 크게 바꿈" />
+    <MESSAGE value="feat : 선택창에서 아바타 블럭 heigth 조절" />
+    <MESSAGE value="feat : 쓰지 않는 duration props 제거" />
+    <MESSAGE value="feat : camera 정적 데이터로 바꿈" />
+    <MESSAGE value="feat : LoaderGrid 로딩 추가" />
+    <MESSAGE value="feat : TypingText 0.8" />
+    <MESSAGE value="feat : 배경 색 white -&gt; 보라색으로 변경" />
+    <MESSAGE value="feat : 조명 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 조명 추가" />
   </component>
 </project>
