@@ -10,7 +10,7 @@ export default function ScrollingText() {
     useEffect(() => {
         gsap.to(scrollRef.current, {
             xPercent: -50,
-            duration: 16,
+            duration: 21,
             ease: 'linear',
             repeat: -1,
         });

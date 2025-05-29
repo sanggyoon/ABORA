@@ -82,7 +82,12 @@ export default async function handleSendMessage(
     setCurrentIndex(0);                   // 첫 메시지부터 시작
     // 모든 메시지 처리 완료 후 mp3/json 삭제 요청
 
+
+
   } catch (error) {
     console.error('Error:', error);
   }
+
+
 }
+

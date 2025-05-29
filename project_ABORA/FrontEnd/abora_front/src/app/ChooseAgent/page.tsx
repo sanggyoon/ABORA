@@ -8,6 +8,9 @@ import slideData from '../slideData';
 
 import styles from './page.module.css';
 import AvatarScene from '../Components/Avatar/AvatarScene';
+import HoverScramble from '../Components/GSAP/TextScramble';
+import TypingText from '../Components/GSAP/TypingText';
+import InitialScrambleText from '../Components/GSAP/InitialScrambleText';
 
 export default function ChooseAgent() {
   const router = useRouter();
@@ -61,11 +64,10 @@ export default function ChooseAgent() {
                 currentAction="breath"
               ></AvatarScene>
               <div className={styles.agentDescription}>
-                <span>{item.model}</span>
-                <br />
-                <span>{item.description}</span>
+                <span><TypingText text = {item.model} className={styles.myTyping} duration={1} /></span>
+                <span><TypingText text = {item.description}  className={styles.myTyping} delay={1}/></span>
               </div>
-              <div className={styles.agentNameContainer}>{item.name}</div>
+              <div className={styles.agentNameContainer}><InitialScrambleText to = {item.name} duration={1.5}/></div>
             </div>
           ))}
         </div>
@@ -84,34 +86,38 @@ export default function ChooseAgent() {
           className={styles.arrow}
           onClick={() => handlePrevSlide(setCurrentSlideB, currentSlideB)}
         >
-          <BiSolidLeftArrow />
+          <BiSolidLeftArrow
+              style={{
+                  color: 'white',
+                  WebkitTextStroke: '1px white' // 이건 텍스트에만 적용되므로 대부분 무효
+              }}
+          />
         </div>
         <div className={styles.slideBox}>
           {slideData.map((item, index) => (
-            <div
-              key={index}
-              className={styles.slide}
-              style={{
-                transform: `translateX(${(index - currentSlideB) * 100}%)`,
-              }}
-            >
-              <AvatarScene
-                ModelComponent={item.Component}
-                glbPath={item.glb}
-                currentAction="breath"
-              ></AvatarScene>
-              <div className={styles.agentDescription}>
-                <span>{item.model}</span>
-                <br />
-                <span>{item.description}</span>
+              <div
+                  key={index}
+                  className={styles.slide}
+                  style={{
+                    transform: `translateX(${(index - currentSlideB) * 100}%)`,
+                  }}
+              >
+                <AvatarScene
+                    ModelComponent={item.Component}
+                    glbPath={item.glb}
+                    currentAction="breath"
+                ></AvatarScene>
+                <div className={styles.agentDescription}>
+                  <span><TypingText text={item.model} className="myTyping"/></span>
+                  <span><TypingText text={item.description} className="myTyping" delay={1}/></span>
+                </div>
+                <div className={styles.agentNameContainer}><InitialScrambleText to={item.name} duration={1.5}/></div>
               </div>
-              <div className={styles.agentNameContainer}>{item.name}</div>
-            </div>
           ))}
         </div>
         <div
-          className={styles.arrow}
-          onClick={() => handleNextSlide(setCurrentSlideB, currentSlideB)}
+            className={styles.arrow}
+            onClick={() => handleNextSlide(setCurrentSlideB, currentSlideB)}
         >
           <BiSolidRightArrow />
         </div>
@@ -121,7 +127,7 @@ export default function ChooseAgent() {
         className={styles.moveConversationRoom}
         onClick={handleButtonClick}
       >
-        Select
+        <HoverScramble from = 'SELECT' to = 'START'/>
       </button>
     </div>
   );

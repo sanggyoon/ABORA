@@ -73,6 +73,14 @@
   left: 1rem;
 }
 
+
+.agentBubble_typing{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
 @keyframes bubbleSlideUp {
   from {
     opacity: 0;
@@ -87,3 +95,4 @@
 .bubbleAnimation {
   animation: bubbleSlideUp 2s ease-in-out;
 }
+

@@ -190,11 +190,11 @@ function ConversationContent() {
         {/* 채팅 영역 */}
         <div className={styles.chatBox} ref={chatBoxRef}>
           <AgentABubble
-            message={`안녕하세요, 저는 ${agentA} 입니다`}
+            message={`안녕, 나는 ${agentA}이야.`}
             timestamp={currentTime}
           />
           <AgentBBubble
-            message={`안녕하세요, 저는 ${agentB} 입니다`}
+            message={`안녕, 나는 ${agentB}이야.`}
             timestamp={currentTime}
           />
           {messages.map((msg, index) => {
@@ -254,7 +254,7 @@ function ConversationContent() {
       <div className={styles.chatInput}>
         <input
           type="text"
-          placeholder="Type your message..."
+          placeholder="ex) "
           value={inputValue}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
