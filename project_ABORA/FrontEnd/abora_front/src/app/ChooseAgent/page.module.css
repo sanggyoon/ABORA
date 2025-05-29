@@ -27,21 +27,23 @@
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
+  transition: all 0.3s ease;
   padding: 1rem;
   width: 15%;
+  font-family: 'Pretendard-Black',sans-serif;
   height: 10%;
   background-color: var(--background);
   border: 1px solid white;
   color: white;
-  line-height: 0%;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
+
 .moveConversationRoom:hover{
-  background-color: white;
-  color: black;
+  background-color: rgba(166, 142, 255, 0.22); /* 보라색 */
+  color: #c5b4ff;
+  border-color: #a68eff;
   cursor: pointer;
-  font-weight: bold;
 }
 
 .slideBox {
@@ -74,12 +76,13 @@
   user-select: none;
 }
 
+
 .agentDescription {
   position: absolute;
   top: 0;
   left: 0;
   color: var(--signature);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-align: left;
   margin-top: 1rem;
   margin-left: 1rem;
@@ -88,8 +91,12 @@
 .agentNameContainer {
   position: absolute;
   bottom: 20px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 2rem;
   border: 1px solid white;
   background-color: var(--background);
   font-size: 1.3rem;
+}
+
+.myTyping{
+  font-family: 'Pretendard-regular', sans-serif;
 }
