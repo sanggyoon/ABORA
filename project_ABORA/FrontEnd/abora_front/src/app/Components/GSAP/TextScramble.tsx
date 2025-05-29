@@ -13,8 +13,7 @@ interface HoverScrambleProps {
 
 export default function HoverScramble({ from, to, className }: HoverScrambleProps) {
     const textRef = useRef<HTMLSpanElement>(null);
-    const currentTween = useRef<gsap.core.Tween | null>(null);
-    const forceTimeout = useRef<NodeJS.Timeout | null>(null);
+    const currentTween = useRef<gsap.core.Tween | null>(null); // 현재 실행 중인 트윈 저장
 
     useEffect(() => {
         if (textRef.current) {
@@ -25,12 +24,12 @@ export default function HoverScramble({ from, to, className }: HoverScrambleProp
     const scrambleTo = (targetText: string) => {
         if (!textRef.current) return;
 
-        // 기존 tween 중단 및 강제 텍스트 초기화
-        if (currentTween.current) currentTween.current.kill();
-        if (forceTimeout.current) clearTimeout(forceTimeout.current);
+        // 기존 트윈이 있으면 강제 중단
+        if (currentTween.current) {
+            currentTween.current.kill();
+        }
 
-        const el = textRef.current;
-        const tween = gsap.to(el, {
+        const tween = gsap.to(textRef.current, {
             duration: 1,
             scrambleText: {
                 text: targetText,
@@ -38,27 +37,18 @@ export default function HoverScramble({ from, to, className }: HoverScrambleProp
                 speed: 0.3,
                 revealDelay: 0.2,
             },
-            overwrite: 'auto',
-            onComplete: () => {
-                if (forceTimeout.current) {
-                    clearTimeout(forceTimeout.current);
-                    forceTimeout.current = null;
-                }
-            },
         });
-
-        // 1.1초 후에도 아직 제대로 바뀌지 않았다면 강제 보정
-        forceTimeout.current = setTimeout(() => {
-            if (el.textContent !== targetText) {
-                el.textContent = targetText;
-            }
-        }, 1100);
 
         currentTween.current = tween;
     };
 
-    const handleMouseEnter = () => scrambleTo(to);
-    const handleMouseLeave = () => scrambleTo(from);
+    const handleMouseEnter = () => {
+        scrambleTo(to);
+    };
+
+    const handleMouseLeave = () => {
+        scrambleTo(from);
+    };
 
     return (
         <span
