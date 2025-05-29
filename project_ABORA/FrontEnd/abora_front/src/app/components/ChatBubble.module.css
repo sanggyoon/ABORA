@@ -28,6 +28,7 @@
   border: 1px solid #c5ae65;
   max-width: 100%;
   word-wrap: break-word;
+  line-height: 1.4;
 }
 
 .agentABubble::after {
@@ -50,6 +51,7 @@
   border: 1px solid #8fa2c3;
   max-width: 100%;
   word-wrap: break-word;
+  line-height: 1.4;
 }
 
 .agentBBubble::after {
@@ -71,9 +73,26 @@
   left: 1rem;
 }
 
+
 .agentBubble_typing{
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1.5;
 }
+
+@keyframes bubbleSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bubbleAnimation {
+  animation: bubbleSlideUp 2s ease-in-out;
+}
+

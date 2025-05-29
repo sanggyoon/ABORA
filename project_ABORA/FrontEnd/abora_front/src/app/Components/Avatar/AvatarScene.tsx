@@ -4,54 +4,55 @@ import { OrbitControls } from '@react-three/drei';
 import ModelController from './motion/ModelController';
 
 type AvatarSceneProps = {
-    jsonFilename?: string;
-    mp3Filename?: string;
-    ModelComponent: React.ForwardRefExoticComponent<any>;
-    glbPath: string;
-    currentAction?: string;
-    onAudioEnd?: () => void;
+  jsonFilename?: string;
+  mp3Filename?: string;
+  ModelComponent: React.ForwardRefExoticComponent<any>;
+  glbPath: string;
+  currentAction?: string;
+  onAudioEnd?: () => void;
 };
 
 function UpdateCamera({ zoom }: { zoom: number }) {
-    const { camera } = useThree();
+  const { camera } = useThree();
 
-    useEffect(() => {
-        camera.zoom = zoom;
-        camera.updateProjectionMatrix();
-    }, [zoom, camera]);
+  useEffect(() => {
+    camera.zoom = zoom;
+    camera.updateProjectionMatrix();
+  }, [zoom, camera]);
 
-    return null;
+  return null;
 }
 
 export default function AvatarScene({
-                                        jsonFilename,
-                                        mp3Filename,
-                                        ModelComponent,
-                                        glbPath,
-                                        currentAction = 'breath',
-                                        onAudioEnd,
-                                    }: AvatarSceneProps) {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [cameraZoom, setCameraZoom] = useState(200);
+  jsonFilename,
+  mp3Filename,
+  ModelComponent,
+  glbPath,
+  currentAction = 'breath',
+  onAudioEnd,
+}: AvatarSceneProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [cameraZoom, setCameraZoom] = useState(200);
 
-    useEffect(() => {
-        const resizeObserver = new ResizeObserver((entries) => {
-            for (const entry of entries) {
-                const { width } = entry.contentRect;
-                setCameraZoom(width / 2.5);
-            }
-        });
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width } = entry.contentRect;
+        setCameraZoom(width / 3.5);
+      }
+    });
 
-        if (containerRef.current) {
-            resizeObserver.observe(containerRef.current);
-        }
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
 
-        return () => {
-            if (containerRef.current) {
-                resizeObserver.unobserve(containerRef.current);
-            }
-        };
-    }, []);
+    return () => {
+      if (containerRef.current) {
+        resizeObserver.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
 
     return (
         <div ref={containerRef} style={{ height: '58vh', width: '70%'}}>
@@ -68,17 +69,18 @@ export default function AvatarScene({
                 <ambientLight intensity={1.7} />
                 <directionalLight position={[10, 5, 0]} intensity={1} />
 
-                <Suspense fallback={null}>
-                    <ModelController
-                        ModelComponent={ModelComponent}
-                        glbPath={glbPath}
-                        jsonFilename={jsonFilename}
-                        mp3Filename={mp3Filename}
-                        currentAction={currentAction}
-                        onAudioEnd={onAudioEnd}
-                    />
-                </Suspense>
-            </Canvas>
-        </div>
-    );
+
+        <Suspense fallback={null}>
+          <ModelController
+            ModelComponent={ModelComponent}
+            glbPath={glbPath}
+            jsonFilename={jsonFilename}
+            mp3Filename={mp3Filename}
+            currentAction={currentAction}
+            onAudioEnd={onAudioEnd}
+          />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
 }
