@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
-import HoverScramble from './Components/TextScramble';
+import HoverScramble from './Components/GSAP/TextScramble';
 
 export default function Home() {
   const router = useRouter();
