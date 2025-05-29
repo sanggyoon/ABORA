@@ -11,6 +11,7 @@ import AvatarScene from '../Components/Avatar/AvatarScene';
 import HoverScramble from '../Components/GSAP/TextScramble';
 import TypingText from '../Components/GSAP/TypingText';
 import InitialScrambleText from '../Components/GSAP/InitialScrambleText';
+import  LoaderGridto from '../Components/GSAP/LoaderGridto';
 
 export default function ChooseAgent() {
   const router = useRouter();
@@ -40,14 +41,18 @@ export default function ChooseAgent() {
   };
 
   return (
+      <>
+        <LoaderGridto/>
     <div className={styles.chooseAgentContainer}>
       {/* 슬라이드 A */}
       <div className={styles.chooseAgent_A}>
+
         <div
           className={styles.arrow}
           onClick={() => handlePrevSlide(setCurrentSlideA, currentSlideA)}
         >
-          <BiSolidLeftArrow />
+          <BiSolidLeftArrow className={styles.fillBlink_AL} size={60} />
+
         </div>
         <div className={styles.slideBox}>
           {slideData.map((item, index) => (
@@ -64,10 +69,10 @@ export default function ChooseAgent() {
                 currentAction="breath"
               ></AvatarScene>
               <div className={styles.agentDescription}>
-                <span><TypingText text = {item.model} className={styles.myTyping} /></span>
-                <span><TypingText text = {item.description}  className={styles.myTyping} /></span>
+                <span><TypingText text = {item.model} className={styles.myTyping} delay={1.7}/></span>
+                <span><TypingText text = {item.description}  className={styles.myTyping} delay={1.7}/></span>
               </div>
-              <div className={styles.agentNameContainer}><InitialScrambleText to = {item.name} duration={1.5}/></div>
+              <div className={styles.agentNameContainer}><InitialScrambleText to = {item.name} duration={1.5} delay={1.7}/></div>
             </div>
           ))}
         </div>
@@ -76,7 +81,7 @@ export default function ChooseAgent() {
           className={styles.arrow}
           onClick={() => handleNextSlide(setCurrentSlideA, currentSlideA)}
         >
-          <BiSolidRightArrow />
+          <BiSolidRightArrow className={styles.fillBlink_AR} size={60}/>
         </div>
       </div>
 
@@ -86,12 +91,7 @@ export default function ChooseAgent() {
           className={styles.arrow}
           onClick={() => handlePrevSlide(setCurrentSlideB, currentSlideB)}
         >
-          <BiSolidLeftArrow
-              style={{
-                  color: 'white',
-                  WebkitTextStroke: '1px white' // 이건 텍스트에만 적용되므로 대부분 무효
-              }}
-          />
+          <BiSolidLeftArrow className={styles.fillBlink_BL} size={60}/>
         </div>
         <div className={styles.slideBox}>
           {slideData.map((item, index) => (
@@ -108,10 +108,10 @@ export default function ChooseAgent() {
                     currentAction="breath"
                 ></AvatarScene>
                 <div className={styles.agentDescription}>
-                  <span><TypingText text={item.model} className="myTyping"/></span>
-                  <span><TypingText text={item.description} className="myTyping" delay={1}/></span>
+                  <span><TypingText text={item.model} className="myTyping"  delay={1.7}/></span>
+                  <span><TypingText text={item.description} className="myTyping" delay={1.7}/></span>
                 </div>
-                <div className={styles.agentNameContainer}><InitialScrambleText to={item.name} duration={1.5}/></div>
+                <div className={styles.agentNameContainer}><InitialScrambleText to={item.name} duration={1.5} delay={1.7}/></div>
               </div>
           ))}
         </div>
@@ -119,7 +119,7 @@ export default function ChooseAgent() {
             className={styles.arrow}
             onClick={() => handleNextSlide(setCurrentSlideB, currentSlideB)}
         >
-          <BiSolidRightArrow />
+          <BiSolidRightArrow className={styles.fillBlink_BR} size={60}/>
         </div>
       </div>
 
@@ -130,5 +130,6 @@ export default function ChooseAgent() {
         <HoverScramble from = 'SELECT' to = 'START'/>
       </button>
     </div>
+        </>
   );
 }
