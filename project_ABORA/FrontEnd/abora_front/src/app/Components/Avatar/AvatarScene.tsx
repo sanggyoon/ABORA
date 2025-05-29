@@ -55,21 +55,32 @@ export default function AvatarScene({
                     position: [0, 0, 45],
                 }}
             >
-                <ambientLight intensity={1.7} />
-                <directionalLight position={[10, 5, 0]} intensity={1} />
+                <ambientLight intensity={0.3}/>
+
+                {/* 강한 정면 광원 */}
+                <directionalLight
+                    position={[3, 0, 5]} // 정면에서 쏘는 위치
+                    intensity={3}        // 매우 강하게
+                    color="#ffffff"
+                    castShadow
+                    shadow-mapSize-width={2048}
+                    shadow-mapSize-height={2048}
+                    shadow-bias={-0.001}
+                />
+                <directionalLight position={[-10, 0, 1]} intensity={0.4}/>
 
 
-        <Suspense fallback={null}>
-          <ModelController
-            ModelComponent={ModelComponent}
-            glbPath={glbPath}
-            jsonFilename={jsonFilename}
-            mp3Filename={mp3Filename}
-            currentAction={currentAction}
-            onAudioEnd={onAudioEnd}
-          />
-        </Suspense>
-      </Canvas>
-    </div>
-  );
+                <Suspense fallback={null}>
+                    <ModelController
+                        ModelComponent={ModelComponent}
+                        glbPath={glbPath}
+                        jsonFilename={jsonFilename}
+                        mp3Filename={mp3Filename}
+                        currentAction={currentAction}
+                        onAudioEnd={onAudioEnd}
+                    />
+                </Suspense>
+            </Canvas>
+        </div>
+    );
 }
