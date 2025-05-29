@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import DotBackground from './Components/GSAP/DotBackground';
+import ScrollingText from './Components/GSAP/ScrollingTest';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -43,6 +45,8 @@ export default function RootLayout({
           <span>Ideation Deep Dive...</span>
         </header>
         {children}
+        <DotBackground />
+        <ScrollingText/>
         <footer>
           <span>Ideation Deep Dive...</span>
           <span>Ideation Deep Dive...</span>
