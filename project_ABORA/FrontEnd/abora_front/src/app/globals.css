@@ -41,7 +41,7 @@ header {
   width: 100%;
   color: var(--signature);
   padding: 1rem 0;
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px #929292;
   position: fixed;
   top: 0;
   display: flex;
@@ -57,7 +57,7 @@ footer {
   width: 100%;
   color: var(--signature);
   padding: 1rem 0;
-  border-top: solid 1px white;
+  border-top: solid 1px #929292;
   position: fixed;
   bottom: 0;
   display: flex;
