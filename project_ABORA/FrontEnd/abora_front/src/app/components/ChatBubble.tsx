@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ChatBubble.module.css';
+import TypingText from './GSAP/TypingText';
 
 type ChatBubbleProps = {
   message: string;
@@ -25,7 +26,7 @@ export const AgentABubble: React.FC<ChatBubbleProps> = ({
   <div className={styles.agentABubbleContainer}>
     {timestamp && <span className={styles.timestamp}>{timestamp}</span>}
     <div className={styles.agentABubble}>
-      <p>{message}</p>
+      <TypingText text = {message} className = {styles.agentBubble_typing}/>
     </div>
   </div>
 );
@@ -37,7 +38,7 @@ export const AgentBBubble: React.FC<ChatBubbleProps> = ({
   <div className={styles.agentBBubbleContainer}>
     {timestamp && <span className={styles.timestamp}>{timestamp}</span>}
     <div className={styles.agentBBubble}>
-      <p>{message}</p>
+        <TypingText text = {message} className = {styles.agentBubble_typing}/>
     </div>
   </div>
 );
