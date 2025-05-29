@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : 조명 추가">
+    <list default="true" id="e67f60d1-034e-4ce4-be78-107c86c56998" name="Changes" comment="feat : p -&gt; div">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ChooseAgent/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/ConversationRoom/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/components/ChatBubble.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/components/ChatBubble.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/FrontEnd/abora_front/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/tts/whisper.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/BackEnd/app/modules/tts/whisper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_ABORA/BackEnd/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project_ABORA/BackEnd/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GSAP" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,22 +46,22 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/projects/ABORA_2/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;whisper&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projects/ABORA_2/project_ABORA/FrontEnd/abora_front/src/app/Components/Avatar/motion&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.0.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projects\ABORA_2\project_ABORA\FrontEnd\abora_front\src\app\Components\Avatar\motion" />
@@ -104,6 +98,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ABORA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ABORA" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="ABORA" />
       <option name="filePath" />
@@ -178,6 +185,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="Python.FlaskServer">
       <module name="ABORA_2" />
       <option name="ENV_FILES" value="" />
@@ -204,6 +234,33 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
@@ -250,6 +307,40 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="ABORA_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
       <module name="ABORA_2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -450,78 +541,7 @@
       <workItem from="1747620906403" duration="2005000" />
       <workItem from="1747622998449" duration="662000" />
       <workItem from="1748257423865" duration="306000" />
-    </task>
-    <task id="LOCAL-00007" summary="fix : Reading 파일 추가 &gt; 코드변경 필요">
-      <option name="closed" value="true" />
-      <created>1746675878604</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1746675878604</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fix : 사용하지않은 파일 삭제">
-      <option name="closed" value="true" />
-      <created>1746675980784</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1746675980784</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fix : 사용하지않은 파일 삭제">
-      <option name="closed" value="true" />
-      <created>1746675999667</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1746675999667</updated>
-    </task>
-    <task id="LOCAL-00010" summary="doc : 아바타 glb 옷 수정">
-      <option name="closed" value="true" />
-      <created>1746875165844</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1746875165844</updated>
-    </task>
-    <task id="LOCAL-00011" summary="doc : slideData 리팩토링">
-      <option name="closed" value="true" />
-      <created>1746877387210</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1746877387210</updated>
-    </task>
-    <task id="LOCAL-00012" summary="doc : slideData 변화에 따른 props 변경">
-      <option name="closed" value="true" />
-      <created>1746877949895</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1746877949895</updated>
-    </task>
-    <task id="LOCAL-00013" summary="doc : Breath, Reading 메소드 추가">
-      <option name="closed" value="true" />
-      <created>1746879618980</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1746879618980</updated>
-    </task>
-    <task id="LOCAL-00014" summary="doc : Breath, Reading 모션 추가">
-      <option name="closed" value="true" />
-      <created>1746879639172</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1746879639172</updated>
-    </task>
-    <task id="LOCAL-00015" summary="doc : NLA 모션 이름 일관성 유지">
-      <option name="closed" value="true" />
-      <created>1746880985863</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1746880985863</updated>
+      <workItem from="1748543506066" duration="383000" />
     </task>
     <task id="LOCAL-00016" summary="refactor : 문서 이름 오류제거">
       <option name="closed" value="true" />
@@ -843,7 +863,79 @@
       <option name="project" value="LOCAL" />
       <updated>1748541035396</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="css : timestamp 색상 변경">
+      <option name="closed" value="true" />
+      <created>1748541764803</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541764803</updated>
+    </task>
+    <task id="LOCAL-00057" summary="css : Next 버튼 애니메이션 추가">
+      <option name="closed" value="true" />
+      <created>1748541828099</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541828099</updated>
+    </task>
+    <task id="LOCAL-00058" summary="feat : TypingText 추가">
+      <option name="closed" value="true" />
+      <created>1748541853889</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541853889</updated>
+    </task>
+    <task id="LOCAL-00059" summary="feat : LoaderGrid">
+      <option name="closed" value="true" />
+      <created>1748541872183</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541872183</updated>
+    </task>
+    <task id="LOCAL-00060" summary="feat : LoaderGridfrom 받음">
+      <option name="closed" value="true" />
+      <created>1748541889670</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541889671</updated>
+    </task>
+    <task id="LOCAL-00061" summary="css : css수정">
+      <option name="closed" value="true" />
+      <created>1748541903762</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541903762</updated>
+    </task>
+    <task id="LOCAL-00062" summary="css : footer 색상 수정">
+      <option name="closed" value="true" />
+      <created>1748541918340</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541918340</updated>
+    </task>
+    <task id="LOCAL-00063" summary="doc : workspace 변경">
+      <option name="closed" value="true" />
+      <created>1748541935566</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1748541935566</updated>
+    </task>
+    <task id="LOCAL-00064" summary="feat : p -&gt; div">
+      <option name="closed" value="true" />
+      <created>1748542146047</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1748542146047</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -861,15 +953,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doc : LipSync 모듈 생성" />
-    <MESSAGE value="doc : router 파일 코드 정리" />
-    <MESSAGE value="feat : whisper json 파일 생성" />
-    <MESSAGE value="refactor : 사용하지 않음" />
-    <MESSAGE value="doc : hangul types ignore" />
-    <MESSAGE value="feat : mp3 + tts apply / 중첩 audio.play() 주의 필요" />
-    <MESSAGE value="feat : breath, reading 모션 적용 오류 수정" />
-    <MESSAGE value="feat : Breath -&gt; ModelController로 명명" />
-    <MESSAGE value="feat :  사용하지 않는 코드 주석 처리" />
     <MESSAGE value="feat :  JSX -&gt; TSX 파일 확장자 변경" />
     <MESSAGE value="feat :  LipSync 파라미터 추가" />
     <MESSAGE value="feat :  사용하지 않는 메소드 주석으로 변경" />
@@ -886,6 +969,15 @@
     <MESSAGE value="feat : TypingText 0.8" />
     <MESSAGE value="feat : 배경 색 white -&gt; 보라색으로 변경" />
     <MESSAGE value="feat : 조명 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 조명 추가" />
+    <MESSAGE value="css : timestamp 색상 변경" />
+    <MESSAGE value="css : Next 버튼 애니메이션 추가" />
+    <MESSAGE value="feat : TypingText 추가" />
+    <MESSAGE value="feat : LoaderGrid" />
+    <MESSAGE value="feat : LoaderGridfrom 받음" />
+    <MESSAGE value="css : css수정" />
+    <MESSAGE value="css : footer 색상 수정" />
+    <MESSAGE value="doc : workspace 변경" />
+    <MESSAGE value="feat : p -&gt; div" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : p -&gt; div" />
   </component>
 </project>

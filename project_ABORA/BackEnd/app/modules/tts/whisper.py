@@ -1,26 +1,31 @@
-from faster_whisper import WhisperModel
-import json
+import torch
+import torchaudio
+import whisper
+from silero_vad import VoiceActivityDetector
 
-# 1. Whisper 모델
-model = WhisperModel("base", device="cpu", compute_type="int8")
+def analyze_audio_with_vad_and_whisper(mp3_path):
+    # 1. 오디오 로드
+    wav, sr = torchaudio.load(mp3_path)
+    vad = VoiceActivityDetector(sample_rate=sr)
 
-def analyze_whisper(mp3_path: str, output_json_path: str):
+    # 2. 음성 구간 추출
+    speech_timestamps = vad.detect_speech(wav)
 
-    #2. mp3 분석
-    segments, _ = model.transcribe(mp3_path, language="ko")
+    # 3. Whisper 로드
+    model = whisper.load_model("base")
 
-    #3. 결과를 리스트로 반환
     results = []
-    for segment in segments:
+    for segment in speech_timestamps:
+        start = segment['start']
+        end = segment['end']
+        sliced_audio = wav[:, int(start * sr):int(end * sr)]
+        torchaudio.save("temp_segment.wav", sliced_audio, sr)
+
+        result = model.transcribe("temp_segment.wav", language="ko")
         results.append({
-            "start": round(segment.start, 2),
-            "end": round(segment.end, 2),
-            "text": segment.text
+            "start": round(start, 2),
+            "end": round(end, 2),
+            "text": result['text']
         })
 
-    #4. json  저장
-    with open(output_json_path, "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
-
-    print("분석 완료! json 생성됨")
-    return results  # 분석 데이터도 원하면 반환
+    return results
