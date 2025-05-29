@@ -175,9 +175,9 @@ function ConversationContent() {
               />
           )}
           <div className={styles.agent_A_avatar}>
-            <p className={styles.name_agentA}>
+            <div className={styles.name_agentA}>
               <TypingText text={agentA}/>
-            </p>
+            </div>
             {renderAvatar(agentDataA, currentActionA, lipSyncA, () => {
               setIsSpeakingA(false); // 재생 종료
               if (currentSpeaker === 'agentA')
@@ -239,7 +239,7 @@ function ConversationContent() {
               />
           )}
           <div className={styles.agent_B_avatar}>
-            <p className={styles.name_agentB}><TypingText text={agentB}/></p>
+            <div className={styles.name_agentB}><TypingText text={agentB}/></div>
             {renderAvatar(agentDataB, currentActionB, lipSyncB, () => {
               setIsSpeakingB(false); // 재생 종료
               if (currentSpeaker === 'agentB')
