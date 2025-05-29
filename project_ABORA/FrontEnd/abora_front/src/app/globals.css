@@ -11,6 +11,11 @@ body {
   height: calc(100vh - var(--headerFooterHeight) * 2);
 }
 
+/*커서숨김*/
+body {
+  cursor: none;
+}
+
 body {
   font-family: 'Pretendard-Regular', sans-serif;
   color: var(--foreground);
@@ -34,6 +39,9 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+button{
+  cursor: none;
 }
 
 header {
