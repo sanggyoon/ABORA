@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import DotBackground from './Components/GSAP/DotBackground';
 import ScrollingText from './Components/GSAP/ScrollingTest';
+import CustomCursor from './Components/GSAP/CustomCursor';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -44,6 +45,7 @@ export default function RootLayout({
           <span>Ideation Deep Dive...</span>
           <span>Ideation Deep Dive...</span>
         </header>
+        <CustomCursor />
         {children}
         <DotBackground />
         <ScrollingText/>
