@@ -21,7 +21,7 @@ export default function TypingText({
 
     useEffect(() => {
         if (textRef.current) {
-            const charSpeed = 0.06; // 한 글자당 0.1초
+            const charSpeed = 0.08; // 한 글자당 0.1초
             const totalDuration = text.length * charSpeed;
 
             gsap.to(textRef.current, {
