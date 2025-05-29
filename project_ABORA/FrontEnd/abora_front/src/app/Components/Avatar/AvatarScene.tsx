@@ -11,7 +11,7 @@ type AvatarSceneProps = {
   currentAction?: string;
   onAudioEnd?: () => void;
 };
-
+/*
 function UpdateCamera({ zoom }: { zoom: number }) {
   const { camera } = useThree();
 
@@ -21,7 +21,7 @@ function UpdateCamera({ zoom }: { zoom: number }) {
   }, [zoom, camera]);
 
   return null;
-}
+}*/
 
 export default function AvatarScene({
   jsonFilename,
@@ -32,7 +32,7 @@ export default function AvatarScene({
   onAudioEnd,
 }: AvatarSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [cameraZoom, setCameraZoom] = useState(200);
+  const [cameraZoom, setCameraZoom] = useState(500);
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
@@ -55,17 +55,16 @@ export default function AvatarScene({
 
 
     return (
-        <div ref={containerRef} style={{ height: '58vh', width: '70%'}}>
+        <div ref={containerRef} style={{ height: '60vh', width: '95%'}}>
             <Canvas
                 orthographic
                 camera={{
-                    zoom: cameraZoom,
+                    zoom: 135,
                     near: 1,
                     far: 50,
-                    position: [0, 0, 30],
+                    position: [0, 0, 45],
                 }}
             >
-                <UpdateCamera zoom={cameraZoom} />
                 <ambientLight intensity={1.7} />
                 <directionalLight position={[10, 5, 0]} intensity={1} />
 
