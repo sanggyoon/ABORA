@@ -82,3 +82,6 @@ htmlcov/
 **/__pycache__/
 *.pyc
 docker-compose.override.yml
+
+# 압축 파일
+*.zip
